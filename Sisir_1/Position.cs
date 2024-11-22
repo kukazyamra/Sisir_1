@@ -39,6 +39,9 @@ namespace Sisir_1
             button1.Enabled = true;
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 }

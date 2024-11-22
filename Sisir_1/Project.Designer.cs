@@ -78,7 +78,7 @@
             // 
             button4.Enabled = false;
             button4.Font = new Font("Segoe UI", 9F);
-            button4.Location = new Point(853, 158);
+            button4.Location = new Point(733, 149);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
             button4.Size = new Size(79, 23);
@@ -90,7 +90,7 @@
             // 
             button2.Enabled = false;
             button2.Font = new Font("Segoe UI", 9F);
-            button2.Location = new Point(853, 92);
+            button2.Location = new Point(733, 83);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(79, 23);
@@ -101,7 +101,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 9F);
-            button1.Location = new Point(853, 65);
+            button1.Location = new Point(733, 56);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(79, 23);
@@ -114,7 +114,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F);
-            label1.Location = new Point(18, 34);
+            label1.Location = new Point(18, 7);
             label1.Name = "label1";
             label1.Size = new Size(88, 25);
             label1.TabIndex = 9;
@@ -124,10 +124,10 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7, Column8 });
-            dataGridView1.Location = new Point(12, 65);
+            dataGridView1.Location = new Point(12, 56);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(726, 150);
+            dataGridView1.Size = new Size(707, 150);
             dataGridView1.TabIndex = 10;
             // 
             // Column1
@@ -144,7 +144,7 @@
             Column2.MinimumWidth = 6;
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
-            Column2.Width = 125;
+            Column2.Width = 250;
             // 
             // Column3
             // 
@@ -152,7 +152,7 @@
             Column3.MinimumWidth = 6;
             Column3.Name = "Column3";
             Column3.ReadOnly = true;
-            Column3.Width = 125;
+            Column3.Width = 95;
             // 
             // Column4
             // 
@@ -160,7 +160,7 @@
             Column4.MinimumWidth = 6;
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
-            Column4.Width = 125;
+            Column4.Width = 95;
             // 
             // Column5
             // 
@@ -168,7 +168,7 @@
             Column5.MinimumWidth = 6;
             Column5.Name = "Column5";
             Column5.ReadOnly = true;
-            Column5.Width = 125;
+            Column5.Width = 95;
             // 
             // Column6
             // 
@@ -176,7 +176,7 @@
             Column6.MinimumWidth = 6;
             Column6.Name = "Column6";
             Column6.ReadOnly = true;
-            Column6.Width = 125;
+            Column6.Width = 95;
             // 
             // Column7
             // 
@@ -184,7 +184,7 @@
             Column7.MinimumWidth = 6;
             Column7.Name = "Column7";
             Column7.ReadOnly = true;
-            Column7.Width = 125;
+            Column7.Width = 95;
             // 
             // Column8
             // 
@@ -192,7 +192,7 @@
             Column8.MinimumWidth = 6;
             Column8.Name = "Column8";
             Column8.ReadOnly = true;
-            Column8.Width = 125;
+            Column8.Width = 150;
             // 
             // panel1
             // 
@@ -213,10 +213,10 @@
             panel1.Controls.Add(comboBox1);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(groupBox1);
-            panel1.Location = new Point(10, 65);
+            panel1.Location = new Point(12, 42);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(728, 527);
+            panel1.Size = new Size(707, 508);
             panel1.TabIndex = 11;
             panel1.Visible = false;
             // 
@@ -353,7 +353,7 @@
             Column9.MinimumWidth = 6;
             Column9.Name = "Column9";
             Column9.ReadOnly = true;
-            Column9.Width = 438;
+            Column9.Width = 377;
             // 
             // label6
             // 
@@ -387,7 +387,7 @@
             // button5
             // 
             button5.Font = new Font("Segoe UI", 9F);
-            button5.Location = new Point(562, 473);
+            button5.Location = new Point(608, 462);
             button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
             button5.Size = new Size(79, 23);
@@ -408,7 +408,7 @@
             // button3
             // 
             button3.Font = new Font("Segoe UI", 9F);
-            button3.Location = new Point(465, 473);
+            button3.Location = new Point(511, 462);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
             button3.Size = new Size(79, 23);
@@ -471,7 +471,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1026, 774);
+            ClientSize = new Size(1279, 774);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
@@ -482,6 +482,7 @@
             Name = "Project";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Справочник проектов";
+            Load += Project_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -500,14 +501,6 @@
         private Button button1;
         private Label label1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column7;
-        private DataGridViewTextBoxColumn Column8;
         private Panel panel1;
         private GroupBox groupBox2;
         private Button button9;
@@ -533,6 +526,14 @@
         private Label label4;
         private DateTimePicker dateTimePicker5;
         private Label label9;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column9;
     }
 }

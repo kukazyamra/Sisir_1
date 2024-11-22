@@ -21,21 +21,21 @@ namespace Sisir_1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            groupBox1.Visible = true;
+            panel1.Visible = true;
             dataGridView1.Visible = false;
             button1.Enabled = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            groupBox1.Visible = false;
+            panel1.Visible = false;
             dataGridView1.Visible = true;
             button1.Enabled = true;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            groupBox1.Visible = false;
+            panel1.Visible = false;
             dataGridView1.Visible = true;
             button1.Enabled = true;
         }

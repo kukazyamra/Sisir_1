@@ -50,21 +50,22 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
-            dataGridView1.Location = new Point(24, 52);
+            dataGridView1.Location = new Point(12, 41);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.ScrollBars = ScrollBars.Horizontal;
-            dataGridView1.Size = new Size(326, 218);
+            dataGridView1.Size = new Size(332, 200);
             dataGridView1.TabIndex = 22;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Column1
             // 
-            Column1.HeaderText = "Название";
+            Column1.HeaderText = "Наименование";
             Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
-            Column1.Width = 125;
+            Column1.Width = 200;
             // 
             // Column2
             // 
@@ -72,13 +73,13 @@
             Column2.MinimumWidth = 6;
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
-            Column2.Width = 125;
+            Column2.Width = 78;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F);
-            label1.Location = new Point(24, 23);
+            label1.Location = new Point(10, 7);
             label1.Name = "label1";
             label1.Size = new Size(110, 25);
             label1.TabIndex = 24;
@@ -88,7 +89,7 @@
             // 
             button4.Enabled = false;
             button4.Font = new Font("Segoe UI", 9F);
-            button4.Location = new Point(372, 140);
+            button4.Location = new Point(354, 130);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
             button4.Size = new Size(79, 23);
@@ -100,7 +101,7 @@
             // 
             button2.Enabled = false;
             button2.Font = new Font("Segoe UI", 9F);
-            button2.Location = new Point(372, 78);
+            button2.Location = new Point(354, 68);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(79, 23);
@@ -111,7 +112,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 9F);
-            button1.Location = new Point(372, 52);
+            button1.Location = new Point(354, 41);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(79, 23);
@@ -128,11 +129,11 @@
             groupBox1.Controls.Add(textBox2);
             groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(24, 50);
+            groupBox1.Location = new Point(16, 35);
             groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(332, 200);
+            groupBox1.Size = new Size(332, 166);
             groupBox1.TabIndex = 19;
             groupBox1.TabStop = false;
             groupBox1.Text = "Основное";
@@ -141,7 +142,7 @@
             // button5
             // 
             button5.Font = new Font("Segoe UI", 9F);
-            button5.Location = new Point(232, 155);
+            button5.Location = new Point(234, 126);
             button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
             button5.Size = new Size(79, 23);
@@ -153,7 +154,7 @@
             // button3
             // 
             button3.Font = new Font("Segoe UI", 9F);
-            button3.Location = new Point(147, 155);
+            button3.Location = new Point(149, 126);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
             button3.Size = new Size(79, 23);
@@ -200,7 +201,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(532, 304);
+            ClientSize = new Size(926, 481);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             Controls.Add(button4);
@@ -221,8 +222,6 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
         private Label label1;
         private Button button4;
         private Button button2;
@@ -234,5 +233,7 @@
         private TextBox textBox2;
         private TextBox textBox1;
         private Label label2;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
     }
 }

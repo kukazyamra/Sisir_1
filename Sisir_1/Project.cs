@@ -53,5 +53,10 @@ namespace Sisir_1
             var form = new Employee();
             form.Show();
         }
+
+        private void Project_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

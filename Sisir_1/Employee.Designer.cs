@@ -241,10 +241,10 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 9F);
-            button1.Location = new Point(1038, 114);
-            button1.Margin = new Padding(4, 4, 4, 4);
+            button1.Location = new Point(663, 53);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(112, 39);
+            button1.Size = new Size(79, 23);
             button1.TabIndex = 1;
             button1.Text = "Добавить";
             button1.UseVisualStyleBackColor = true;
@@ -254,10 +254,10 @@
             // 
             button2.Enabled = false;
             button2.Font = new Font("Segoe UI", 9F);
-            button2.Location = new Point(1038, 159);
-            button2.Margin = new Padding(4, 4, 4, 4);
+            button2.Location = new Point(663, 80);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(112, 39);
+            button2.Size = new Size(79, 23);
             button2.TabIndex = 2;
             button2.Text = "Изменить";
             button2.UseVisualStyleBackColor = true;
@@ -266,10 +266,10 @@
             // 
             button4.Enabled = false;
             button4.Font = new Font("Segoe UI", 9F);
-            button4.Location = new Point(1038, 269);
-            button4.Margin = new Padding(4, 4, 4, 4);
+            button4.Location = new Point(663, 146);
+            button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(112, 37);
+            button4.Size = new Size(79, 22);
             button4.TabIndex = 4;
             button4.Text = "Удалить";
             button4.UseVisualStyleBackColor = true;
@@ -278,10 +278,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F);
-            label1.Location = new Point(36, 56);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(10, 7);
             label1.Name = "label1";
-            label1.Size = new Size(168, 38);
+            label1.Size = new Size(115, 25);
             label1.TabIndex = 5;
             label1.Text = "Сотрудники";
             // 
@@ -289,13 +288,14 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column16, Column17, Column18, Column19, Column20, Column21, Column22, Column23, Column24, Column25, Column26, Column27, Column28, Column29, Column30, Column31 });
-            dataGridView1.Location = new Point(40, 114);
-            dataGridView1.Margin = new Padding(4, 4, 4, 4);
+            dataGridView1.Location = new Point(12, 53);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.ScrollBars = ScrollBars.Horizontal;
-            dataGridView1.Size = new Size(966, 564);
+            dataGridView1.Size = new Size(623, 451);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Column16
             // 
@@ -327,7 +327,7 @@
             Column19.MinimumWidth = 6;
             Column19.Name = "Column19";
             Column19.ReadOnly = true;
-            Column19.Width = 125;
+            Column19.Width = 95;
             // 
             // Column20
             // 
@@ -335,7 +335,7 @@
             Column20.MinimumWidth = 6;
             Column20.Name = "Column20";
             Column20.ReadOnly = true;
-            Column20.Width = 125;
+            Column20.Width = 95;
             // 
             // Column21
             // 
@@ -343,7 +343,7 @@
             Column21.MinimumWidth = 6;
             Column21.Name = "Column21";
             Column21.ReadOnly = true;
-            Column21.Width = 125;
+            Column21.Width = 95;
             // 
             // Column22
             // 
@@ -351,7 +351,7 @@
             Column22.MinimumWidth = 6;
             Column22.Name = "Column22";
             Column22.ReadOnly = true;
-            Column22.Width = 125;
+            Column22.Width = 250;
             // 
             // Column23
             // 
@@ -359,7 +359,7 @@
             Column23.MinimumWidth = 6;
             Column23.Name = "Column23";
             Column23.ReadOnly = true;
-            Column23.Width = 125;
+            Column23.Width = 95;
             // 
             // Column24
             // 
@@ -367,7 +367,7 @@
             Column24.MinimumWidth = 6;
             Column24.Name = "Column24";
             Column24.ReadOnly = true;
-            Column24.Width = 125;
+            Column24.Width = 250;
             // 
             // Column25
             // 
@@ -375,7 +375,7 @@
             Column25.MinimumWidth = 6;
             Column25.Name = "Column25";
             Column25.ReadOnly = true;
-            Column25.Width = 125;
+            Column25.Width = 250;
             // 
             // Column26
             // 
@@ -399,7 +399,7 @@
             Column28.MinimumWidth = 6;
             Column28.Name = "Column28";
             Column28.ReadOnly = true;
-            Column28.Width = 125;
+            Column28.Width = 95;
             // 
             // Column29
             // 
@@ -435,11 +435,11 @@
             groupBox1.Controls.Add(textBox3);
             groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(4, 4);
-            groupBox1.Margin = new Padding(4, 4, 4, 4);
+            groupBox1.Location = new Point(3, 2);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4, 4, 4, 4);
-            groupBox1.Size = new Size(899, 106);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(629, 64);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Основное";
@@ -447,73 +447,69 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(514, 34);
-            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Location = new Point(360, 20);
             label7.Name = "label7";
-            label7.Size = new Size(88, 25);
+            label7.Size = new Size(58, 15);
             label7.TabIndex = 18;
             label7.Text = "Отчество";
             // 
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(261, 36);
-            label20.Margin = new Padding(4, 0, 4, 0);
+            label20.Location = new Point(183, 22);
             label20.Name = "label20";
-            label20.Size = new Size(47, 25);
+            label20.Size = new Size(31, 15);
             label20.TabIndex = 16;
             label20.Text = "Имя";
             // 
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(770, 36);
-            label18.Margin = new Padding(4, 0, 4, 0);
+            label18.Location = new Point(539, 22);
             label18.Name = "label18";
-            label18.Size = new Size(43, 25);
+            label18.Size = new Size(28, 15);
             label18.TabIndex = 14;
             label18.Text = "Д.р.";
             // 
             // dateTimePicker1
             // 
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(770, 64);
-            dateTimePicker1.Margin = new Padding(4, 4, 4, 4);
+            dateTimePicker1.Location = new Point(539, 38);
+            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(115, 31);
+            dateTimePicker1.Size = new Size(82, 23);
             dateTimePicker1.TabIndex = 12;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(261, 64);
-            textBox2.Margin = new Padding(4, 4, 4, 4);
+            textBox2.Location = new Point(183, 38);
+            textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(235, 31);
+            textBox2.Size = new Size(166, 23);
             textBox2.TabIndex = 3;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(514, 64);
-            textBox3.Margin = new Padding(4, 4, 4, 4);
+            textBox3.Location = new Point(360, 38);
+            textBox3.Margin = new Padding(3, 2, 3, 2);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(235, 31);
+            textBox3.Size = new Size(166, 23);
             textBox3.TabIndex = 5;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(8, 64);
-            textBox1.Margin = new Padding(4, 4, 4, 4);
+            textBox1.Location = new Point(5, 38);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(235, 31);
+            textBox1.Size = new Size(166, 23);
             textBox1.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(8, 34);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(5, 20);
             label2.Name = "label2";
-            label2.Size = new Size(85, 25);
+            label2.Size = new Size(58, 15);
             label2.TabIndex = 0;
             label2.Text = "Фамилия";
             // 
@@ -531,11 +527,11 @@
             groupBox3.Controls.Add(textBox10);
             groupBox3.Controls.Add(textBox8);
             groupBox3.Controls.Add(textBox9);
-            groupBox3.Location = new Point(4, 131);
-            groupBox3.Margin = new Padding(4, 4, 4, 4);
+            groupBox3.Location = new Point(3, 79);
+            groupBox3.Margin = new Padding(3, 2, 3, 2);
             groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new Padding(4, 4, 4, 4);
-            groupBox3.Size = new Size(899, 186);
+            groupBox3.Padding = new Padding(3, 2, 3, 2);
+            groupBox3.Size = new Size(629, 112);
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
             groupBox3.Text = "Паспортные данные";
@@ -543,119 +539,113 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(770, 36);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(539, 22);
             label3.Name = "label3";
-            label3.Size = new Size(116, 25);
+            label3.Size = new Size(76, 15);
             label3.TabIndex = 27;
             label3.Text = "Дата выдачи";
             // 
             // label25
             // 
             label25.AutoSize = true;
-            label25.Location = new Point(459, 115);
-            label25.Margin = new Padding(4, 0, 4, 0);
+            label25.Location = new Point(321, 69);
             label25.Name = "label25";
-            label25.Size = new Size(170, 25);
+            label25.Size = new Size(112, 15);
             label25.TabIndex = 26;
             label25.Text = "Адрес проживания";
             // 
             // label23
             // 
             label23.AutoSize = true;
-            label23.Location = new Point(12, 115);
-            label23.Margin = new Padding(4, 0, 4, 0);
+            label23.Location = new Point(9, 69);
             label23.Name = "label23";
-            label23.Size = new Size(170, 25);
+            label23.Size = new Size(113, 15);
             label23.TabIndex = 24;
             label23.Text = "Адрес регистрации";
             // 
             // label21
             // 
             label21.AutoSize = true;
-            label21.Location = new Point(261, 36);
-            label21.Margin = new Padding(4, 0, 4, 0);
+            label21.Location = new Point(183, 22);
             label21.Name = "label21";
-            label21.Size = new Size(101, 25);
+            label21.Size = new Size(66, 15);
             label21.TabIndex = 22;
             label21.Text = "Кем выдан";
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(138, 36);
-            label15.Margin = new Padding(4, 0, 4, 0);
+            label15.Location = new Point(96, 22);
             label15.Name = "label15";
-            label15.Size = new Size(69, 25);
+            label15.Size = new Size(45, 15);
             label15.TabIndex = 20;
             label15.Text = "Номер";
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(12, 36);
-            label13.Margin = new Padding(4, 0, 4, 0);
+            label13.Location = new Point(9, 22);
             label13.Name = "label13";
-            label13.Size = new Size(62, 25);
+            label13.Size = new Size(41, 15);
             label13.TabIndex = 18;
             label13.Text = "Серия";
             // 
             // dateTimePicker2
             // 
             dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(770, 64);
-            dateTimePicker2.Margin = new Padding(4, 4, 4, 4);
+            dateTimePicker2.Location = new Point(539, 38);
+            dateTimePicker2.Margin = new Padding(3, 2, 3, 2);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(115, 31);
+            dateTimePicker2.Size = new Size(82, 23);
             dateTimePicker2.TabIndex = 17;
             // 
             // textBox12
             // 
-            textBox12.Location = new Point(459, 144);
-            textBox12.Margin = new Padding(4, 4, 4, 4);
+            textBox12.Location = new Point(321, 86);
+            textBox12.Margin = new Padding(3, 2, 3, 2);
             textBox12.Name = "textBox12";
-            textBox12.Size = new Size(426, 31);
+            textBox12.Size = new Size(300, 23);
             textBox12.TabIndex = 16;
             // 
             // textBox11
             // 
-            textBox11.Location = new Point(11, 144);
-            textBox11.Margin = new Padding(4, 4, 4, 4);
+            textBox11.Location = new Point(8, 86);
+            textBox11.Margin = new Padding(3, 2, 3, 2);
             textBox11.Name = "textBox11";
-            textBox11.Size = new Size(426, 31);
+            textBox11.Size = new Size(300, 23);
             textBox11.TabIndex = 14;
             // 
             // textBox10
             // 
-            textBox10.Location = new Point(261, 64);
-            textBox10.Margin = new Padding(4, 4, 4, 4);
+            textBox10.Location = new Point(183, 38);
+            textBox10.Margin = new Padding(3, 2, 3, 2);
             textBox10.Name = "textBox10";
-            textBox10.Size = new Size(490, 31);
+            textBox10.Size = new Size(344, 23);
             textBox10.TabIndex = 12;
             // 
             // textBox8
             // 
-            textBox8.Location = new Point(138, 64);
-            textBox8.Margin = new Padding(4, 4, 4, 4);
+            textBox8.Location = new Point(96, 38);
+            textBox8.Margin = new Padding(3, 2, 3, 2);
             textBox8.Name = "textBox8";
-            textBox8.Size = new Size(105, 31);
+            textBox8.Size = new Size(75, 23);
             textBox8.TabIndex = 3;
             // 
             // textBox9
             // 
-            textBox9.Location = new Point(11, 64);
-            textBox9.Margin = new Padding(4, 4, 4, 4);
+            textBox9.Location = new Point(8, 38);
+            textBox9.Margin = new Padding(3, 2, 3, 2);
             textBox9.Name = "textBox9";
-            textBox9.Size = new Size(105, 31);
+            textBox9.Size = new Size(75, 23);
             textBox9.TabIndex = 1;
             // 
             // button3
             // 
             button3.Font = new Font("Segoe UI", 9F);
-            button3.Location = new Point(641, 936);
-            button3.Margin = new Padding(4, 4, 4, 4);
+            button3.Location = new Point(449, 541);
+            button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(112, 39);
+            button3.Size = new Size(79, 23);
             button3.TabIndex = 3;
             button3.Text = "ОК";
             button3.UseVisualStyleBackColor = true;
@@ -664,10 +654,10 @@
             // button5
             // 
             button5.Font = new Font("Segoe UI", 9F);
-            button5.Location = new Point(790, 936);
-            button5.Margin = new Padding(4, 4, 4, 4);
+            button5.Location = new Point(553, 541);
+            button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
-            button5.Size = new Size(112, 39);
+            button5.Size = new Size(79, 23);
             button5.TabIndex = 4;
             button5.Text = "Отмена";
             button5.UseVisualStyleBackColor = true;
@@ -681,21 +671,21 @@
             groupBox4.Controls.Add(label10);
             groupBox4.Controls.Add(comboBox1);
             groupBox4.Controls.Add(comboBox2);
-            groupBox4.Location = new Point(4, 344);
-            groupBox4.Margin = new Padding(4, 4, 4, 4);
+            groupBox4.Location = new Point(3, 206);
+            groupBox4.Margin = new Padding(3, 2, 3, 2);
             groupBox4.Name = "groupBox4";
-            groupBox4.Padding = new Padding(4, 4, 4, 4);
-            groupBox4.Size = new Size(899, 100);
+            groupBox4.Padding = new Padding(3, 2, 3, 2);
+            groupBox4.Size = new Size(629, 60);
             groupBox4.TabIndex = 5;
             groupBox4.TabStop = false;
             groupBox4.Text = "Положение в компании";
             // 
             // button7
             // 
-            button7.Location = new Point(716, 56);
-            button7.Margin = new Padding(4, 4, 4, 4);
+            button7.Location = new Point(501, 33);
+            button7.Margin = new Padding(3, 2, 3, 2);
             button7.Name = "button7";
-            button7.Size = new Size(34, 40);
+            button7.Size = new Size(24, 24);
             button7.TabIndex = 21;
             button7.Text = "...";
             button7.UseVisualStyleBackColor = true;
@@ -703,10 +693,10 @@
             // 
             // button6
             // 
-            button6.Location = new Point(404, 56);
-            button6.Margin = new Padding(4, 4, 4, 4);
+            button6.Location = new Point(284, 34);
+            button6.Margin = new Padding(3, 2, 3, 2);
             button6.Name = "button6";
-            button6.Size = new Size(34, 40);
+            button6.Size = new Size(24, 23);
             button6.TabIndex = 20;
             button6.Text = "...";
             button6.UseVisualStyleBackColor = true;
@@ -715,39 +705,37 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(8, 29);
-            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Location = new Point(5, 17);
             label8.Name = "label8";
-            label8.Size = new Size(102, 25);
+            label8.Size = new Size(69, 15);
             label8.TabIndex = 19;
             label8.Text = "Должность";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(459, 29);
-            label10.Margin = new Padding(4, 0, 4, 0);
+            label10.Location = new Point(321, 17);
             label10.Name = "label10";
-            label10.Size = new Size(82, 25);
+            label10.Size = new Size(53, 15);
             label10.TabIndex = 18;
             label10.Text = "Уровень";
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(12, 56);
-            comboBox1.Margin = new Padding(4, 4, 4, 4);
+            comboBox1.Location = new Point(9, 34);
+            comboBox1.Margin = new Padding(3, 2, 3, 2);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(383, 33);
+            comboBox1.Size = new Size(269, 23);
             comboBox1.TabIndex = 8;
             // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(459, 56);
-            comboBox2.Margin = new Padding(4, 4, 4, 4);
+            comboBox2.Location = new Point(321, 34);
+            comboBox2.Margin = new Padding(3, 2, 3, 2);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(250, 33);
+            comboBox2.Size = new Size(176, 23);
             comboBox2.TabIndex = 10;
             // 
             // groupBox5
@@ -758,11 +746,11 @@
             groupBox5.Controls.Add(label4);
             groupBox5.Controls.Add(textBox6);
             groupBox5.Controls.Add(textBox5);
-            groupBox5.Location = new Point(4, 461);
-            groupBox5.Margin = new Padding(4, 4, 4, 4);
+            groupBox5.Location = new Point(3, 277);
+            groupBox5.Margin = new Padding(3, 2, 3, 2);
             groupBox5.Name = "groupBox5";
-            groupBox5.Padding = new Padding(4, 4, 4, 4);
-            groupBox5.Size = new Size(899, 105);
+            groupBox5.Padding = new Padding(3, 2, 3, 2);
+            groupBox5.Size = new Size(629, 63);
             groupBox5.TabIndex = 6;
             groupBox5.TabStop = false;
             groupBox5.Text = "Контактные данные";
@@ -770,55 +758,52 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(261, 29);
-            label12.Margin = new Padding(4, 0, 4, 0);
+            label12.Location = new Point(183, 17);
             label12.Name = "label12";
-            label12.Size = new Size(54, 25);
+            label12.Size = new Size(36, 15);
             label12.TabIndex = 2;
             label12.Text = "Email";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(514, 29);
-            label11.Margin = new Padding(4, 0, 4, 0);
+            label11.Location = new Point(360, 17);
             label11.Name = "label11";
-            label11.Size = new Size(83, 25);
+            label11.Size = new Size(55, 15);
             label11.TabIndex = 4;
             label11.Text = "Telegram";
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(514, 56);
-            textBox4.Margin = new Padding(4, 4, 4, 4);
+            textBox4.Location = new Point(360, 34);
+            textBox4.Margin = new Padding(3, 2, 3, 2);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(235, 31);
+            textBox4.Size = new Size(166, 23);
             textBox4.TabIndex = 5;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 29);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(9, 17);
             label4.Name = "label4";
-            label4.Size = new Size(81, 25);
+            label4.Size = new Size(55, 15);
             label4.TabIndex = 14;
             label4.Text = "Телефон";
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(12, 56);
-            textBox6.Margin = new Padding(4, 4, 4, 4);
+            textBox6.Location = new Point(9, 34);
+            textBox6.Margin = new Padding(3, 2, 3, 2);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(230, 31);
+            textBox6.Size = new Size(162, 23);
             textBox6.TabIndex = 1;
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(268, 56);
-            textBox5.Margin = new Padding(4, 4, 4, 4);
+            textBox5.Location = new Point(187, 34);
+            textBox5.Margin = new Padding(3, 2, 3, 2);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(230, 31);
+            textBox5.Size = new Size(162, 23);
             textBox5.TabIndex = 3;
             // 
             // panel1
@@ -830,10 +815,10 @@
             panel1.Controls.Add(groupBox3);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(groupBox1);
-            panel1.Location = new Point(40, 114);
-            panel1.Margin = new Padding(4, 4, 4, 4);
+            panel1.Location = new Point(12, 44);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(920, 991);
+            panel1.Size = new Size(644, 567);
             panel1.TabIndex = 6;
             panel1.Visible = false;
             panel1.Paint += panel1_Paint;
@@ -843,11 +828,9 @@
             groupBox2.Controls.Add(button9);
             groupBox2.Controls.Add(button8);
             groupBox2.Controls.Add(dataGridView2);
-            groupBox2.Location = new Point(11, 591);
-            groupBox2.Margin = new Padding(4, 5, 4, 5);
+            groupBox2.Location = new Point(8, 355);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(4, 5, 4, 5);
-            groupBox2.Size = new Size(891, 290);
+            groupBox2.Size = new Size(624, 174);
             groupBox2.TabIndex = 8;
             groupBox2.TabStop = false;
             groupBox2.Text = "Навыки";
@@ -855,10 +838,10 @@
             // button9
             // 
             button9.Font = new Font("Segoe UI", 7F);
-            button9.Location = new Point(440, 81);
-            button9.Margin = new Padding(4, 4, 4, 4);
+            button9.Location = new Point(324, 49);
+            button9.Margin = new Padding(3, 2, 3, 2);
             button9.Name = "button9";
-            button9.Size = new Size(34, 36);
+            button9.Size = new Size(24, 22);
             button9.TabIndex = 23;
             button9.Text = "-";
             button9.UseVisualStyleBackColor = true;
@@ -866,10 +849,10 @@
             // button8
             // 
             button8.Font = new Font("Segoe UI", 7F);
-            button8.Location = new Point(440, 35);
-            button8.Margin = new Padding(4, 4, 4, 4);
+            button8.Location = new Point(324, 21);
+            button8.Margin = new Padding(3, 2, 3, 2);
             button8.Name = "button8";
-            button8.Size = new Size(34, 40);
+            button8.Size = new Size(24, 24);
             button8.TabIndex = 22;
             button8.Text = "+";
             button8.UseVisualStyleBackColor = true;
@@ -879,11 +862,11 @@
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Column32, Column33 });
-            dataGridView2.Location = new Point(4, 35);
-            dataGridView2.Margin = new Padding(4, 4, 4, 4);
+            dataGridView2.Location = new Point(6, 21);
+            dataGridView2.Margin = new Padding(3, 2, 3, 2);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(428, 235);
+            dataGridView2.Size = new Size(312, 141);
             dataGridView2.TabIndex = 7;
             // 
             // Column32
@@ -892,7 +875,7 @@
             Column32.MinimumWidth = 6;
             Column32.Name = "Column32";
             Column32.ReadOnly = true;
-            Column32.Width = 146;
+            Column32.Width = 200;
             // 
             // Column33
             // 
@@ -900,20 +883,20 @@
             Column33.MinimumWidth = 6;
             Column33.Name = "Column33";
             Column33.ReadOnly = true;
-            Column33.Width = 125;
+            Column33.Width = 59;
             // 
             // Employee
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1406, 1050);
+            ClientSize = new Size(1484, 804);
             Controls.Add(panel1);
             Controls.Add(label1);
             Controls.Add(button4);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Employee";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Справочник сотрудников";
@@ -956,22 +939,6 @@
         private Button button4;
         private Label label1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column16;
-        private DataGridViewTextBoxColumn Column17;
-        private DataGridViewTextBoxColumn Column18;
-        private DataGridViewTextBoxColumn Column19;
-        private DataGridViewTextBoxColumn Column20;
-        private DataGridViewTextBoxColumn Column21;
-        private DataGridViewTextBoxColumn Column22;
-        private DataGridViewTextBoxColumn Column23;
-        private DataGridViewTextBoxColumn Column24;
-        private DataGridViewTextBoxColumn Column25;
-        private DataGridViewTextBoxColumn Column26;
-        private DataGridViewTextBoxColumn Column27;
-        private DataGridViewTextBoxColumn Column28;
-        private DataGridViewTextBoxColumn Column29;
-        private DataGridViewTextBoxColumn Column30;
-        private DataGridViewTextBoxColumn Column31;
         private GroupBox groupBox1;
         private Label label7;
         private Label label20;
@@ -1015,6 +982,22 @@
         private GroupBox groupBox2;
         private Button button9;
         private Button button8;
+        private DataGridViewTextBoxColumn Column16;
+        private DataGridViewTextBoxColumn Column17;
+        private DataGridViewTextBoxColumn Column18;
+        private DataGridViewTextBoxColumn Column19;
+        private DataGridViewTextBoxColumn Column20;
+        private DataGridViewTextBoxColumn Column21;
+        private DataGridViewTextBoxColumn Column22;
+        private DataGridViewTextBoxColumn Column23;
+        private DataGridViewTextBoxColumn Column24;
+        private DataGridViewTextBoxColumn Column25;
+        private DataGridViewTextBoxColumn Column26;
+        private DataGridViewTextBoxColumn Column27;
+        private DataGridViewTextBoxColumn Column28;
+        private DataGridViewTextBoxColumn Column29;
+        private DataGridViewTextBoxColumn Column30;
+        private DataGridViewTextBoxColumn Column31;
         private DataGridViewTextBoxColumn Column32;
         private DataGridViewTextBoxColumn Column33;
     }

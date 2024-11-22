@@ -69,5 +69,10 @@ namespace Sisir_1
             var form = new Skill();
             form.Show();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
