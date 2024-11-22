@@ -78,7 +78,7 @@
             // 
             button4.Enabled = false;
             button4.Font = new Font("Segoe UI", 9F);
-            button4.Location = new Point(733, 149);
+            button4.Location = new Point(711, 149);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
             button4.Size = new Size(79, 23);
@@ -90,7 +90,7 @@
             // 
             button2.Enabled = false;
             button2.Font = new Font("Segoe UI", 9F);
-            button2.Location = new Point(733, 83);
+            button2.Location = new Point(711, 83);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(79, 23);
@@ -101,7 +101,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 9F);
-            button1.Location = new Point(733, 56);
+            button1.Location = new Point(711, 56);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(79, 23);
@@ -127,7 +127,7 @@
             dataGridView1.Location = new Point(12, 56);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(707, 150);
+            dataGridView1.Size = new Size(690, 342);
             dataGridView1.TabIndex = 10;
             // 
             // Column1
@@ -213,10 +213,10 @@
             panel1.Controls.Add(comboBox1);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(groupBox1);
-            panel1.Location = new Point(12, 42);
+            panel1.Location = new Point(12, 41);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(707, 508);
+            panel1.Size = new Size(690, 508);
             panel1.TabIndex = 11;
             panel1.Visible = false;
             // 

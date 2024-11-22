@@ -145,7 +145,7 @@
             // button5
             // 
             button5.Font = new Font("Segoe UI", 9F);
-            button5.Location = new Point(244, 89);
+            button5.Location = new Point(246, 98);
             button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
             button5.Size = new Size(79, 23);
@@ -157,7 +157,7 @@
             // button3
             // 
             button3.Font = new Font("Segoe UI", 9F);
-            button3.Location = new Point(146, 89);
+            button3.Location = new Point(161, 98);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
             button3.Size = new Size(79, 23);

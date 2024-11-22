@@ -48,22 +48,6 @@
             button4 = new Button();
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            Column16 = new DataGridViewTextBoxColumn();
-            Column17 = new DataGridViewTextBoxColumn();
-            Column18 = new DataGridViewTextBoxColumn();
-            Column19 = new DataGridViewTextBoxColumn();
-            Column20 = new DataGridViewTextBoxColumn();
-            Column21 = new DataGridViewTextBoxColumn();
-            Column22 = new DataGridViewTextBoxColumn();
-            Column23 = new DataGridViewTextBoxColumn();
-            Column24 = new DataGridViewTextBoxColumn();
-            Column25 = new DataGridViewTextBoxColumn();
-            Column26 = new DataGridViewTextBoxColumn();
-            Column27 = new DataGridViewTextBoxColumn();
-            Column28 = new DataGridViewTextBoxColumn();
-            Column29 = new DataGridViewTextBoxColumn();
-            Column30 = new DataGridViewTextBoxColumn();
-            Column31 = new DataGridViewTextBoxColumn();
             groupBox1 = new GroupBox();
             label7 = new Label();
             label20 = new Label();
@@ -109,6 +93,22 @@
             dataGridView2 = new DataGridView();
             Column32 = new DataGridViewTextBoxColumn();
             Column33 = new DataGridViewTextBoxColumn();
+            Column16 = new DataGridViewTextBoxColumn();
+            Column17 = new DataGridViewTextBoxColumn();
+            Column18 = new DataGridViewTextBoxColumn();
+            Column19 = new DataGridViewTextBoxColumn();
+            Column20 = new DataGridViewTextBoxColumn();
+            Column21 = new DataGridViewTextBoxColumn();
+            Column22 = new DataGridViewTextBoxColumn();
+            Column23 = new DataGridViewTextBoxColumn();
+            Column24 = new DataGridViewTextBoxColumn();
+            Column25 = new DataGridViewTextBoxColumn();
+            Column26 = new DataGridViewTextBoxColumn();
+            Column27 = new DataGridViewTextBoxColumn();
+            Column28 = new DataGridViewTextBoxColumn();
+            Column29 = new DataGridViewTextBoxColumn();
+            Column30 = new DataGridViewTextBoxColumn();
+            Column31 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -293,137 +293,9 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.ScrollBars = ScrollBars.Horizontal;
-            dataGridView1.Size = new Size(623, 451);
+            dataGridView1.Size = new Size(632, 451);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // Column16
-            // 
-            Column16.HeaderText = "Фамилия";
-            Column16.MinimumWidth = 6;
-            Column16.Name = "Column16";
-            Column16.ReadOnly = true;
-            Column16.Width = 125;
-            // 
-            // Column17
-            // 
-            Column17.HeaderText = "Имя";
-            Column17.MinimumWidth = 6;
-            Column17.Name = "Column17";
-            Column17.ReadOnly = true;
-            Column17.Width = 125;
-            // 
-            // Column18
-            // 
-            Column18.HeaderText = "Отчество";
-            Column18.MinimumWidth = 6;
-            Column18.Name = "Column18";
-            Column18.ReadOnly = true;
-            Column18.Width = 125;
-            // 
-            // Column19
-            // 
-            Column19.HeaderText = "Дата рождения";
-            Column19.MinimumWidth = 6;
-            Column19.Name = "Column19";
-            Column19.ReadOnly = true;
-            Column19.Width = 95;
-            // 
-            // Column20
-            // 
-            Column20.HeaderText = "Серия паспорта";
-            Column20.MinimumWidth = 6;
-            Column20.Name = "Column20";
-            Column20.ReadOnly = true;
-            Column20.Width = 95;
-            // 
-            // Column21
-            // 
-            Column21.HeaderText = "Номер паспорта";
-            Column21.MinimumWidth = 6;
-            Column21.Name = "Column21";
-            Column21.ReadOnly = true;
-            Column21.Width = 95;
-            // 
-            // Column22
-            // 
-            Column22.HeaderText = "Кем выдан";
-            Column22.MinimumWidth = 6;
-            Column22.Name = "Column22";
-            Column22.ReadOnly = true;
-            Column22.Width = 250;
-            // 
-            // Column23
-            // 
-            Column23.HeaderText = "Дата выдачи";
-            Column23.MinimumWidth = 6;
-            Column23.Name = "Column23";
-            Column23.ReadOnly = true;
-            Column23.Width = 95;
-            // 
-            // Column24
-            // 
-            Column24.HeaderText = "Адрес регистрации";
-            Column24.MinimumWidth = 6;
-            Column24.Name = "Column24";
-            Column24.ReadOnly = true;
-            Column24.Width = 250;
-            // 
-            // Column25
-            // 
-            Column25.HeaderText = "Адрес проживания";
-            Column25.MinimumWidth = 6;
-            Column25.Name = "Column25";
-            Column25.ReadOnly = true;
-            Column25.Width = 250;
-            // 
-            // Column26
-            // 
-            Column26.HeaderText = "Должность";
-            Column26.MinimumWidth = 6;
-            Column26.Name = "Column26";
-            Column26.ReadOnly = true;
-            Column26.Width = 125;
-            // 
-            // Column27
-            // 
-            Column27.HeaderText = "Уровень";
-            Column27.MinimumWidth = 6;
-            Column27.Name = "Column27";
-            Column27.ReadOnly = true;
-            Column27.Width = 125;
-            // 
-            // Column28
-            // 
-            Column28.HeaderText = "Зарплата";
-            Column28.MinimumWidth = 6;
-            Column28.Name = "Column28";
-            Column28.ReadOnly = true;
-            Column28.Width = 95;
-            // 
-            // Column29
-            // 
-            Column29.HeaderText = "Телефон";
-            Column29.MinimumWidth = 6;
-            Column29.Name = "Column29";
-            Column29.ReadOnly = true;
-            Column29.Width = 125;
-            // 
-            // Column30
-            // 
-            Column30.HeaderText = "Email";
-            Column30.MinimumWidth = 6;
-            Column30.Name = "Column30";
-            Column30.ReadOnly = true;
-            Column30.Width = 125;
-            // 
-            // Column31
-            // 
-            Column31.HeaderText = "Telegram";
-            Column31.MinimumWidth = 6;
-            Column31.Name = "Column31";
-            Column31.ReadOnly = true;
-            Column31.Width = 125;
             // 
             // groupBox1
             // 
@@ -815,10 +687,10 @@
             panel1.Controls.Add(groupBox3);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(groupBox1);
-            panel1.Location = new Point(12, 44);
+            panel1.Location = new Point(12, 45);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(644, 567);
+            panel1.Size = new Size(635, 567);
             panel1.TabIndex = 6;
             panel1.Visible = false;
             panel1.Paint += panel1_Paint;
@@ -884,6 +756,134 @@
             Column33.Name = "Column33";
             Column33.ReadOnly = true;
             Column33.Width = 59;
+            // 
+            // Column16
+            // 
+            Column16.HeaderText = "Фамилия";
+            Column16.MinimumWidth = 6;
+            Column16.Name = "Column16";
+            Column16.ReadOnly = true;
+            Column16.Width = 130;
+            // 
+            // Column17
+            // 
+            Column17.HeaderText = "Имя";
+            Column17.MinimumWidth = 6;
+            Column17.Name = "Column17";
+            Column17.ReadOnly = true;
+            Column17.Width = 130;
+            // 
+            // Column18
+            // 
+            Column18.HeaderText = "Отчество";
+            Column18.MinimumWidth = 6;
+            Column18.Name = "Column18";
+            Column18.ReadOnly = true;
+            Column18.Width = 130;
+            // 
+            // Column19
+            // 
+            Column19.HeaderText = "Дата рождения";
+            Column19.MinimumWidth = 6;
+            Column19.Name = "Column19";
+            Column19.ReadOnly = true;
+            Column19.Width = 95;
+            // 
+            // Column20
+            // 
+            Column20.HeaderText = "Серия паспорта";
+            Column20.MinimumWidth = 6;
+            Column20.Name = "Column20";
+            Column20.ReadOnly = true;
+            Column20.Width = 95;
+            // 
+            // Column21
+            // 
+            Column21.HeaderText = "Номер паспорта";
+            Column21.MinimumWidth = 6;
+            Column21.Name = "Column21";
+            Column21.ReadOnly = true;
+            Column21.Width = 95;
+            // 
+            // Column22
+            // 
+            Column22.HeaderText = "Кем выдан";
+            Column22.MinimumWidth = 6;
+            Column22.Name = "Column22";
+            Column22.ReadOnly = true;
+            Column22.Width = 250;
+            // 
+            // Column23
+            // 
+            Column23.HeaderText = "Дата выдачи";
+            Column23.MinimumWidth = 6;
+            Column23.Name = "Column23";
+            Column23.ReadOnly = true;
+            Column23.Width = 95;
+            // 
+            // Column24
+            // 
+            Column24.HeaderText = "Адрес регистрации";
+            Column24.MinimumWidth = 6;
+            Column24.Name = "Column24";
+            Column24.ReadOnly = true;
+            Column24.Width = 250;
+            // 
+            // Column25
+            // 
+            Column25.HeaderText = "Адрес проживания";
+            Column25.MinimumWidth = 6;
+            Column25.Name = "Column25";
+            Column25.ReadOnly = true;
+            Column25.Width = 250;
+            // 
+            // Column26
+            // 
+            Column26.HeaderText = "Должность";
+            Column26.MinimumWidth = 6;
+            Column26.Name = "Column26";
+            Column26.ReadOnly = true;
+            Column26.Width = 125;
+            // 
+            // Column27
+            // 
+            Column27.HeaderText = "Уровень";
+            Column27.MinimumWidth = 6;
+            Column27.Name = "Column27";
+            Column27.ReadOnly = true;
+            Column27.Width = 125;
+            // 
+            // Column28
+            // 
+            Column28.HeaderText = "Зарплата";
+            Column28.MinimumWidth = 6;
+            Column28.Name = "Column28";
+            Column28.ReadOnly = true;
+            Column28.Width = 95;
+            // 
+            // Column29
+            // 
+            Column29.HeaderText = "Телефон";
+            Column29.MinimumWidth = 6;
+            Column29.Name = "Column29";
+            Column29.ReadOnly = true;
+            Column29.Width = 125;
+            // 
+            // Column30
+            // 
+            Column30.HeaderText = "Email";
+            Column30.MinimumWidth = 6;
+            Column30.Name = "Column30";
+            Column30.ReadOnly = true;
+            Column30.Width = 125;
+            // 
+            // Column31
+            // 
+            Column31.HeaderText = "Telegram";
+            Column31.MinimumWidth = 6;
+            Column31.Name = "Column31";
+            Column31.ReadOnly = true;
+            Column31.Width = 125;
             // 
             // Employee
             // 
@@ -982,6 +982,8 @@
         private GroupBox groupBox2;
         private Button button9;
         private Button button8;
+        private DataGridViewTextBoxColumn Column32;
+        private DataGridViewTextBoxColumn Column33;
         private DataGridViewTextBoxColumn Column16;
         private DataGridViewTextBoxColumn Column17;
         private DataGridViewTextBoxColumn Column18;
@@ -998,7 +1000,5 @@
         private DataGridViewTextBoxColumn Column29;
         private DataGridViewTextBoxColumn Column30;
         private DataGridViewTextBoxColumn Column31;
-        private DataGridViewTextBoxColumn Column32;
-        private DataGridViewTextBoxColumn Column33;
     }
 }
