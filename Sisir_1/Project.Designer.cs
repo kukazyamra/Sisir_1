@@ -42,31 +42,27 @@
             Column7 = new DataGridViewTextBoxColumn();
             Column8 = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
-            dateTimePicker5 = new DateTimePicker();
-            label9 = new Label();
-            dateTimePicker4 = new DateTimePicker();
-            label7 = new Label();
-            dateTimePicker2 = new DateTimePicker();
-            label5 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            label4 = new Label();
-            dateTimePicker3 = new DateTimePicker();
             groupBox2 = new GroupBox();
             button9 = new Button();
             button8 = new Button();
             dataGridView2 = new DataGridView();
             Column9 = new DataGridViewTextBoxColumn();
-            label6 = new Label();
-            button6 = new Button();
-            label8 = new Label();
             button5 = new Button();
-            comboBox1 = new ComboBox();
             button3 = new Button();
             groupBox1 = new GroupBox();
+            dateTimePicker5 = new DateTimePicker();
             label3 = new Label();
             richTextBox1 = new RichTextBox();
+            label9 = new Label();
             textBox1 = new TextBox();
             label2 = new Label();
+            comboBox1 = new ComboBox();
+            label6 = new Label();
+            button6 = new Button();
+            dateTimePicker3 = new DateTimePicker();
+            dateTimePicker2 = new DateTimePicker();
+            label8 = new Label();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -78,7 +74,7 @@
             // 
             button4.Enabled = false;
             button4.Font = new Font("Segoe UI", 9F);
-            button4.Location = new Point(711, 149);
+            button4.Location = new Point(730, 149);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
             button4.Size = new Size(79, 23);
@@ -90,7 +86,7 @@
             // 
             button2.Enabled = false;
             button2.Font = new Font("Segoe UI", 9F);
-            button2.Location = new Point(711, 83);
+            button2.Location = new Point(730, 83);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(79, 23);
@@ -101,7 +97,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 9F);
-            button1.Location = new Point(711, 56);
+            button1.Location = new Point(730, 56);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(79, 23);
@@ -196,119 +192,25 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(dateTimePicker5);
-            panel1.Controls.Add(label9);
-            panel1.Controls.Add(dateTimePicker4);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(dateTimePicker2);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(dateTimePicker1);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(dateTimePicker3);
             panel1.Controls.Add(groupBox2);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(button6);
-            panel1.Controls.Add(label8);
             panel1.Controls.Add(button5);
-            panel1.Controls.Add(comboBox1);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(groupBox1);
             panel1.Location = new Point(12, 41);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(690, 508);
+            panel1.Size = new Size(700, 508);
             panel1.TabIndex = 11;
             panel1.Visible = false;
-            // 
-            // dateTimePicker5
-            // 
-            dateTimePicker5.Format = DateTimePickerFormat.Short;
-            dateTimePicker5.Location = new Point(19, 236);
-            dateTimePicker5.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker5.Name = "dateTimePicker5";
-            dateTimePicker5.Size = new Size(154, 23);
-            dateTimePicker5.TabIndex = 28;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(19, 219);
-            label9.Name = "label9";
-            label9.Size = new Size(112, 15);
-            label9.TabIndex = 27;
-            label9.Text = "Дата начала (план)";
-            // 
-            // dateTimePicker4
-            // 
-            dateTimePicker4.Format = DateTimePickerFormat.Short;
-            dateTimePicker4.Location = new Point(532, 236);
-            dateTimePicker4.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker4.Name = "dateTimePicker4";
-            dateTimePicker4.Size = new Size(148, 23);
-            dateTimePicker4.TabIndex = 26;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(532, 219);
-            label7.Name = "label7";
-            label7.Size = new Size(139, 15);
-            label7.TabIndex = 25;
-            label7.Text = "Дата завершения (факт)";
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(362, 236);
-            dateTimePicker2.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(154, 23);
-            dateTimePicker2.TabIndex = 24;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(362, 219);
-            label5.Name = "label5";
-            label5.Size = new Size(140, 15);
-            label5.TabIndex = 23;
-            label5.Text = "Дата завершения (план)";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(190, 236);
-            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(154, 23);
-            dateTimePicker1.TabIndex = 22;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(190, 219);
-            label4.Name = "label4";
-            label4.Size = new Size(111, 15);
-            label4.TabIndex = 21;
-            label4.Text = "Дата начала (факт)";
-            // 
-            // dateTimePicker3
-            // 
-            dateTimePicker3.Format = DateTimePickerFormat.Short;
-            dateTimePicker3.Location = new Point(362, 182);
-            dateTimePicker3.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker3.Name = "dateTimePicker3";
-            dateTimePicker3.Size = new Size(154, 23);
-            dateTimePicker3.TabIndex = 19;
             // 
             // groupBox2
             // 
             groupBox2.Controls.Add(button9);
             groupBox2.Controls.Add(button8);
             groupBox2.Controls.Add(dataGridView2);
-            groupBox2.Location = new Point(17, 272);
+            groupBox2.Location = new Point(11, 272);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(668, 174);
+            groupBox2.Size = new Size(674, 174);
             groupBox2.TabIndex = 8;
             groupBox2.TabStop = false;
             groupBox2.Text = "Команда";
@@ -340,7 +242,7 @@
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Column9 });
-            dataGridView2.Location = new Point(3, 21);
+            dataGridView2.Location = new Point(6, 20);
             dataGridView2.Margin = new Padding(3, 2, 3, 2);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
@@ -355,35 +257,6 @@
             Column9.ReadOnly = true;
             Column9.Width = 377;
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(362, 164);
-            label6.Name = "label6";
-            label6.Size = new Size(85, 15);
-            label6.TabIndex = 18;
-            label6.Text = "Дата создания";
-            // 
-            // button6
-            // 
-            button6.Location = new Point(319, 181);
-            button6.Margin = new Padding(3, 2, 3, 2);
-            button6.Name = "button6";
-            button6.Size = new Size(24, 23);
-            button6.TabIndex = 20;
-            button6.Text = "...";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(20, 164);
-            label8.Name = "label8";
-            label8.Size = new Size(91, 15);
-            label8.TabIndex = 19;
-            label8.Text = "Ответственный";
-            // 
             // button5
             // 
             button5.Font = new Font("Segoe UI", 9F);
@@ -395,15 +268,6 @@
             button5.Text = "Отмена";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click_1;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(20, 181);
-            comboBox1.Margin = new Padding(3, 2, 3, 2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(295, 23);
-            comboBox1.TabIndex = 8;
             // 
             // button3
             // 
@@ -419,23 +283,41 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(dateTimePicker5);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(richTextBox1);
+            groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(button6);
+            groupBox1.Controls.Add(dateTimePicker3);
+            groupBox1.Controls.Add(dateTimePicker2);
+            groupBox1.Controls.Add(label8);
+            groupBox1.Controls.Add(label5);
             groupBox1.Location = new Point(11, 8);
             groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(674, 142);
+            groupBox1.Size = new Size(679, 259);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Основное";
             // 
+            // dateTimePicker5
+            // 
+            dateTimePicker5.Format = DateTimePickerFormat.Short;
+            dateTimePicker5.Location = new Point(6, 221);
+            dateTimePicker5.Margin = new Padding(3, 2, 3, 2);
+            dateTimePicker5.Name = "dateTimePicker5";
+            dateTimePicker5.Size = new Size(154, 23);
+            dateTimePicker5.TabIndex = 28;
+            // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(324, 20);
+            label3.Location = new Point(6, 76);
             label3.Name = "label3";
             label3.Size = new Size(62, 15);
             label3.TabIndex = 3;
@@ -443,19 +325,28 @@
             // 
             // richTextBox1
             // 
-            richTextBox1.Location = new Point(324, 38);
+            richTextBox1.Location = new Point(5, 93);
             richTextBox1.Margin = new Padding(3, 2, 3, 2);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(345, 91);
+            richTextBox1.Size = new Size(326, 91);
             richTextBox1.TabIndex = 2;
             richTextBox1.Text = "";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(6, 204);
+            label9.Name = "label9";
+            label9.Size = new Size(112, 15);
+            label9.TabIndex = 27;
+            label9.Text = "Дата начала (план)";
             // 
             // textBox1
             // 
             textBox1.Location = new Point(5, 38);
             textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(284, 23);
+            textBox1.Size = new Size(326, 23);
             textBox1.TabIndex = 1;
             // 
             // label2
@@ -467,11 +358,76 @@
             label2.TabIndex = 0;
             label2.Text = "Наименование";
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(347, 38);
+            comboBox1.Margin = new Padding(3, 2, 3, 2);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(295, 23);
+            comboBox1.TabIndex = 8;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(347, 76);
+            label6.Name = "label6";
+            label6.Size = new Size(85, 15);
+            label6.TabIndex = 18;
+            label6.Text = "Дата создания";
+            // 
+            // button6
+            // 
+            button6.Location = new Point(648, 38);
+            button6.Margin = new Padding(3, 2, 3, 2);
+            button6.Name = "button6";
+            button6.Size = new Size(24, 23);
+            button6.TabIndex = 20;
+            button6.Text = "...";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
+            // dateTimePicker3
+            // 
+            dateTimePicker3.Format = DateTimePickerFormat.Short;
+            dateTimePicker3.Location = new Point(347, 94);
+            dateTimePicker3.Margin = new Padding(3, 2, 3, 2);
+            dateTimePicker3.Name = "dateTimePicker3";
+            dateTimePicker3.Size = new Size(154, 23);
+            dateTimePicker3.TabIndex = 19;
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Format = DateTimePickerFormat.Short;
+            dateTimePicker2.Location = new Point(177, 221);
+            dateTimePicker2.Margin = new Padding(3, 2, 3, 2);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(154, 23);
+            dateTimePicker2.TabIndex = 24;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(347, 21);
+            label8.Name = "label8";
+            label8.Size = new Size(91, 15);
+            label8.TabIndex = 19;
+            label8.Text = "Ответственный";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(177, 204);
+            label5.Name = "label5";
+            label5.Size = new Size(140, 15);
+            label5.TabIndex = 23;
+            label5.Text = "Дата завершения (план)";
+            // 
             // Project
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1279, 774);
+            ClientSize = new Size(830, 585);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
@@ -485,7 +441,6 @@
             Load += Project_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             groupBox1.ResumeLayout(false);
@@ -518,12 +473,8 @@
         private RichTextBox richTextBox1;
         private DateTimePicker dateTimePicker3;
         private Label label6;
-        private DateTimePicker dateTimePicker4;
-        private Label label7;
         private DateTimePicker dateTimePicker2;
         private Label label5;
-        private DateTimePicker dateTimePicker1;
-        private Label label4;
         private DateTimePicker dateTimePicker5;
         private Label label9;
         private DataGridViewTextBoxColumn Column1;

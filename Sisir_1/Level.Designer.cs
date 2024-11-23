@@ -35,7 +35,6 @@
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             label20 = new Label();
-            groupBox1 = new GroupBox();
             button5 = new Button();
             button3 = new Button();
             button4 = new Button();
@@ -44,7 +43,6 @@
             label1 = new Label();
             panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            groupBox1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -52,7 +50,7 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
-            dataGridView1.Location = new Point(12, 45);
+            dataGridView1.Location = new Point(12, 55);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
@@ -79,7 +77,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(5, 17);
+            label2.Location = new Point(3, 0);
             label2.Name = "label2";
             label2.Size = new Size(90, 15);
             label2.TabIndex = 0;
@@ -87,7 +85,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(5, 38);
+            textBox1.Location = new Point(3, 21);
             textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(306, 23);
@@ -95,7 +93,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(5, 87);
+            textBox2.Location = new Point(3, 70);
             textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(150, 23);
@@ -104,26 +102,11 @@
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(5, 67);
+            label20.Location = new Point(3, 50);
             label20.Name = "label20";
             label20.Size = new Size(84, 15);
             label20.TabIndex = 16;
             label20.Text = "Коэффициент";
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(label20);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(6, 2);
-            groupBox1.Margin = new Padding(3, 2, 3, 2);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(345, 122);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Основное";
             // 
             // button5
             // 
@@ -153,7 +136,7 @@
             // 
             button4.Enabled = false;
             button4.Font = new Font("Segoe UI", 9F);
-            button4.Location = new Point(369, 131);
+            button4.Location = new Point(369, 141);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
             button4.Size = new Size(79, 23);
@@ -165,7 +148,7 @@
             // 
             button2.Enabled = false;
             button2.Font = new Font("Segoe UI", 9F);
-            button2.Location = new Point(369, 71);
+            button2.Location = new Point(369, 81);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(79, 23);
@@ -176,7 +159,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 9F);
-            button1.Location = new Point(369, 45);
+            button1.Location = new Point(369, 55);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(79, 23);
@@ -197,10 +180,13 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(label20);
             panel1.Controls.Add(button5);
-            panel1.Controls.Add(groupBox1);
             panel1.Controls.Add(button3);
-            panel1.Location = new Point(12, 37);
+            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(textBox1);
+            panel1.Location = new Point(12, 36);
             panel1.Name = "panel1";
             panel1.Size = new Size(351, 176);
             panel1.TabIndex = 19;
@@ -210,7 +196,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(848, 438);
+            ClientSize = new Size(491, 288);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
@@ -222,9 +208,8 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Справочник уровней";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -235,7 +220,6 @@
         private TextBox textBox1;
         private TextBox textBox2;
         private Label label20;
-        private GroupBox groupBox1;
         private Button button4;
         private Button button2;
         private Button button1;

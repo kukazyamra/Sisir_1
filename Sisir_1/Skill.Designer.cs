@@ -34,14 +34,12 @@
             button4 = new Button();
             button2 = new Button();
             button1 = new Button();
-            groupBox1 = new GroupBox();
             textBox1 = new TextBox();
             label2 = new Label();
             button5 = new Button();
             button3 = new Button();
             panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            groupBox1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -49,7 +47,7 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1 });
-            dataGridView1.Location = new Point(12, 43);
+            dataGridView1.Location = new Point(12, 58);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
@@ -80,7 +78,7 @@
             // 
             button4.Enabled = false;
             button4.Font = new Font("Segoe UI", 9F);
-            button4.Location = new Point(359, 134);
+            button4.Location = new Point(359, 133);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
             button4.Size = new Size(79, 23);
@@ -92,7 +90,7 @@
             // 
             button2.Enabled = false;
             button2.Font = new Font("Segoe UI", 9F);
-            button2.Location = new Point(359, 72);
+            button2.Location = new Point(361, 83);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(79, 23);
@@ -103,7 +101,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 9F);
-            button1.Location = new Point(359, 45);
+            button1.Location = new Point(361, 56);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(79, 23);
@@ -112,31 +110,19 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(3, 2);
-            groupBox1.Margin = new Padding(3, 2, 3, 2);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(320, 83);
-            groupBox1.TabIndex = 25;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Основное";
-            // 
             // textBox1
             // 
-            textBox1.Location = new Point(5, 38);
+            textBox1.Location = new Point(3, 22);
             textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(306, 23);
+            textBox1.Size = new Size(319, 23);
             textBox1.TabIndex = 1;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(5, 16);
+            label2.Location = new Point(3, 0);
             label2.Name = "label2";
             label2.Size = new Size(90, 15);
             label2.TabIndex = 0;
@@ -168,10 +154,11 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(textBox1);
             panel1.Controls.Add(button5);
-            panel1.Controls.Add(groupBox1);
             panel1.Controls.Add(button3);
-            panel1.Location = new Point(12, 36);
+            panel1.Controls.Add(label2);
+            panel1.Location = new Point(12, 35);
             panel1.Name = "panel1";
             panel1.Size = new Size(328, 137);
             panel1.TabIndex = 31;
@@ -181,7 +168,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(913, 470);
+            ClientSize = new Size(474, 305);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
@@ -193,9 +180,8 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Skill";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -207,7 +193,6 @@
         private Button button4;
         private Button button2;
         private Button button1;
-        private GroupBox groupBox1;
         private Button button5;
         private Button button3;
         private TextBox textBox1;

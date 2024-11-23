@@ -1,6 +1,6 @@
 ﻿namespace Sisir_1
 {
-    public partial class Skill :Form 
+    public partial class Skill : Form
     {
         public Skill()
         {
@@ -31,6 +31,11 @@
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
