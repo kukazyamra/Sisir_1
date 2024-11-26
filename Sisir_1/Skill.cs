@@ -11,7 +11,9 @@
         {
             panel1.Visible = true;
             dataGridView1.Visible = false;
-            button1.Enabled = false;
+            add.Enabled = false;
+            edit.Enabled = false;
+            delete.Enabled = false;
         }
 
 
@@ -20,14 +22,18 @@
         {
             panel1.Visible = false;
             dataGridView1.Visible = true;
-            button1.Enabled = true;
+            add.Enabled = true;
+            edit.Enabled = true;
+            delete.Enabled = true;
         }
 
         private void button5_Click_1(object sender, EventArgs e)
         {
             panel1.Visible = false;
             dataGridView1.Visible = true;
-            button1.Enabled = true;
+            add.Enabled = true;
+            edit.Enabled = true;
+            delete.Enabled = true;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

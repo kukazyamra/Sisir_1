@@ -21,7 +21,9 @@ namespace Sisir_1
         {
             panel1.Visible = true;
             dataGridView1.Visible = false;
-            button1.Enabled = false;
+            add.Enabled = false;
+            delete.Enabled = false;
+            edit.Enabled = false;
         }
 
 
@@ -29,14 +31,18 @@ namespace Sisir_1
         {
             panel1.Visible = false;
             dataGridView1.Visible = true;
-            button1.Enabled = true;
+            add.Enabled = true;
+            delete.Enabled = true;
+            edit.Enabled = true;
         }
 
         private void button3_Click_1(object sender, EventArgs e)
         {
             panel1.Visible = false;
             dataGridView1.Visible = true;
-            button1.Enabled = true;
+            add.Enabled = true;
+            delete.Enabled = true;
+            edit.Enabled = true;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

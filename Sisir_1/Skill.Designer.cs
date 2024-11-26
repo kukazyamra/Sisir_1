@@ -31,10 +31,10 @@
             dataGridView1 = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             label1 = new Label();
-            button4 = new Button();
-            button2 = new Button();
-            button1 = new Button();
-            textBox1 = new TextBox();
+            delete = new Button();
+            edit = new Button();
+            add = new Button();
+            name = new TextBox();
             label2 = new Label();
             button5 = new Button();
             button3 = new Button();
@@ -47,12 +47,12 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1 });
-            dataGridView1.Location = new Point(12, 58);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
+            dataGridView1.Location = new Point(17, 97);
+            dataGridView1.Margin = new Padding(4, 3, 4, 3);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.ScrollBars = ScrollBars.Horizontal;
-            dataGridView1.Size = new Size(326, 218);
+            dataGridView1.Size = new Size(466, 363);
             dataGridView1.TabIndex = 28;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -68,73 +68,75 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F);
-            label1.Location = new Point(10, 7);
+            label1.Location = new Point(14, 12);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(78, 25);
+            label1.Size = new Size(116, 38);
             label1.TabIndex = 30;
             label1.Text = "Навыки";
             // 
-            // button4
+            // delete
             // 
-            button4.Enabled = false;
-            button4.Font = new Font("Segoe UI", 9F);
-            button4.Location = new Point(359, 133);
-            button4.Margin = new Padding(3, 2, 3, 2);
-            button4.Name = "button4";
-            button4.Size = new Size(79, 23);
-            button4.TabIndex = 29;
-            button4.Text = "Удалить";
-            button4.UseVisualStyleBackColor = true;
+            delete.Enabled = false;
+            delete.Font = new Font("Segoe UI", 9F);
+            delete.Location = new Point(513, 222);
+            delete.Margin = new Padding(4, 3, 4, 3);
+            delete.Name = "delete";
+            delete.Size = new Size(113, 38);
+            delete.TabIndex = 29;
+            delete.Text = "Удалить";
+            delete.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // edit
             // 
-            button2.Enabled = false;
-            button2.Font = new Font("Segoe UI", 9F);
-            button2.Location = new Point(361, 83);
-            button2.Margin = new Padding(3, 2, 3, 2);
-            button2.Name = "button2";
-            button2.Size = new Size(79, 23);
-            button2.TabIndex = 27;
-            button2.Text = "Изменить";
-            button2.UseVisualStyleBackColor = true;
+            edit.Enabled = false;
+            edit.Font = new Font("Segoe UI", 9F);
+            edit.Location = new Point(516, 138);
+            edit.Margin = new Padding(4, 3, 4, 3);
+            edit.Name = "edit";
+            edit.Size = new Size(113, 38);
+            edit.TabIndex = 27;
+            edit.Text = "Изменить";
+            edit.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // add
             // 
-            button1.Font = new Font("Segoe UI", 9F);
-            button1.Location = new Point(361, 56);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(79, 23);
-            button1.TabIndex = 26;
-            button1.Text = "Добавить";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            add.Font = new Font("Segoe UI", 9F);
+            add.Location = new Point(516, 93);
+            add.Margin = new Padding(4, 3, 4, 3);
+            add.Name = "add";
+            add.Size = new Size(113, 38);
+            add.TabIndex = 26;
+            add.Text = "Добавить";
+            add.UseVisualStyleBackColor = true;
+            add.Click += button1_Click;
             // 
-            // textBox1
+            // name
             // 
-            textBox1.Location = new Point(3, 22);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(319, 23);
-            textBox1.TabIndex = 1;
-            textBox1.TextChanged += textBox1_TextChanged;
+            name.Location = new Point(4, 37);
+            name.Margin = new Padding(4, 3, 4, 3);
+            name.Name = "name";
+            name.Size = new Size(454, 31);
+            name.TabIndex = 1;
+            name.TextChanged += textBox1_TextChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(3, 0);
+            label2.Location = new Point(4, 0);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(90, 15);
+            label2.Size = new Size(135, 25);
             label2.TabIndex = 0;
             label2.Text = "Наименование";
             // 
             // button5
             // 
             button5.Font = new Font("Segoe UI", 9F);
-            button5.Location = new Point(246, 98);
-            button5.Margin = new Padding(3, 2, 3, 2);
+            button5.Location = new Point(351, 163);
+            button5.Margin = new Padding(4, 3, 4, 3);
             button5.Name = "button5";
-            button5.Size = new Size(79, 23);
+            button5.Size = new Size(113, 38);
             button5.TabIndex = 9;
             button5.Text = "Отмена";
             button5.UseVisualStyleBackColor = true;
@@ -143,10 +145,10 @@
             // button3
             // 
             button3.Font = new Font("Segoe UI", 9F);
-            button3.Location = new Point(161, 98);
-            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Location = new Point(230, 163);
+            button3.Margin = new Padding(4, 3, 4, 3);
             button3.Name = "button3";
-            button3.Size = new Size(79, 23);
+            button3.Size = new Size(113, 38);
             button3.TabIndex = 8;
             button3.Text = "ОК";
             button3.UseVisualStyleBackColor = true;
@@ -154,28 +156,29 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(name);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(12, 35);
+            panel1.Location = new Point(17, 58);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(328, 137);
+            panel1.Size = new Size(469, 228);
             panel1.TabIndex = 31;
             panel1.Visible = false;
             // 
             // Skill
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(474, 305);
+            ClientSize = new Size(677, 508);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
-            Controls.Add(button4);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Margin = new Padding(3, 2, 3, 2);
+            Controls.Add(delete);
+            Controls.Add(edit);
+            Controls.Add(add);
+            Margin = new Padding(4, 3, 4, 3);
             Name = "Skill";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Skill";
@@ -190,12 +193,12 @@
 
         private DataGridView dataGridView1;
         private Label label1;
-        private Button button4;
-        private Button button2;
-        private Button button1;
+        private Button delete;
+        private Button edit;
+        private Button add;
         private Button button5;
         private Button button3;
-        private TextBox textBox1;
+        private TextBox name;
         private Label label2;
         private DataGridViewTextBoxColumn Column1;
         private Panel panel1;

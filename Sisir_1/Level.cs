@@ -23,21 +23,28 @@ namespace Sisir_1
         {
             panel1.Visible = true;
             dataGridView1.Visible = false;
-            button1.Enabled = false;
+            submit.Enabled = false;
+            edit.Enabled = false;
+            delete.Enabled = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             panel1.Visible = false;
             dataGridView1.Visible = true;
-            button1.Enabled = true;
+            submit.Enabled = true;
+            edit.Enabled = true;
+            delete.Enabled = true;
+
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             panel1.Visible = false;
             dataGridView1.Visible = true;
-            button1.Enabled = true;
+            submit.Enabled = true;
+            edit.Enabled = true;
+            delete.Enabled = true;
         }
     }
 }

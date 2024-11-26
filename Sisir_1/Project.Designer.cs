@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button4 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            delete = new Button();
+            edit = new Button();
+            add = new Button();
             label1 = new Label();
             dataGridView1 = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
@@ -50,17 +50,17 @@
             button5 = new Button();
             button3 = new Button();
             groupBox1 = new GroupBox();
-            dateTimePicker5 = new DateTimePicker();
+            start_date_plan = new DateTimePicker();
             label3 = new Label();
-            richTextBox1 = new RichTextBox();
+            description = new RichTextBox();
             label9 = new Label();
-            textBox1 = new TextBox();
+            name = new TextBox();
             label2 = new Label();
-            comboBox1 = new ComboBox();
+            responsible_id = new ComboBox();
             label6 = new Label();
             button6 = new Button();
-            dateTimePicker3 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
+            creation_date = new DateTimePicker();
+            finish_date_plan = new DateTimePicker();
             label8 = new Label();
             label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -70,49 +70,50 @@
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // button4
+            // delete
             // 
-            button4.Enabled = false;
-            button4.Font = new Font("Segoe UI", 9F);
-            button4.Location = new Point(730, 149);
-            button4.Margin = new Padding(3, 2, 3, 2);
-            button4.Name = "button4";
-            button4.Size = new Size(79, 23);
-            button4.TabIndex = 7;
-            button4.Text = "Удалить";
-            button4.UseVisualStyleBackColor = true;
+            delete.Enabled = false;
+            delete.Font = new Font("Segoe UI", 9F);
+            delete.Location = new Point(1043, 248);
+            delete.Margin = new Padding(4, 3, 4, 3);
+            delete.Name = "delete";
+            delete.Size = new Size(113, 38);
+            delete.TabIndex = 7;
+            delete.Text = "Удалить";
+            delete.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // edit
             // 
-            button2.Enabled = false;
-            button2.Font = new Font("Segoe UI", 9F);
-            button2.Location = new Point(730, 83);
-            button2.Margin = new Padding(3, 2, 3, 2);
-            button2.Name = "button2";
-            button2.Size = new Size(79, 23);
-            button2.TabIndex = 6;
-            button2.Text = "Изменить";
-            button2.UseVisualStyleBackColor = true;
+            edit.Enabled = false;
+            edit.Font = new Font("Segoe UI", 9F);
+            edit.Location = new Point(1043, 138);
+            edit.Margin = new Padding(4, 3, 4, 3);
+            edit.Name = "edit";
+            edit.Size = new Size(113, 38);
+            edit.TabIndex = 6;
+            edit.Text = "Изменить";
+            edit.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // add
             // 
-            button1.Font = new Font("Segoe UI", 9F);
-            button1.Location = new Point(730, 56);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(79, 23);
-            button1.TabIndex = 5;
-            button1.Text = "Добавить";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            add.Font = new Font("Segoe UI", 9F);
+            add.Location = new Point(1043, 93);
+            add.Margin = new Padding(4, 3, 4, 3);
+            add.Name = "add";
+            add.Size = new Size(113, 38);
+            add.TabIndex = 5;
+            add.Text = "Добавить";
+            add.UseVisualStyleBackColor = true;
+            add.Click += button1_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F);
-            label1.Location = new Point(18, 7);
+            label1.Location = new Point(26, 12);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(88, 25);
+            label1.Size = new Size(129, 38);
             label1.TabIndex = 9;
             label1.Text = "Проекты";
             // 
@@ -120,10 +121,11 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7, Column8 });
-            dataGridView1.Location = new Point(12, 56);
+            dataGridView1.Location = new Point(17, 93);
+            dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(690, 342);
+            dataGridView1.Size = new Size(986, 570);
             dataGridView1.TabIndex = 10;
             // 
             // Column1
@@ -196,10 +198,10 @@
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(groupBox1);
-            panel1.Location = new Point(12, 41);
-            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Location = new Point(17, 68);
+            panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(700, 508);
+            panel1.Size = new Size(1000, 847);
             panel1.TabIndex = 11;
             panel1.Visible = false;
             // 
@@ -208,9 +210,11 @@
             groupBox2.Controls.Add(button9);
             groupBox2.Controls.Add(button8);
             groupBox2.Controls.Add(dataGridView2);
-            groupBox2.Location = new Point(11, 272);
+            groupBox2.Location = new Point(16, 453);
+            groupBox2.Margin = new Padding(4, 5, 4, 5);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(674, 174);
+            groupBox2.Padding = new Padding(4, 5, 4, 5);
+            groupBox2.Size = new Size(963, 290);
             groupBox2.TabIndex = 8;
             groupBox2.TabStop = false;
             groupBox2.Text = "Команда";
@@ -218,10 +222,10 @@
             // button9
             // 
             button9.Font = new Font("Segoe UI", 7F);
-            button9.Location = new Point(438, 48);
-            button9.Margin = new Padding(3, 2, 3, 2);
+            button9.Location = new Point(626, 80);
+            button9.Margin = new Padding(4, 3, 4, 3);
             button9.Name = "button9";
-            button9.Size = new Size(24, 22);
+            button9.Size = new Size(34, 37);
             button9.TabIndex = 23;
             button9.Text = "-";
             button9.UseVisualStyleBackColor = true;
@@ -229,10 +233,10 @@
             // button8
             // 
             button8.Font = new Font("Segoe UI", 7F);
-            button8.Location = new Point(438, 20);
-            button8.Margin = new Padding(3, 2, 3, 2);
+            button8.Location = new Point(626, 33);
+            button8.Margin = new Padding(4, 3, 4, 3);
             button8.Name = "button8";
-            button8.Size = new Size(24, 24);
+            button8.Size = new Size(34, 40);
             button8.TabIndex = 22;
             button8.Text = "+";
             button8.UseVisualStyleBackColor = true;
@@ -242,11 +246,11 @@
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Column9 });
-            dataGridView2.Location = new Point(6, 20);
-            dataGridView2.Margin = new Padding(3, 2, 3, 2);
+            dataGridView2.Location = new Point(9, 33);
+            dataGridView2.Margin = new Padding(4, 3, 4, 3);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(430, 141);
+            dataGridView2.Size = new Size(614, 235);
             dataGridView2.TabIndex = 7;
             // 
             // Column9
@@ -260,10 +264,10 @@
             // button5
             // 
             button5.Font = new Font("Segoe UI", 9F);
-            button5.Location = new Point(608, 462);
-            button5.Margin = new Padding(3, 2, 3, 2);
+            button5.Location = new Point(869, 770);
+            button5.Margin = new Padding(4, 3, 4, 3);
             button5.Name = "button5";
-            button5.Size = new Size(79, 23);
+            button5.Size = new Size(113, 38);
             button5.TabIndex = 4;
             button5.Text = "Отмена";
             button5.UseVisualStyleBackColor = true;
@@ -272,10 +276,10 @@
             // button3
             // 
             button3.Font = new Font("Segoe UI", 9F);
-            button3.Location = new Point(511, 462);
-            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Location = new Point(730, 770);
+            button3.Margin = new Padding(4, 3, 4, 3);
             button3.Name = "button3";
-            button3.Size = new Size(79, 23);
+            button3.Size = new Size(113, 38);
             button3.TabIndex = 3;
             button3.Text = "ОК";
             button3.UseVisualStyleBackColor = true;
@@ -283,158 +287,164 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(dateTimePicker5);
+            groupBox1.Controls.Add(start_date_plan);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(richTextBox1);
+            groupBox1.Controls.Add(description);
             groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(name);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(responsible_id);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(button6);
-            groupBox1.Controls.Add(dateTimePicker3);
-            groupBox1.Controls.Add(dateTimePicker2);
+            groupBox1.Controls.Add(creation_date);
+            groupBox1.Controls.Add(finish_date_plan);
             groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(label5);
-            groupBox1.Location = new Point(11, 8);
-            groupBox1.Margin = new Padding(3, 2, 3, 2);
+            groupBox1.Location = new Point(16, 13);
+            groupBox1.Margin = new Padding(4, 3, 4, 3);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(679, 259);
+            groupBox1.Padding = new Padding(4, 3, 4, 3);
+            groupBox1.Size = new Size(970, 432);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Основное";
             // 
-            // dateTimePicker5
+            // start_date_plan
             // 
-            dateTimePicker5.Format = DateTimePickerFormat.Short;
-            dateTimePicker5.Location = new Point(6, 221);
-            dateTimePicker5.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker5.Name = "dateTimePicker5";
-            dateTimePicker5.Size = new Size(154, 23);
-            dateTimePicker5.TabIndex = 28;
+            start_date_plan.Format = DateTimePickerFormat.Short;
+            start_date_plan.Location = new Point(9, 368);
+            start_date_plan.Margin = new Padding(4, 3, 4, 3);
+            start_date_plan.Name = "start_date_plan";
+            start_date_plan.Size = new Size(218, 31);
+            start_date_plan.TabIndex = 28;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(6, 76);
+            label3.Location = new Point(9, 127);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(62, 15);
+            label3.Size = new Size(92, 25);
             label3.TabIndex = 3;
             label3.Text = "Описание";
             // 
-            // richTextBox1
+            // description
             // 
-            richTextBox1.Location = new Point(5, 93);
-            richTextBox1.Margin = new Padding(3, 2, 3, 2);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(326, 91);
-            richTextBox1.TabIndex = 2;
-            richTextBox1.Text = "";
+            description.Location = new Point(7, 155);
+            description.Margin = new Padding(4, 3, 4, 3);
+            description.Name = "description";
+            description.Size = new Size(464, 149);
+            description.TabIndex = 2;
+            description.Text = "";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(6, 204);
+            label9.Location = new Point(9, 340);
+            label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
-            label9.Size = new Size(112, 15);
+            label9.Size = new Size(163, 25);
             label9.TabIndex = 27;
             label9.Text = "Дата начала (план)";
             // 
-            // textBox1
+            // name
             // 
-            textBox1.Location = new Point(5, 38);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(326, 23);
-            textBox1.TabIndex = 1;
+            name.Location = new Point(7, 63);
+            name.Margin = new Padding(4, 3, 4, 3);
+            name.Name = "name";
+            name.Size = new Size(464, 31);
+            name.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(5, 20);
+            label2.Location = new Point(7, 33);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(90, 15);
+            label2.Size = new Size(135, 25);
             label2.TabIndex = 0;
             label2.Text = "Наименование";
             // 
-            // comboBox1
+            // responsible_id
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(347, 38);
-            comboBox1.Margin = new Padding(3, 2, 3, 2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(295, 23);
-            comboBox1.TabIndex = 8;
+            responsible_id.FormattingEnabled = true;
+            responsible_id.Location = new Point(496, 63);
+            responsible_id.Margin = new Padding(4, 3, 4, 3);
+            responsible_id.Name = "responsible_id";
+            responsible_id.Size = new Size(420, 33);
+            responsible_id.TabIndex = 8;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(347, 76);
+            label6.Location = new Point(496, 127);
+            label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(85, 15);
+            label6.Size = new Size(129, 25);
             label6.TabIndex = 18;
             label6.Text = "Дата создания";
             // 
             // button6
             // 
-            button6.Location = new Point(648, 38);
-            button6.Margin = new Padding(3, 2, 3, 2);
+            button6.Location = new Point(926, 63);
+            button6.Margin = new Padding(4, 3, 4, 3);
             button6.Name = "button6";
-            button6.Size = new Size(24, 23);
+            button6.Size = new Size(34, 38);
             button6.TabIndex = 20;
             button6.Text = "...";
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
-            // dateTimePicker3
+            // creation_date
             // 
-            dateTimePicker3.Format = DateTimePickerFormat.Short;
-            dateTimePicker3.Location = new Point(347, 94);
-            dateTimePicker3.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker3.Name = "dateTimePicker3";
-            dateTimePicker3.Size = new Size(154, 23);
-            dateTimePicker3.TabIndex = 19;
+            creation_date.Format = DateTimePickerFormat.Short;
+            creation_date.Location = new Point(496, 157);
+            creation_date.Margin = new Padding(4, 3, 4, 3);
+            creation_date.Name = "creation_date";
+            creation_date.Size = new Size(218, 31);
+            creation_date.TabIndex = 19;
             // 
-            // dateTimePicker2
+            // finish_date_plan
             // 
-            dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(177, 221);
-            dateTimePicker2.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(154, 23);
-            dateTimePicker2.TabIndex = 24;
+            finish_date_plan.Format = DateTimePickerFormat.Short;
+            finish_date_plan.Location = new Point(253, 368);
+            finish_date_plan.Margin = new Padding(4, 3, 4, 3);
+            finish_date_plan.Name = "finish_date_plan";
+            finish_date_plan.Size = new Size(218, 31);
+            finish_date_plan.TabIndex = 24;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(347, 21);
+            label8.Location = new Point(496, 35);
+            label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new Size(91, 15);
+            label8.Size = new Size(136, 25);
             label8.TabIndex = 19;
             label8.Text = "Ответственный";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(177, 204);
+            label5.Location = new Point(253, 340);
+            label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(140, 15);
+            label5.Size = new Size(206, 25);
             label5.TabIndex = 23;
             label5.Text = "Дата завершения (план)";
             // 
             // Project
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(830, 585);
+            ClientSize = new Size(1186, 975);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
-            Controls.Add(button4);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Margin = new Padding(3, 2, 3, 2);
+            Controls.Add(delete);
+            Controls.Add(edit);
+            Controls.Add(add);
+            Margin = new Padding(4, 3, 4, 3);
             Name = "Project";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Справочник проектов";
@@ -451,9 +461,9 @@
 
         #endregion
 
-        private Button button4;
-        private Button button2;
-        private Button button1;
+        private Button delete;
+        private Button edit;
+        private Button add;
         private Label label1;
         private DataGridView dataGridView1;
         private Panel panel1;
@@ -464,18 +474,18 @@
         private Button button5;
         private Button button6;
         private Label label8;
-        private ComboBox comboBox1;
+        private ComboBox responsible_id;
         private Button button3;
         private GroupBox groupBox1;
-        private TextBox textBox1;
+        private TextBox name;
         private Label label2;
         private Label label3;
-        private RichTextBox richTextBox1;
-        private DateTimePicker dateTimePicker3;
+        private RichTextBox description;
+        private DateTimePicker creation_date;
         private Label label6;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker finish_date_plan;
         private Label label5;
-        private DateTimePicker dateTimePicker5;
+        private DateTimePicker start_date_plan;
         private Label label9;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;

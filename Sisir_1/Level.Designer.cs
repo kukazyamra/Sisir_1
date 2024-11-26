@@ -32,14 +32,14 @@
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            name = new TextBox();
+            coefficient = new TextBox();
             label20 = new Label();
             button5 = new Button();
             button3 = new Button();
-            button4 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            delete = new Button();
+            edit = new Button();
+            submit = new Button();
             label1 = new Label();
             panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -50,12 +50,12 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
-            dataGridView1.Location = new Point(12, 55);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
+            dataGridView1.Location = new Point(17, 92);
+            dataGridView1.Margin = new Padding(4, 3, 4, 3);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.ScrollBars = ScrollBars.Horizontal;
-            dataGridView1.Size = new Size(351, 196);
+            dataGridView1.Size = new Size(501, 327);
             dataGridView1.TabIndex = 7;
             // 
             // Column1
@@ -77,44 +77,46 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(3, 0);
+            label2.Location = new Point(4, 0);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(90, 15);
+            label2.Size = new Size(135, 25);
             label2.TabIndex = 0;
             label2.Text = "Наименование";
             // 
-            // textBox1
+            // name
             // 
-            textBox1.Location = new Point(3, 21);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(306, 23);
-            textBox1.TabIndex = 1;
+            name.Location = new Point(4, 35);
+            name.Margin = new Padding(4, 3, 4, 3);
+            name.Name = "name";
+            name.Size = new Size(435, 31);
+            name.TabIndex = 1;
             // 
-            // textBox2
+            // coefficient
             // 
-            textBox2.Location = new Point(3, 70);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(150, 23);
-            textBox2.TabIndex = 3;
+            coefficient.Location = new Point(4, 117);
+            coefficient.Margin = new Padding(4, 3, 4, 3);
+            coefficient.Name = "coefficient";
+            coefficient.Size = new Size(213, 31);
+            coefficient.TabIndex = 3;
             // 
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(3, 50);
+            label20.Location = new Point(4, 83);
+            label20.Margin = new Padding(4, 0, 4, 0);
             label20.Name = "label20";
-            label20.Size = new Size(84, 15);
+            label20.Size = new Size(122, 25);
             label20.TabIndex = 16;
             label20.Text = "Коэффициент";
             // 
             // button5
             // 
             button5.Font = new Font("Segoe UI", 9F);
-            button5.Location = new Point(269, 137);
-            button5.Margin = new Padding(3, 2, 3, 2);
+            button5.Location = new Point(384, 228);
+            button5.Margin = new Padding(4, 3, 4, 3);
             button5.Name = "button5";
-            button5.Size = new Size(79, 23);
+            button5.Size = new Size(113, 38);
             button5.TabIndex = 9;
             button5.Text = "Отмена";
             button5.UseVisualStyleBackColor = true;
@@ -123,58 +125,59 @@
             // button3
             // 
             button3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button3.Location = new Point(172, 137);
-            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Location = new Point(246, 228);
+            button3.Margin = new Padding(4, 3, 4, 3);
             button3.Name = "button3";
-            button3.Size = new Size(79, 23);
+            button3.Size = new Size(113, 38);
             button3.TabIndex = 8;
             button3.Text = "ОК";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
-            // button4
+            // delete
             // 
-            button4.Enabled = false;
-            button4.Font = new Font("Segoe UI", 9F);
-            button4.Location = new Point(369, 141);
-            button4.Margin = new Padding(3, 2, 3, 2);
-            button4.Name = "button4";
-            button4.Size = new Size(79, 23);
-            button4.TabIndex = 7;
-            button4.Text = "Удалить";
-            button4.UseVisualStyleBackColor = true;
+            delete.Enabled = false;
+            delete.Font = new Font("Segoe UI", 9F);
+            delete.Location = new Point(527, 235);
+            delete.Margin = new Padding(4, 3, 4, 3);
+            delete.Name = "delete";
+            delete.Size = new Size(113, 38);
+            delete.TabIndex = 7;
+            delete.Text = "Удалить";
+            delete.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // edit
             // 
-            button2.Enabled = false;
-            button2.Font = new Font("Segoe UI", 9F);
-            button2.Location = new Point(369, 81);
-            button2.Margin = new Padding(3, 2, 3, 2);
-            button2.Name = "button2";
-            button2.Size = new Size(79, 23);
-            button2.TabIndex = 6;
-            button2.Text = "Изменить";
-            button2.UseVisualStyleBackColor = true;
+            edit.Enabled = false;
+            edit.Font = new Font("Segoe UI", 9F);
+            edit.Location = new Point(527, 135);
+            edit.Margin = new Padding(4, 3, 4, 3);
+            edit.Name = "edit";
+            edit.Size = new Size(113, 38);
+            edit.TabIndex = 6;
+            edit.Text = "Изменить";
+            edit.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // submit
             // 
-            button1.Font = new Font("Segoe UI", 9F);
-            button1.Location = new Point(369, 55);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(79, 23);
-            button1.TabIndex = 5;
-            button1.Text = "Добавить";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            submit.Font = new Font("Segoe UI", 9F);
+            submit.Location = new Point(527, 92);
+            submit.Margin = new Padding(4, 3, 4, 3);
+            submit.Name = "submit";
+            submit.Size = new Size(113, 38);
+            submit.TabIndex = 5;
+            submit.Text = "Добавить";
+            submit.UseVisualStyleBackColor = true;
+            submit.Click += button1_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F);
-            label1.Location = new Point(10, 7);
+            label1.Location = new Point(14, 12);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(77, 25);
+            label1.Size = new Size(112, 38);
             label1.TabIndex = 18;
             label1.Text = "Уровни";
             // 
@@ -183,27 +186,28 @@
             panel1.Controls.Add(label20);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button3);
-            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(coefficient);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(textBox1);
-            panel1.Location = new Point(12, 36);
+            panel1.Controls.Add(name);
+            panel1.Location = new Point(17, 60);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(351, 176);
+            panel1.Size = new Size(501, 293);
             panel1.TabIndex = 19;
             panel1.Visible = false;
             // 
             // Level
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(491, 288);
+            ClientSize = new Size(701, 480);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
-            Controls.Add(button4);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Margin = new Padding(3, 2, 3, 2);
+            Controls.Add(delete);
+            Controls.Add(edit);
+            Controls.Add(submit);
+            Margin = new Padding(4, 3, 4, 3);
             Name = "Level";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Справочник уровней";
@@ -217,12 +221,12 @@
         #endregion
         private DataGridView dataGridView1;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox name;
+        private TextBox coefficient;
         private Label label20;
-        private Button button4;
-        private Button button2;
-        private Button button1;
+        private Button delete;
+        private Button edit;
+        private Button submit;
         private Button button5;
         private Button button3;
         private Label label1;
