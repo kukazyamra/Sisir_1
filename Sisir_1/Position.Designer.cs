@@ -88,7 +88,6 @@
             // 
             // delete
             // 
-            delete.Enabled = false;
             delete.Font = new Font("Segoe UI", 9F);
             delete.Location = new Point(500, 247);
             delete.Margin = new Padding(4, 3, 4, 3);
@@ -100,7 +99,6 @@
             // 
             // edit
             // 
-            edit.Enabled = false;
             edit.Font = new Font("Segoe UI", 9F);
             edit.Location = new Point(500, 143);
             edit.Margin = new Padding(4, 3, 4, 3);

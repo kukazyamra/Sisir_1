@@ -46,7 +46,6 @@
             button9 = new Button();
             button8 = new Button();
             dataGridView2 = new DataGridView();
-            Column9 = new DataGridViewTextBoxColumn();
             button5 = new Button();
             button3 = new Button();
             groupBox1 = new GroupBox();
@@ -63,6 +62,8 @@
             finish_date_plan = new DateTimePicker();
             label8 = new Label();
             label5 = new Label();
+            Column9 = new DataGridViewTextBoxColumn();
+            Column10 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -72,7 +73,6 @@
             // 
             // delete
             // 
-            delete.Enabled = false;
             delete.Font = new Font("Segoe UI", 9F);
             delete.Location = new Point(1043, 248);
             delete.Margin = new Padding(4, 3, 4, 3);
@@ -84,7 +84,6 @@
             // 
             // edit
             // 
-            edit.Enabled = false;
             edit.Font = new Font("Segoe UI", 9F);
             edit.Location = new Point(1043, 138);
             edit.Margin = new Padding(4, 3, 4, 3);
@@ -222,7 +221,7 @@
             // button9
             // 
             button9.Font = new Font("Segoe UI", 7F);
-            button9.Location = new Point(626, 80);
+            button9.Location = new Point(665, 80);
             button9.Margin = new Padding(4, 3, 4, 3);
             button9.Name = "button9";
             button9.Size = new Size(34, 37);
@@ -233,7 +232,7 @@
             // button8
             // 
             button8.Font = new Font("Segoe UI", 7F);
-            button8.Location = new Point(626, 33);
+            button8.Location = new Point(665, 33);
             button8.Margin = new Padding(4, 3, 4, 3);
             button8.Name = "button8";
             button8.Size = new Size(34, 40);
@@ -245,21 +244,13 @@
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Column9 });
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Column9, Column10 });
             dataGridView2.Location = new Point(9, 33);
             dataGridView2.Margin = new Padding(4, 3, 4, 3);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(614, 235);
+            dataGridView2.Size = new Size(648, 235);
             dataGridView2.TabIndex = 7;
-            // 
-            // Column9
-            // 
-            Column9.HeaderText = "Сотрудник";
-            Column9.MinimumWidth = 6;
-            Column9.Name = "Column9";
-            Column9.ReadOnly = true;
-            Column9.Width = 377;
             // 
             // button5
             // 
@@ -433,6 +424,22 @@
             label5.TabIndex = 23;
             label5.Text = "Дата завершения (план)";
             // 
+            // Column9
+            // 
+            Column9.HeaderText = "Сотрудник";
+            Column9.MinimumWidth = 6;
+            Column9.Name = "Column9";
+            Column9.ReadOnly = true;
+            Column9.Width = 377;
+            // 
+            // Column10
+            // 
+            Column10.HeaderText = "Должность";
+            Column10.MinimumWidth = 8;
+            Column10.Name = "Column10";
+            Column10.ReadOnly = true;
+            Column10.Width = 220;
+            // 
             // Project
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -496,5 +503,6 @@
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column9;
+        private DataGridViewTextBoxColumn Column10;
     }
 }
