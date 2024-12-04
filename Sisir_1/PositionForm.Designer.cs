@@ -1,6 +1,6 @@
 ﻿namespace Sisir_1
 {
-    partial class Position
+    partial class PositionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -39,8 +39,8 @@
             salary = new TextBox();
             name = new TextBox();
             label2 = new Label();
-            button5 = new Button();
-            button3 = new Button();
+            cancel = new Button();
+            ok = new Button();
             panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
@@ -48,16 +48,19 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
-            dataGridView1.Location = new Point(17, 98);
-            dataGridView1.Margin = new Padding(4, 3, 4, 3);
+            dataGridView1.Location = new Point(14, 78);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.ScrollBars = ScrollBars.Horizontal;
-            dataGridView1.Size = new Size(474, 260);
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(379, 208);
             dataGridView1.TabIndex = 22;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Column1
             // 
@@ -79,42 +82,43 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F);
-            label1.Location = new Point(14, 12);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(11, 10);
             label1.Name = "label1";
-            label1.Size = new Size(160, 38);
+            label1.Size = new Size(139, 32);
             label1.TabIndex = 24;
             label1.Text = "Должности";
             // 
             // delete
             // 
             delete.Font = new Font("Segoe UI", 9F);
-            delete.Location = new Point(500, 247);
-            delete.Margin = new Padding(4, 3, 4, 3);
+            delete.Location = new Point(400, 198);
+            delete.Margin = new Padding(3, 2, 3, 2);
             delete.Name = "delete";
-            delete.Size = new Size(113, 38);
+            delete.Size = new Size(90, 30);
             delete.TabIndex = 23;
             delete.Text = "Удалить";
             delete.UseVisualStyleBackColor = true;
+            delete.Click += delete_Click;
             // 
             // edit
             // 
             edit.Font = new Font("Segoe UI", 9F);
-            edit.Location = new Point(500, 143);
-            edit.Margin = new Padding(4, 3, 4, 3);
+            edit.Location = new Point(400, 114);
+            edit.Margin = new Padding(3, 2, 3, 2);
             edit.Name = "edit";
-            edit.Size = new Size(113, 38);
+            edit.Size = new Size(90, 30);
             edit.TabIndex = 21;
             edit.Text = "Изменить";
             edit.UseVisualStyleBackColor = true;
+            edit.Click += edit_Click;
             // 
             // add
             // 
             add.Font = new Font("Segoe UI", 9F);
-            add.Location = new Point(500, 98);
-            add.Margin = new Padding(4, 3, 4, 3);
+            add.Location = new Point(400, 78);
+            add.Margin = new Padding(3, 2, 3, 2);
             add.Name = "add";
-            add.Size = new Size(113, 38);
+            add.Size = new Size(90, 30);
             add.TabIndex = 20;
             add.Text = "Добавить";
             add.UseVisualStyleBackColor = true;
@@ -123,93 +127,92 @@
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(4, 78);
-            label20.Margin = new Padding(4, 0, 4, 0);
+            label20.Location = new Point(3, 62);
             label20.Name = "label20";
-            label20.Size = new Size(156, 25);
+            label20.Size = new Size(134, 20);
             label20.TabIndex = 16;
             label20.Text = "Заработная плата";
             // 
             // salary
             // 
-            salary.Location = new Point(4, 112);
-            salary.Margin = new Padding(4, 3, 4, 3);
+            salary.Location = new Point(3, 90);
+            salary.Margin = new Padding(3, 2, 3, 2);
             salary.Name = "salary";
-            salary.Size = new Size(213, 31);
+            salary.Size = new Size(171, 27);
             salary.TabIndex = 3;
             // 
             // name
             // 
-            name.Location = new Point(4, 30);
-            name.Margin = new Padding(4, 3, 4, 3);
+            name.Location = new Point(3, 24);
+            name.Margin = new Padding(3, 2, 3, 2);
             name.Name = "name";
-            name.Size = new Size(435, 31);
+            name.Size = new Size(349, 27);
             name.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(4, -5);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(3, -4);
             label2.Name = "label2";
-            label2.Size = new Size(135, 25);
+            label2.Size = new Size(116, 20);
             label2.TabIndex = 0;
             label2.Text = "Наименование";
             // 
-            // button5
+            // cancel
             // 
-            button5.Font = new Font("Segoe UI", 9F);
-            button5.Location = new Point(331, 192);
-            button5.Margin = new Padding(4, 3, 4, 3);
-            button5.Name = "button5";
-            button5.Size = new Size(113, 38);
-            button5.TabIndex = 9;
-            button5.Text = "Отмена";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click_1;
+            cancel.Font = new Font("Segoe UI", 9F);
+            cancel.Location = new Point(265, 154);
+            cancel.Margin = new Padding(3, 2, 3, 2);
+            cancel.Name = "cancel";
+            cancel.Size = new Size(90, 30);
+            cancel.TabIndex = 9;
+            cancel.Text = "Отмена";
+            cancel.UseVisualStyleBackColor = true;
+            cancel.Click += cancel_Click_1;
             // 
-            // button3
+            // ok
             // 
-            button3.Font = new Font("Segoe UI", 9F);
-            button3.Location = new Point(213, 192);
-            button3.Margin = new Padding(4, 3, 4, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(113, 38);
-            button3.TabIndex = 8;
-            button3.Text = "ОК";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click_1;
+            ok.Font = new Font("Segoe UI", 9F);
+            ok.Location = new Point(170, 154);
+            ok.Margin = new Padding(3, 2, 3, 2);
+            ok.Name = "ok";
+            ok.Size = new Size(90, 30);
+            ok.TabIndex = 8;
+            ok.Text = "ОК";
+            ok.UseVisualStyleBackColor = true;
+            ok.Click += ok_Click_1;
             // 
             // panel1
             // 
             panel1.Controls.Add(label20);
-            panel1.Controls.Add(button5);
+            panel1.Controls.Add(cancel);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(salary);
-            panel1.Controls.Add(button3);
+            panel1.Controls.Add(ok);
             panel1.Controls.Add(name);
-            panel1.Location = new Point(17, 73);
-            panel1.Margin = new Padding(4, 5, 4, 5);
+            panel1.Location = new Point(14, 58);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(474, 260);
+            panel1.Size = new Size(379, 208);
             panel1.TabIndex = 25;
             panel1.Visible = false;
             // 
-            // Position
+            // PositionForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(664, 395);
+            ClientSize = new Size(531, 316);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             Controls.Add(delete);
             Controls.Add(edit);
             Controls.Add(add);
-            Margin = new Padding(4, 3, 4, 3);
-            Name = "Position";
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "PositionForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Справочник должностей";
+            Load += PositionForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -224,8 +227,8 @@
         private Button delete;
         private Button edit;
         private Button add;
-        private Button button5;
-        private Button button3;
+        private Button cancel;
+        private Button ok;
         private Label label20;
         private TextBox salary;
         private TextBox name;

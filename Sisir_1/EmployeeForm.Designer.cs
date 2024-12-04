@@ -1,6 +1,6 @@
 ﻿namespace Sisir_1
 {
-    partial class Employee
+    partial class EmployeeForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -47,23 +47,6 @@
             edit = new Button();
             delete = new Button();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
-            Column16 = new DataGridViewTextBoxColumn();
-            Column17 = new DataGridViewTextBoxColumn();
-            Column18 = new DataGridViewTextBoxColumn();
-            Column19 = new DataGridViewTextBoxColumn();
-            Column20 = new DataGridViewTextBoxColumn();
-            Column21 = new DataGridViewTextBoxColumn();
-            Column22 = new DataGridViewTextBoxColumn();
-            Column23 = new DataGridViewTextBoxColumn();
-            Column24 = new DataGridViewTextBoxColumn();
-            Column25 = new DataGridViewTextBoxColumn();
-            Column26 = new DataGridViewTextBoxColumn();
-            Column27 = new DataGridViewTextBoxColumn();
-            Column28 = new DataGridViewTextBoxColumn();
-            Column29 = new DataGridViewTextBoxColumn();
-            Column30 = new DataGridViewTextBoxColumn();
-            Column31 = new DataGridViewTextBoxColumn();
             groupBox1 = new GroupBox();
             label7 = new Label();
             label20 = new Label();
@@ -86,8 +69,8 @@
             issued_by = new TextBox();
             number = new TextBox();
             series = new TextBox();
-            button3 = new Button();
-            button5 = new Button();
+            ok = new Button();
+            cancel = new Button();
             groupBox4 = new GroupBox();
             button7 = new Button();
             button6 = new Button();
@@ -109,7 +92,24 @@
             dataGridView2 = new DataGridView();
             Column32 = new DataGridViewTextBoxColumn();
             Column33 = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dataGridView1 = new DataGridView();
+            surname_ = new DataGridViewTextBoxColumn();
+            name_ = new DataGridViewTextBoxColumn();
+            patronymic_ = new DataGridViewTextBoxColumn();
+            birthday_ = new DataGridViewTextBoxColumn();
+            series_ = new DataGridViewTextBoxColumn();
+            number_ = new DataGridViewTextBoxColumn();
+            who_ = new DataGridViewTextBoxColumn();
+            when_ = new DataGridViewTextBoxColumn();
+            reg_address = new DataGridViewTextBoxColumn();
+            res_address = new DataGridViewTextBoxColumn();
+            position_ = new DataGridViewTextBoxColumn();
+            level_ = new DataGridViewTextBoxColumn();
+            salary_ = new DataGridViewTextBoxColumn();
+            phone_ = new DataGridViewTextBoxColumn();
+            email_ = new DataGridViewTextBoxColumn();
+            telegram_ = new DataGridViewTextBoxColumn();
+            id = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
@@ -117,6 +117,7 @@
             panel1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // Column1
@@ -241,188 +242,48 @@
             // add
             // 
             add.Font = new Font("Segoe UI", 9F);
-            add.Location = new Point(947, 88);
-            add.Margin = new Padding(4, 3, 4, 3);
+            add.Location = new Point(758, 70);
+            add.Margin = new Padding(3, 2, 3, 2);
             add.Name = "add";
-            add.Size = new Size(113, 38);
+            add.Size = new Size(90, 30);
             add.TabIndex = 1;
             add.Text = "Добавить";
             add.UseVisualStyleBackColor = true;
-            add.Click += button1_Click;
+            add.Click += add_Click;
             // 
             // edit
             // 
             edit.Font = new Font("Segoe UI", 9F);
-            edit.Location = new Point(947, 133);
-            edit.Margin = new Padding(4, 3, 4, 3);
+            edit.Location = new Point(758, 106);
+            edit.Margin = new Padding(3, 2, 3, 2);
             edit.Name = "edit";
-            edit.Size = new Size(113, 38);
+            edit.Size = new Size(90, 30);
             edit.TabIndex = 2;
             edit.Text = "Изменить";
             edit.UseVisualStyleBackColor = true;
+            edit.Click += edit_Click;
             // 
             // delete
             // 
             delete.Font = new Font("Segoe UI", 9F);
-            delete.Location = new Point(947, 243);
-            delete.Margin = new Padding(4, 3, 4, 3);
+            delete.Location = new Point(758, 194);
+            delete.Margin = new Padding(3, 2, 3, 2);
             delete.Name = "delete";
-            delete.Size = new Size(113, 37);
+            delete.Size = new Size(90, 30);
             delete.TabIndex = 4;
             delete.Text = "Удалить";
             delete.UseVisualStyleBackColor = true;
+            delete.Click += delete_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F);
-            label1.Location = new Point(14, 12);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(11, 10);
             label1.Name = "label1";
-            label1.Size = new Size(168, 38);
+            label1.Size = new Size(146, 32);
             label1.TabIndex = 5;
             label1.Text = "Сотрудники";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column16, Column17, Column18, Column19, Column20, Column21, Column22, Column23, Column24, Column25, Column26, Column27, Column28, Column29, Column30, Column31 });
-            dataGridView1.Location = new Point(17, 88);
-            dataGridView1.Margin = new Padding(4, 3, 4, 3);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.ScrollBars = ScrollBars.Horizontal;
-            dataGridView1.Size = new Size(903, 752);
-            dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // Column16
-            // 
-            Column16.HeaderText = "Фамилия";
-            Column16.MinimumWidth = 6;
-            Column16.Name = "Column16";
-            Column16.ReadOnly = true;
-            Column16.Width = 130;
-            // 
-            // Column17
-            // 
-            Column17.HeaderText = "Имя";
-            Column17.MinimumWidth = 6;
-            Column17.Name = "Column17";
-            Column17.ReadOnly = true;
-            Column17.Width = 130;
-            // 
-            // Column18
-            // 
-            Column18.HeaderText = "Отчество";
-            Column18.MinimumWidth = 6;
-            Column18.Name = "Column18";
-            Column18.ReadOnly = true;
-            Column18.Width = 130;
-            // 
-            // Column19
-            // 
-            Column19.HeaderText = "Дата рождения";
-            Column19.MinimumWidth = 6;
-            Column19.Name = "Column19";
-            Column19.ReadOnly = true;
-            Column19.Width = 95;
-            // 
-            // Column20
-            // 
-            Column20.HeaderText = "Серия паспорта";
-            Column20.MinimumWidth = 6;
-            Column20.Name = "Column20";
-            Column20.ReadOnly = true;
-            Column20.Width = 95;
-            // 
-            // Column21
-            // 
-            Column21.HeaderText = "Номер паспорта";
-            Column21.MinimumWidth = 6;
-            Column21.Name = "Column21";
-            Column21.ReadOnly = true;
-            Column21.Width = 95;
-            // 
-            // Column22
-            // 
-            Column22.HeaderText = "Кем выдан";
-            Column22.MinimumWidth = 6;
-            Column22.Name = "Column22";
-            Column22.ReadOnly = true;
-            Column22.Width = 250;
-            // 
-            // Column23
-            // 
-            Column23.HeaderText = "Дата выдачи";
-            Column23.MinimumWidth = 6;
-            Column23.Name = "Column23";
-            Column23.ReadOnly = true;
-            Column23.Width = 95;
-            // 
-            // Column24
-            // 
-            Column24.HeaderText = "Адрес регистрации";
-            Column24.MinimumWidth = 6;
-            Column24.Name = "Column24";
-            Column24.ReadOnly = true;
-            Column24.Width = 250;
-            // 
-            // Column25
-            // 
-            Column25.HeaderText = "Адрес проживания";
-            Column25.MinimumWidth = 6;
-            Column25.Name = "Column25";
-            Column25.ReadOnly = true;
-            Column25.Width = 250;
-            // 
-            // Column26
-            // 
-            Column26.HeaderText = "Должность";
-            Column26.MinimumWidth = 6;
-            Column26.Name = "Column26";
-            Column26.ReadOnly = true;
-            Column26.Width = 125;
-            // 
-            // Column27
-            // 
-            Column27.HeaderText = "Уровень";
-            Column27.MinimumWidth = 6;
-            Column27.Name = "Column27";
-            Column27.ReadOnly = true;
-            Column27.Width = 125;
-            // 
-            // Column28
-            // 
-            Column28.HeaderText = "Зарплата";
-            Column28.MinimumWidth = 6;
-            Column28.Name = "Column28";
-            Column28.ReadOnly = true;
-            Column28.Width = 95;
-            // 
-            // Column29
-            // 
-            Column29.HeaderText = "Телефон";
-            Column29.MinimumWidth = 6;
-            Column29.Name = "Column29";
-            Column29.ReadOnly = true;
-            Column29.Width = 125;
-            // 
-            // Column30
-            // 
-            Column30.HeaderText = "Email";
-            Column30.MinimumWidth = 6;
-            Column30.Name = "Column30";
-            Column30.ReadOnly = true;
-            Column30.Width = 125;
-            // 
-            // Column31
-            // 
-            Column31.HeaderText = "Telegram";
-            Column31.MinimumWidth = 6;
-            Column31.Name = "Column31";
-            Column31.ReadOnly = true;
-            Column31.Width = 125;
             // 
             // groupBox1
             // 
@@ -434,11 +295,11 @@
             groupBox1.Controls.Add(patronymic);
             groupBox1.Controls.Add(surname);
             groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(4, 3);
-            groupBox1.Margin = new Padding(4, 3, 4, 3);
+            groupBox1.Location = new Point(3, 2);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4, 3, 4, 3);
-            groupBox1.Size = new Size(899, 107);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(719, 86);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Основное";
@@ -446,73 +307,69 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(514, 33);
-            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Location = new Point(411, 26);
             label7.Name = "label7";
-            label7.Size = new Size(88, 25);
+            label7.Size = new Size(72, 20);
             label7.TabIndex = 18;
             label7.Text = "Отчество";
             // 
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(261, 37);
-            label20.Margin = new Padding(4, 0, 4, 0);
+            label20.Location = new Point(209, 30);
             label20.Name = "label20";
-            label20.Size = new Size(47, 25);
+            label20.Size = new Size(39, 20);
             label20.TabIndex = 16;
             label20.Text = "Имя";
             // 
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(770, 37);
-            label18.Margin = new Padding(4, 0, 4, 0);
+            label18.Location = new Point(616, 30);
             label18.Name = "label18";
-            label18.Size = new Size(43, 25);
+            label18.Size = new Size(34, 20);
             label18.TabIndex = 14;
             label18.Text = "Д.р.";
             // 
             // birthday
             // 
             birthday.Format = DateTimePickerFormat.Short;
-            birthday.Location = new Point(770, 63);
-            birthday.Margin = new Padding(4, 3, 4, 3);
+            birthday.Location = new Point(616, 50);
+            birthday.Margin = new Padding(3, 2, 3, 2);
             birthday.Name = "birthday";
-            birthday.Size = new Size(115, 31);
+            birthday.Size = new Size(93, 27);
             birthday.TabIndex = 12;
             // 
             // name
             // 
-            name.Location = new Point(261, 63);
-            name.Margin = new Padding(4, 3, 4, 3);
+            name.Location = new Point(209, 50);
+            name.Margin = new Padding(3, 2, 3, 2);
             name.Name = "name";
-            name.Size = new Size(235, 31);
+            name.Size = new Size(189, 27);
             name.TabIndex = 3;
             // 
             // patronymic
             // 
-            patronymic.Location = new Point(514, 63);
-            patronymic.Margin = new Padding(4, 3, 4, 3);
+            patronymic.Location = new Point(411, 50);
+            patronymic.Margin = new Padding(3, 2, 3, 2);
             patronymic.Name = "patronymic";
-            patronymic.Size = new Size(235, 31);
+            patronymic.Size = new Size(189, 27);
             patronymic.TabIndex = 5;
             // 
             // surname
             // 
-            surname.Location = new Point(7, 63);
-            surname.Margin = new Padding(4, 3, 4, 3);
+            surname.Location = new Point(6, 50);
+            surname.Margin = new Padding(3, 2, 3, 2);
             surname.Name = "surname";
-            surname.Size = new Size(235, 31);
+            surname.Size = new Size(189, 27);
             surname.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(7, 33);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(6, 26);
             label2.Name = "label2";
-            label2.Size = new Size(85, 25);
+            label2.Size = new Size(73, 20);
             label2.TabIndex = 0;
             label2.Text = "Фамилия";
             // 
@@ -530,11 +387,11 @@
             groupBox3.Controls.Add(issued_by);
             groupBox3.Controls.Add(number);
             groupBox3.Controls.Add(series);
-            groupBox3.Location = new Point(4, 132);
-            groupBox3.Margin = new Padding(4, 3, 4, 3);
+            groupBox3.Location = new Point(3, 106);
+            groupBox3.Margin = new Padding(3, 2, 3, 2);
             groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new Padding(4, 3, 4, 3);
-            groupBox3.Size = new Size(899, 187);
+            groupBox3.Padding = new Padding(3, 2, 3, 2);
+            groupBox3.Size = new Size(719, 150);
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
             groupBox3.Text = "Паспортные данные";
@@ -542,135 +399,129 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(770, 37);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(616, 30);
             label3.Name = "label3";
-            label3.Size = new Size(116, 25);
+            label3.Size = new Size(97, 20);
             label3.TabIndex = 27;
             label3.Text = "Дата выдачи";
             // 
             // label25
             // 
             label25.AutoSize = true;
-            label25.Location = new Point(459, 115);
-            label25.Margin = new Padding(4, 0, 4, 0);
+            label25.Location = new Point(367, 92);
             label25.Name = "label25";
-            label25.Size = new Size(170, 25);
+            label25.Size = new Size(144, 20);
             label25.TabIndex = 26;
             label25.Text = "Адрес проживания";
             // 
             // label23
             // 
             label23.AutoSize = true;
-            label23.Location = new Point(13, 115);
-            label23.Margin = new Padding(4, 0, 4, 0);
+            label23.Location = new Point(10, 92);
             label23.Name = "label23";
-            label23.Size = new Size(170, 25);
+            label23.Size = new Size(144, 20);
             label23.TabIndex = 24;
             label23.Text = "Адрес регистрации";
             // 
             // label21
             // 
             label21.AutoSize = true;
-            label21.Location = new Point(261, 37);
-            label21.Margin = new Padding(4, 0, 4, 0);
+            label21.Location = new Point(209, 30);
             label21.Name = "label21";
-            label21.Size = new Size(101, 25);
+            label21.Size = new Size(85, 20);
             label21.TabIndex = 22;
             label21.Text = "Кем выдан";
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(137, 37);
-            label15.Margin = new Padding(4, 0, 4, 0);
+            label15.Location = new Point(110, 30);
             label15.Name = "label15";
-            label15.Size = new Size(69, 25);
+            label15.Size = new Size(57, 20);
             label15.TabIndex = 20;
             label15.Text = "Номер";
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(13, 37);
-            label13.Margin = new Padding(4, 0, 4, 0);
+            label13.Location = new Point(10, 30);
             label13.Name = "label13";
-            label13.Size = new Size(62, 25);
+            label13.Size = new Size(52, 20);
             label13.TabIndex = 18;
             label13.Text = "Серия";
             // 
             // issue_date
             // 
             issue_date.Format = DateTimePickerFormat.Short;
-            issue_date.Location = new Point(770, 63);
-            issue_date.Margin = new Padding(4, 3, 4, 3);
+            issue_date.Location = new Point(616, 50);
+            issue_date.Margin = new Padding(3, 2, 3, 2);
             issue_date.Name = "issue_date";
-            issue_date.Size = new Size(115, 31);
+            issue_date.Size = new Size(93, 27);
             issue_date.TabIndex = 17;
             // 
             // residential_address
             // 
-            residential_address.Location = new Point(459, 143);
-            residential_address.Margin = new Padding(4, 3, 4, 3);
+            residential_address.Location = new Point(367, 114);
+            residential_address.Margin = new Padding(3, 2, 3, 2);
             residential_address.Name = "residential_address";
-            residential_address.Size = new Size(427, 31);
+            residential_address.Size = new Size(342, 27);
             residential_address.TabIndex = 16;
             // 
             // reegistration_address
             // 
-            reegistration_address.Location = new Point(11, 143);
-            reegistration_address.Margin = new Padding(4, 3, 4, 3);
+            reegistration_address.Location = new Point(9, 114);
+            reegistration_address.Margin = new Padding(3, 2, 3, 2);
             reegistration_address.Name = "reegistration_address";
-            reegistration_address.Size = new Size(427, 31);
+            reegistration_address.Size = new Size(342, 27);
             reegistration_address.TabIndex = 14;
             // 
             // issued_by
             // 
-            issued_by.Location = new Point(261, 63);
-            issued_by.Margin = new Padding(4, 3, 4, 3);
+            issued_by.Location = new Point(209, 50);
+            issued_by.Margin = new Padding(3, 2, 3, 2);
             issued_by.Name = "issued_by";
-            issued_by.Size = new Size(490, 31);
+            issued_by.Size = new Size(393, 27);
             issued_by.TabIndex = 12;
             // 
             // number
             // 
-            number.Location = new Point(137, 63);
-            number.Margin = new Padding(4, 3, 4, 3);
+            number.Location = new Point(110, 50);
+            number.Margin = new Padding(3, 2, 3, 2);
             number.Name = "number";
-            number.Size = new Size(105, 31);
+            number.Size = new Size(85, 27);
             number.TabIndex = 3;
             // 
             // series
             // 
-            series.Location = new Point(11, 63);
-            series.Margin = new Padding(4, 3, 4, 3);
+            series.Location = new Point(9, 50);
+            series.Margin = new Padding(3, 2, 3, 2);
             series.Name = "series";
-            series.Size = new Size(105, 31);
+            series.Size = new Size(85, 27);
             series.TabIndex = 1;
             // 
-            // button3
+            // ok
             // 
-            button3.Font = new Font("Segoe UI", 9F);
-            button3.Location = new Point(641, 902);
-            button3.Margin = new Padding(4, 3, 4, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(113, 38);
-            button3.TabIndex = 3;
-            button3.Text = "ОК";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            ok.Font = new Font("Segoe UI", 9F);
+            ok.Location = new Point(513, 722);
+            ok.Margin = new Padding(3, 2, 3, 2);
+            ok.Name = "ok";
+            ok.Size = new Size(90, 30);
+            ok.TabIndex = 3;
+            ok.Text = "ОК";
+            ok.UseVisualStyleBackColor = true;
+            ok.Click += ok_Click;
             // 
-            // button5
+            // cancel
             // 
-            button5.Font = new Font("Segoe UI", 9F);
-            button5.Location = new Point(790, 902);
-            button5.Margin = new Padding(4, 3, 4, 3);
-            button5.Name = "button5";
-            button5.Size = new Size(113, 38);
-            button5.TabIndex = 4;
-            button5.Text = "Отмена";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            cancel.Font = new Font("Segoe UI", 9F);
+            cancel.Location = new Point(636, 722);
+            cancel.Margin = new Padding(3, 2, 3, 2);
+            cancel.Name = "cancel";
+            cancel.Size = new Size(90, 30);
+            cancel.TabIndex = 4;
+            cancel.Text = "Отмена";
+            cancel.UseVisualStyleBackColor = true;
+            cancel.Click += cancel_Click;
             // 
             // groupBox4
             // 
@@ -680,21 +531,21 @@
             groupBox4.Controls.Add(label10);
             groupBox4.Controls.Add(position_id);
             groupBox4.Controls.Add(level_id);
-            groupBox4.Location = new Point(4, 343);
-            groupBox4.Margin = new Padding(4, 3, 4, 3);
+            groupBox4.Location = new Point(3, 274);
+            groupBox4.Margin = new Padding(3, 2, 3, 2);
             groupBox4.Name = "groupBox4";
-            groupBox4.Padding = new Padding(4, 3, 4, 3);
-            groupBox4.Size = new Size(899, 100);
+            groupBox4.Padding = new Padding(3, 2, 3, 2);
+            groupBox4.Size = new Size(719, 80);
             groupBox4.TabIndex = 5;
             groupBox4.TabStop = false;
             groupBox4.Text = "Положение в компании";
             // 
             // button7
             // 
-            button7.Location = new Point(716, 55);
-            button7.Margin = new Padding(4, 3, 4, 3);
+            button7.Location = new Point(573, 44);
+            button7.Margin = new Padding(3, 2, 3, 2);
             button7.Name = "button7";
-            button7.Size = new Size(34, 40);
+            button7.Size = new Size(27, 32);
             button7.TabIndex = 21;
             button7.Text = "...";
             button7.UseVisualStyleBackColor = true;
@@ -702,10 +553,10 @@
             // 
             // button6
             // 
-            button6.Location = new Point(406, 57);
-            button6.Margin = new Padding(4, 3, 4, 3);
+            button6.Location = new Point(325, 46);
+            button6.Margin = new Padding(3, 2, 3, 2);
             button6.Name = "button6";
-            button6.Size = new Size(34, 38);
+            button6.Size = new Size(27, 30);
             button6.TabIndex = 20;
             button6.Text = "...";
             button6.UseVisualStyleBackColor = true;
@@ -714,39 +565,39 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(7, 28);
-            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Location = new Point(6, 22);
             label8.Name = "label8";
-            label8.Size = new Size(102, 25);
+            label8.Size = new Size(86, 20);
             label8.TabIndex = 19;
             label8.Text = "Должность";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(459, 28);
-            label10.Margin = new Padding(4, 0, 4, 0);
+            label10.Location = new Point(367, 22);
             label10.Name = "label10";
-            label10.Size = new Size(82, 25);
+            label10.Size = new Size(69, 20);
             label10.TabIndex = 18;
             label10.Text = "Уровень";
             // 
             // position_id
             // 
+            position_id.DropDownStyle = ComboBoxStyle.DropDownList;
             position_id.FormattingEnabled = true;
-            position_id.Location = new Point(13, 57);
-            position_id.Margin = new Padding(4, 3, 4, 3);
+            position_id.Location = new Point(10, 46);
+            position_id.Margin = new Padding(3, 2, 3, 2);
             position_id.Name = "position_id";
-            position_id.Size = new Size(383, 33);
+            position_id.Size = new Size(307, 28);
             position_id.TabIndex = 8;
             // 
             // level_id
             // 
+            level_id.DropDownStyle = ComboBoxStyle.DropDownList;
             level_id.FormattingEnabled = true;
-            level_id.Location = new Point(459, 57);
-            level_id.Margin = new Padding(4, 3, 4, 3);
+            level_id.Location = new Point(367, 46);
+            level_id.Margin = new Padding(3, 2, 3, 2);
             level_id.Name = "level_id";
-            level_id.Size = new Size(250, 33);
+            level_id.Size = new Size(201, 28);
             level_id.TabIndex = 10;
             // 
             // groupBox5
@@ -757,11 +608,11 @@
             groupBox5.Controls.Add(label4);
             groupBox5.Controls.Add(phone);
             groupBox5.Controls.Add(email);
-            groupBox5.Location = new Point(4, 462);
-            groupBox5.Margin = new Padding(4, 3, 4, 3);
+            groupBox5.Location = new Point(3, 370);
+            groupBox5.Margin = new Padding(3, 2, 3, 2);
             groupBox5.Name = "groupBox5";
-            groupBox5.Padding = new Padding(4, 3, 4, 3);
-            groupBox5.Size = new Size(899, 105);
+            groupBox5.Padding = new Padding(3, 2, 3, 2);
+            groupBox5.Size = new Size(719, 84);
             groupBox5.TabIndex = 6;
             groupBox5.TabStop = false;
             groupBox5.Text = "Контактные данные";
@@ -769,84 +620,80 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(261, 28);
-            label12.Margin = new Padding(4, 0, 4, 0);
+            label12.Location = new Point(209, 22);
             label12.Name = "label12";
-            label12.Size = new Size(54, 25);
+            label12.Size = new Size(46, 20);
             label12.TabIndex = 2;
             label12.Text = "Email";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(514, 28);
-            label11.Margin = new Padding(4, 0, 4, 0);
+            label11.Location = new Point(411, 22);
             label11.Name = "label11";
-            label11.Size = new Size(83, 25);
+            label11.Size = new Size(71, 20);
             label11.TabIndex = 4;
             label11.Text = "Telegram";
             // 
             // telegram
             // 
-            telegram.Location = new Point(514, 57);
-            telegram.Margin = new Padding(4, 3, 4, 3);
+            telegram.Location = new Point(411, 46);
+            telegram.Margin = new Padding(3, 2, 3, 2);
             telegram.Name = "telegram";
-            telegram.Size = new Size(235, 31);
+            telegram.Size = new Size(189, 27);
             telegram.TabIndex = 5;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(13, 28);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(10, 22);
             label4.Name = "label4";
-            label4.Size = new Size(81, 25);
+            label4.Size = new Size(69, 20);
             label4.TabIndex = 14;
             label4.Text = "Телефон";
             // 
             // phone
             // 
-            phone.Location = new Point(13, 57);
-            phone.Margin = new Padding(4, 3, 4, 3);
+            phone.Location = new Point(10, 46);
+            phone.Margin = new Padding(3, 2, 3, 2);
             phone.Name = "phone";
-            phone.Size = new Size(230, 31);
+            phone.Size = new Size(185, 27);
             phone.TabIndex = 1;
             // 
             // email
             // 
-            email.Location = new Point(267, 57);
-            email.Margin = new Padding(4, 3, 4, 3);
+            email.Location = new Point(214, 46);
+            email.Margin = new Padding(3, 2, 3, 2);
             email.Name = "email";
-            email.Size = new Size(230, 31);
+            email.Size = new Size(185, 27);
             email.TabIndex = 3;
             // 
             // panel1
             // 
             panel1.Controls.Add(groupBox2);
             panel1.Controls.Add(groupBox5);
-            panel1.Controls.Add(button5);
+            panel1.Controls.Add(cancel);
             panel1.Controls.Add(groupBox4);
             panel1.Controls.Add(groupBox3);
-            panel1.Controls.Add(button3);
+            panel1.Controls.Add(ok);
             panel1.Controls.Add(groupBox1);
-            panel1.Location = new Point(17, 75);
-            panel1.Margin = new Padding(4, 3, 4, 3);
+            panel1.Location = new Point(6, 60);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(907, 945);
+            panel1.Size = new Size(726, 756);
             panel1.TabIndex = 6;
             panel1.Visible = false;
-            panel1.Paint += panel1_Paint;
             // 
             // groupBox2
             // 
             groupBox2.Controls.Add(button9);
             groupBox2.Controls.Add(button8);
             groupBox2.Controls.Add(dataGridView2);
-            groupBox2.Location = new Point(11, 592);
-            groupBox2.Margin = new Padding(4, 5, 4, 5);
+            groupBox2.Location = new Point(9, 474);
+            groupBox2.Margin = new Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(4, 5, 4, 5);
-            groupBox2.Size = new Size(891, 290);
+            groupBox2.Padding = new Padding(3, 4, 3, 4);
+            groupBox2.Size = new Size(713, 232);
             groupBox2.TabIndex = 8;
             groupBox2.TabStop = false;
             groupBox2.Text = "Навыки";
@@ -854,10 +701,10 @@
             // button9
             // 
             button9.Font = new Font("Segoe UI", 7F);
-            button9.Location = new Point(463, 82);
-            button9.Margin = new Padding(4, 3, 4, 3);
+            button9.Location = new Point(370, 66);
+            button9.Margin = new Padding(3, 2, 3, 2);
             button9.Name = "button9";
-            button9.Size = new Size(34, 37);
+            button9.Size = new Size(27, 30);
             button9.TabIndex = 23;
             button9.Text = "-";
             button9.UseVisualStyleBackColor = true;
@@ -865,10 +712,10 @@
             // button8
             // 
             button8.Font = new Font("Segoe UI", 7F);
-            button8.Location = new Point(463, 35);
-            button8.Margin = new Padding(4, 3, 4, 3);
+            button8.Location = new Point(370, 28);
+            button8.Margin = new Padding(3, 2, 3, 2);
             button8.Name = "button8";
-            button8.Size = new Size(34, 40);
+            button8.Size = new Size(27, 32);
             button8.TabIndex = 22;
             button8.Text = "+";
             button8.UseVisualStyleBackColor = true;
@@ -878,11 +725,12 @@
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Column32, Column33 });
-            dataGridView2.Location = new Point(9, 35);
-            dataGridView2.Margin = new Padding(4, 3, 4, 3);
+            dataGridView2.Location = new Point(7, 28);
+            dataGridView2.Margin = new Padding(3, 2, 3, 2);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(446, 235);
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView2.Size = new Size(357, 188);
             dataGridView2.TabIndex = 7;
             // 
             // Column32
@@ -901,23 +749,173 @@
             Column33.ReadOnly = true;
             Column33.Width = 59;
             // 
-            // Employee
+            // dataGridView1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.ColumnHeadersHeight = 29;
+            dataGridView1.Location = new Point(6, 70);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(723, 455);
+            dataGridView1.TabIndex = 7;
+            // 
+            // surname_
+            // 
+            surname_.HeaderText = "Фамилия";
+            surname_.MinimumWidth = 6;
+            surname_.Name = "surname_";
+            surname_.ReadOnly = true;
+            surname_.Width = 130;
+            // 
+            // name_
+            // 
+            name_.HeaderText = "Имя";
+            name_.MinimumWidth = 6;
+            name_.Name = "name_";
+            name_.ReadOnly = true;
+            name_.Width = 130;
+            // 
+            // patronymic_
+            // 
+            patronymic_.HeaderText = "Отчество";
+            patronymic_.MinimumWidth = 6;
+            patronymic_.Name = "patronymic_";
+            patronymic_.ReadOnly = true;
+            patronymic_.Width = 130;
+            // 
+            // birthday_
+            // 
+            birthday_.HeaderText = "Дата рождения";
+            birthday_.MinimumWidth = 6;
+            birthday_.Name = "birthday_";
+            birthday_.ReadOnly = true;
+            birthday_.Width = 95;
+            // 
+            // series_
+            // 
+            series_.HeaderText = "Серия паспорта";
+            series_.MinimumWidth = 6;
+            series_.Name = "series_";
+            series_.ReadOnly = true;
+            series_.Width = 95;
+            // 
+            // number_
+            // 
+            number_.HeaderText = "Номер паспорта";
+            number_.MinimumWidth = 6;
+            number_.Name = "number_";
+            number_.ReadOnly = true;
+            number_.Width = 95;
+            // 
+            // who_
+            // 
+            who_.HeaderText = "Кем выдан";
+            who_.MinimumWidth = 6;
+            who_.Name = "who_";
+            who_.ReadOnly = true;
+            who_.Width = 250;
+            // 
+            // when_
+            // 
+            when_.HeaderText = "Дата выдачи";
+            when_.MinimumWidth = 6;
+            when_.Name = "when_";
+            when_.ReadOnly = true;
+            when_.Width = 95;
+            // 
+            // reg_address
+            // 
+            reg_address.HeaderText = "Адрес регистрации";
+            reg_address.MinimumWidth = 6;
+            reg_address.Name = "reg_address";
+            reg_address.ReadOnly = true;
+            reg_address.Width = 250;
+            // 
+            // res_address
+            // 
+            res_address.HeaderText = "Адрес проживания";
+            res_address.MinimumWidth = 6;
+            res_address.Name = "res_address";
+            res_address.ReadOnly = true;
+            res_address.Width = 250;
+            // 
+            // position_
+            // 
+            position_.HeaderText = "Должность";
+            position_.MinimumWidth = 6;
+            position_.Name = "position_";
+            position_.ReadOnly = true;
+            position_.Width = 125;
+            // 
+            // level_
+            // 
+            level_.HeaderText = "Уровень";
+            level_.MinimumWidth = 6;
+            level_.Name = "level_";
+            level_.ReadOnly = true;
+            level_.Width = 125;
+            // 
+            // salary_
+            // 
+            salary_.HeaderText = "Зарплата";
+            salary_.MinimumWidth = 6;
+            salary_.Name = "salary_";
+            salary_.ReadOnly = true;
+            salary_.Width = 95;
+            // 
+            // phone_
+            // 
+            phone_.HeaderText = "Телефон";
+            phone_.MinimumWidth = 6;
+            phone_.Name = "phone_";
+            phone_.ReadOnly = true;
+            phone_.Width = 125;
+            // 
+            // email_
+            // 
+            email_.HeaderText = "Email";
+            email_.MinimumWidth = 6;
+            email_.Name = "email_";
+            email_.ReadOnly = true;
+            email_.Width = 125;
+            // 
+            // telegram_
+            // 
+            telegram_.HeaderText = "Telegram";
+            telegram_.MinimumWidth = 6;
+            telegram_.Name = "telegram_";
+            telegram_.ReadOnly = true;
+            telegram_.Width = 125;
+            // 
+            // id
+            // 
+            id.HeaderText = "id_";
+            id.MinimumWidth = 6;
+            id.Name = "id";
+            id.ReadOnly = true;
+            id.Width = 125;
+            // 
+            // EmployeeForm
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1096, 1048);
+            ClientSize = new Size(877, 838);
+            Controls.Add(dataGridView1);
             Controls.Add(panel1);
             Controls.Add(label1);
             Controls.Add(delete);
             Controls.Add(edit);
             Controls.Add(add);
-            Controls.Add(dataGridView1);
-            Margin = new Padding(4, 3, 4, 3);
-            Name = "Employee";
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "EmployeeForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Справочник сотрудников";
             Load += Employee_Load_1;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox3.ResumeLayout(false);
@@ -929,6 +927,7 @@
             panel1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -954,7 +953,6 @@
         private Button edit;
         private Button delete;
         private Label label1;
-        private DataGridView dataGridView1;
         private GroupBox groupBox1;
         private Label label7;
         private Label label20;
@@ -977,8 +975,8 @@
         private TextBox issued_by;
         private TextBox number;
         private TextBox series;
-        private Button button3;
-        private Button button5;
+        private Button ok;
+        private Button cancel;
         private GroupBox groupBox4;
         private Button button7;
         private Button button6;
@@ -1000,21 +998,23 @@
         private Button button8;
         private DataGridViewTextBoxColumn Column32;
         private DataGridViewTextBoxColumn Column33;
-        private DataGridViewTextBoxColumn Column16;
-        private DataGridViewTextBoxColumn Column17;
-        private DataGridViewTextBoxColumn Column18;
-        private DataGridViewTextBoxColumn Column19;
-        private DataGridViewTextBoxColumn Column20;
-        private DataGridViewTextBoxColumn Column21;
-        private DataGridViewTextBoxColumn Column22;
-        private DataGridViewTextBoxColumn Column23;
-        private DataGridViewTextBoxColumn Column24;
-        private DataGridViewTextBoxColumn Column25;
-        private DataGridViewTextBoxColumn Column26;
-        private DataGridViewTextBoxColumn Column27;
-        private DataGridViewTextBoxColumn Column28;
-        private DataGridViewTextBoxColumn Column29;
-        private DataGridViewTextBoxColumn Column30;
-        private DataGridViewTextBoxColumn Column31;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn surname_;
+        private DataGridViewTextBoxColumn name_;
+        private DataGridViewTextBoxColumn patronymic_;
+        private DataGridViewTextBoxColumn birthday_;
+        private DataGridViewTextBoxColumn series_;
+        private DataGridViewTextBoxColumn number_;
+        private DataGridViewTextBoxColumn who_;
+        private DataGridViewTextBoxColumn when_;
+        private DataGridViewTextBoxColumn reg_address;
+        private DataGridViewTextBoxColumn res_address;
+        private DataGridViewTextBoxColumn position_;
+        private DataGridViewTextBoxColumn level_;
+        private DataGridViewTextBoxColumn salary_;
+        private DataGridViewTextBoxColumn phone_;
+        private DataGridViewTextBoxColumn email_;
+        private DataGridViewTextBoxColumn telegram_;
+        private DataGridViewTextBoxColumn id;
     }
 }

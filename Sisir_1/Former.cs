@@ -19,19 +19,19 @@ namespace Sisir_1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var form = new Employee();
+            var form = new EmployeeForm();
             form.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var form = new Position();
+            var form = new PositionForm();
             form.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var form = new Level();
+            var form = new LevelForm();
             form.Show();
 
         }

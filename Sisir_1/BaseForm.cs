@@ -1,11 +1,15 @@
-﻿namespace Sisir_1
+﻿using System.Text;
+using Microsoft.EntityFrameworkCore;
+using Sisir_1.Data;
+
+namespace Sisir_1
 {
-    public partial class Base : Form
+    public partial class BaseForm : Form
     {
         // Базовая форма
 
 
-        public Base()
+        public BaseForm()
         {
             InitializeComponent();
 
@@ -17,11 +21,11 @@
 
             // Подменю "Сотрудники"
             ToolStripMenuItem employeesMenuItem = new ToolStripMenuItem("Сотрудники");
-            employeesMenuItem.Click += (s, e) => OpenForm<Employee>();
+            employeesMenuItem.Click += (s, e) => OpenForm<EmployeeForm>();
 
             // Подменю "Проекты"
             ToolStripMenuItem projectsMenuItem = new ToolStripMenuItem("Проекты");
-            projectsMenuItem.Click += (s, e) => OpenForm<Project>();
+            projectsMenuItem.Click += (s, e) => OpenForm<ProjectForm>();
 
             // Добавление элементов в раздел "Справочники"
             directoriesMenuItem.DropDownItems.Add(employeesMenuItem);
@@ -32,15 +36,15 @@
 
             // Подменю "Должности"
             ToolStripMenuItem positionsMenuItem = new ToolStripMenuItem("Должности");
-            positionsMenuItem.Click += (s, e) => OpenForm<Position>();
+            positionsMenuItem.Click += (s, e) => OpenForm<PositionForm>();
 
             // Подменю "Уровни"
             ToolStripMenuItem levelsMenuItem = new ToolStripMenuItem("Уровни");
-            levelsMenuItem.Click += (s, e) => OpenForm<Level>();
+            levelsMenuItem.Click += (s, e) => OpenForm<LevelForm>();
 
             // Подменю "Навыки"
             ToolStripMenuItem skillsMenuItem = new ToolStripMenuItem("Навыки");
-            skillsMenuItem.Click += (s, e) => OpenForm<Skill>();
+            skillsMenuItem.Click += (s, e) => OpenForm<SkillForm>();
 
             // Добавление подменю в "Другое"
             otherMenuItem.DropDownItems.Add(positionsMenuItem);
@@ -69,7 +73,10 @@
             form.Show();
         }
 
+        private void BaseForm_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
 // Базовая форма
