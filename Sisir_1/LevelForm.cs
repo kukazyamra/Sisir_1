@@ -14,7 +14,14 @@ namespace Sisir_1
 
     public partial class LevelForm : Form
     {
+        private EmployeeForm? employeeForm;
         private int currentId = 0;
+
+        public LevelForm(EmployeeForm form)
+        {
+            this.employeeForm = form;
+            InitializeComponent();
+        }
         public LevelForm()
         {
             InitializeComponent();
@@ -63,7 +70,7 @@ namespace Sisir_1
             using (var context = new HrDepartmentContext())
             {
                 // Получаем все продукты из базы данных
-                var levels = context.Levels.ToList();
+                var levels = context.Levels.OrderBy(e => e.Id).ToList();
 
                 // Привязываем список продуктов к DataGridView
                 dataGridView1.DataSource = levels;
@@ -92,7 +99,7 @@ namespace Sisir_1
 
         private void ok_Click(object sender, EventArgs e)
         {
-
+            int? id = null;
             if (Validate())
             {
                 using (var context = new HrDepartmentContext())
@@ -107,6 +114,8 @@ namespace Sisir_1
                             recordToUpdate.Name = name.Text;
                             recordToUpdate.Coefficient = decimal.Parse(coefficient.Text);
                             context.SaveChanges();
+                            id = recordToUpdate.Id;
+
                         }
                         else
                         {
@@ -122,11 +131,17 @@ namespace Sisir_1
 
                         // Сохраняем изменения в базе данных
                         context.SaveChanges();
+                        id = level.Id;
+
                     }
                 }
                 currentId = 0;
                 ClearInputs();
                 ShowTable();
+                if (employeeForm != null)
+                {
+                    employeeForm.UpdateLevelsCombobox(id);
+                }
             }
             else
             {
@@ -165,7 +180,10 @@ namespace Sisir_1
                         context.SaveChanges();
                     }
                 }
-                MessageBox.Show("Объект успешно удален.");
+                if (employeeForm != null)
+                {
+                    employeeForm.UpdateLevelsCombobox();
+                }
                 FillTable();
             }
             else
@@ -185,6 +203,26 @@ namespace Sisir_1
             else
             {
                 MessageBox.Show("Пожалуйста, выберите строку для изменения.");
+            }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (employeeForm != null && e.RowIndex >= 0)
+            {
+                // Получаем текущую строку
+                var row = dataGridView1.Rows[e.RowIndex];
+
+                // Предполагаем, что ID хранится в колонке с именем "Id"
+                var idValue = row.Cells["Id"].Value;
+
+                if (idValue != null)
+                {
+                    int id = Convert.ToInt32(idValue);
+                    employeeForm.UpdateLevelsCombobox(id);
+                    this.Close();
+                    // Здесь можно выполнить любое действие с этим ID
+                }
             }
         }
     }

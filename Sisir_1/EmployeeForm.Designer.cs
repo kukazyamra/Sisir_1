@@ -72,8 +72,8 @@
             ok = new Button();
             cancel = new Button();
             groupBox4 = new GroupBox();
-            button7 = new Button();
-            button6 = new Button();
+            level_form = new Button();
+            position_form = new Button();
             label8 = new Label();
             label10 = new Label();
             position_id = new ComboBox();
@@ -90,8 +90,9 @@
             button9 = new Button();
             button8 = new Button();
             dataGridView2 = new DataGridView();
-            Column32 = new DataGridViewTextBoxColumn();
-            Column33 = new DataGridViewTextBoxColumn();
+            Skill_name = new DataGridViewTextBoxColumn();
+            Skill_level = new DataGridViewTextBoxColumn();
+            Skill_id = new DataGridViewTextBoxColumn();
             dataGridView1 = new DataGridView();
             surname_ = new DataGridViewTextBoxColumn();
             name_ = new DataGridViewTextBoxColumn();
@@ -525,8 +526,8 @@
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(button7);
-            groupBox4.Controls.Add(button6);
+            groupBox4.Controls.Add(level_form);
+            groupBox4.Controls.Add(position_form);
             groupBox4.Controls.Add(label8);
             groupBox4.Controls.Add(label10);
             groupBox4.Controls.Add(position_id);
@@ -540,27 +541,27 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "Положение в компании";
             // 
-            // button7
+            // level_form
             // 
-            button7.Location = new Point(573, 44);
-            button7.Margin = new Padding(3, 2, 3, 2);
-            button7.Name = "button7";
-            button7.Size = new Size(27, 32);
-            button7.TabIndex = 21;
-            button7.Text = "...";
-            button7.UseVisualStyleBackColor = true;
-            button7.Click += button7_Click_1;
+            level_form.Location = new Point(573, 44);
+            level_form.Margin = new Padding(3, 2, 3, 2);
+            level_form.Name = "level_form";
+            level_form.Size = new Size(27, 32);
+            level_form.TabIndex = 21;
+            level_form.Text = "...";
+            level_form.UseVisualStyleBackColor = true;
+            level_form.Click += button7_Click_1;
             // 
-            // button6
+            // position_form
             // 
-            button6.Location = new Point(325, 46);
-            button6.Margin = new Padding(3, 2, 3, 2);
-            button6.Name = "button6";
-            button6.Size = new Size(27, 30);
-            button6.TabIndex = 20;
-            button6.Text = "...";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
+            position_form.Location = new Point(325, 46);
+            position_form.Margin = new Padding(3, 2, 3, 2);
+            position_form.Name = "position_form";
+            position_form.Size = new Size(27, 30);
+            position_form.TabIndex = 20;
+            position_form.Text = "...";
+            position_form.UseVisualStyleBackColor = true;
+            position_form.Click += button6_Click;
             // 
             // label8
             // 
@@ -677,7 +678,7 @@
             panel1.Controls.Add(groupBox3);
             panel1.Controls.Add(ok);
             panel1.Controls.Add(groupBox1);
-            panel1.Location = new Point(6, 60);
+            panel1.Location = new Point(8, 70);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
             panel1.Size = new Size(726, 756);
@@ -708,6 +709,7 @@
             button9.TabIndex = 23;
             button9.Text = "-";
             button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // button8
             // 
@@ -723,31 +725,45 @@
             // 
             // dataGridView2
             // 
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AllowUserToDeleteRows = false;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Column32, Column33 });
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Skill_name, Skill_level, Skill_id });
             dataGridView2.Location = new Point(7, 28);
             dataGridView2.Margin = new Padding(3, 2, 3, 2);
+            dataGridView2.MultiSelect = false;
             dataGridView2.Name = "dataGridView2";
+            dataGridView2.ReadOnly = true;
+            dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 51;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.Size = new Size(357, 188);
             dataGridView2.TabIndex = 7;
             // 
-            // Column32
+            // Skill_name
             // 
-            Column32.HeaderText = "Наименование";
-            Column32.MinimumWidth = 6;
-            Column32.Name = "Column32";
-            Column32.ReadOnly = true;
-            Column32.Width = 200;
+            Skill_name.HeaderText = "Наименование";
+            Skill_name.MinimumWidth = 6;
+            Skill_name.Name = "Skill_name";
+            Skill_name.ReadOnly = true;
+            Skill_name.Width = 200;
             // 
-            // Column33
+            // Skill_level
             // 
-            Column33.HeaderText = "Уровень";
-            Column33.MinimumWidth = 6;
-            Column33.Name = "Column33";
-            Column33.ReadOnly = true;
-            Column33.Width = 59;
+            Skill_level.HeaderText = "Уровень";
+            Skill_level.MinimumWidth = 6;
+            Skill_level.Name = "Skill_level";
+            Skill_level.ReadOnly = true;
+            Skill_level.Width = 59;
+            // 
+            // Skill_id
+            // 
+            Skill_id.HeaderText = "ID";
+            Skill_id.MinimumWidth = 6;
+            Skill_id.Name = "Skill_id";
+            Skill_id.ReadOnly = true;
+            Skill_id.Visible = false;
+            Skill_id.Width = 125;
             // 
             // dataGridView1
             // 
@@ -755,7 +771,7 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.ColumnHeadersHeight = 29;
-            dataGridView1.Location = new Point(6, 70);
+            dataGridView1.Location = new Point(11, 70);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;
@@ -904,7 +920,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(877, 838);
+            ClientSize = new Size(1310, 838);
             Controls.Add(dataGridView1);
             Controls.Add(panel1);
             Controls.Add(label1);
@@ -978,8 +994,8 @@
         private Button ok;
         private Button cancel;
         private GroupBox groupBox4;
-        private Button button7;
-        private Button button6;
+        private Button level_form;
+        private Button position_form;
         private Label label8;
         private Label label10;
         private ComboBox position_id;
@@ -996,8 +1012,6 @@
         private GroupBox groupBox2;
         private Button button9;
         private Button button8;
-        private DataGridViewTextBoxColumn Column32;
-        private DataGridViewTextBoxColumn Column33;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn surname_;
         private DataGridViewTextBoxColumn name_;
@@ -1016,5 +1030,8 @@
         private DataGridViewTextBoxColumn email_;
         private DataGridViewTextBoxColumn telegram_;
         private DataGridViewTextBoxColumn id;
+        private DataGridViewTextBoxColumn Skill_name;
+        private DataGridViewTextBoxColumn Skill_level;
+        private DataGridViewTextBoxColumn Skill_id;
     }
 }

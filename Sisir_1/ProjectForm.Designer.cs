@@ -33,24 +33,21 @@
             add = new Button();
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
-            Column8 = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             groupBox2 = new GroupBox();
-            button9 = new Button();
-            button8 = new Button();
+            team_remove = new Button();
+            team_add = new Button();
             dataGridView2 = new DataGridView();
             Column9 = new DataGridViewTextBoxColumn();
             Column10 = new DataGridViewTextBoxColumn();
+            Team_Id = new DataGridViewTextBoxColumn();
             button5 = new Button();
             button3 = new Button();
             groupBox1 = new GroupBox();
+            finish_date_fact = new DateTimePicker();
+            label7 = new Label();
+            start_date_fact = new DateTimePicker();
+            label4 = new Label();
             start_date_plan = new DateTimePicker();
             label3 = new Label();
             description = new RichTextBox();
@@ -59,7 +56,7 @@
             label2 = new Label();
             responsible_id = new ComboBox();
             label6 = new Label();
-            button6 = new Button();
+            responsible___ = new Button();
             creation_date = new DateTimePicker();
             finish_date_plan = new DateTimePicker();
             label8 = new Label();
@@ -81,6 +78,7 @@
             delete.TabIndex = 7;
             delete.Text = "Удалить";
             delete.UseVisualStyleBackColor = true;
+            delete.Click += delete_Click;
             // 
             // edit
             // 
@@ -92,6 +90,7 @@
             edit.TabIndex = 6;
             edit.Text = "Изменить";
             edit.UseVisualStyleBackColor = true;
+            edit.Click += edit_Click;
             // 
             // add
             // 
@@ -117,79 +116,19 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7, Column8 });
             dataGridView1.Location = new Point(14, 74);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(789, 456);
             dataGridView1.TabIndex = 10;
-            dataGridView1.SelectionMode= DataGridViewSelectionMode.FullRowSelect;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Наименование";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Описание";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            Column2.Width = 250;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Дата создания";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            Column3.Width = 95;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Дата начала (план)";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            Column4.Width = 95;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Дата начала (факт)";
-            Column5.MinimumWidth = 6;
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            Column5.Width = 95;
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Дата завершения (план)";
-            Column6.MinimumWidth = 6;
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            Column6.Width = 95;
-            // 
-            // Column7
-            // 
-            Column7.HeaderText = "Дата завершения (план)";
-            Column7.MinimumWidth = 6;
-            Column7.Name = "Column7";
-            Column7.ReadOnly = true;
-            Column7.Width = 95;
-            // 
-            // Column8
-            // 
-            Column8.HeaderText = "Ответственный";
-            Column8.MinimumWidth = 6;
-            Column8.Name = "Column8";
-            Column8.ReadOnly = true;
-            Column8.Width = 150;
             // 
             // panel1
             // 
@@ -197,7 +136,7 @@
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(groupBox1);
-            panel1.Location = new Point(14, 54);
+            panel1.Location = new Point(4, 55);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 678);
@@ -206,8 +145,8 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(button9);
-            groupBox2.Controls.Add(button8);
+            groupBox2.Controls.Add(team_remove);
+            groupBox2.Controls.Add(team_add);
             groupBox2.Controls.Add(dataGridView2);
             groupBox2.Location = new Point(13, 362);
             groupBox2.Margin = new Padding(3, 4, 3, 4);
@@ -218,36 +157,41 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Команда";
             // 
-            // button9
+            // team_remove
             // 
-            button9.Font = new Font("Segoe UI", 7F);
-            button9.Location = new Point(532, 64);
-            button9.Margin = new Padding(3, 2, 3, 2);
-            button9.Name = "button9";
-            button9.Size = new Size(27, 30);
-            button9.TabIndex = 23;
-            button9.Text = "-";
-            button9.UseVisualStyleBackColor = true;
+            team_remove.Font = new Font("Segoe UI", 7F);
+            team_remove.Location = new Point(532, 64);
+            team_remove.Margin = new Padding(3, 2, 3, 2);
+            team_remove.Name = "team_remove";
+            team_remove.Size = new Size(27, 30);
+            team_remove.TabIndex = 23;
+            team_remove.Text = "-";
+            team_remove.UseVisualStyleBackColor = true;
+            team_remove.Click += team_remove_Click;
             // 
-            // button8
+            // team_add
             // 
-            button8.Font = new Font("Segoe UI", 7F);
-            button8.Location = new Point(532, 26);
-            button8.Margin = new Padding(3, 2, 3, 2);
-            button8.Name = "button8";
-            button8.Size = new Size(27, 32);
-            button8.TabIndex = 22;
-            button8.Text = "+";
-            button8.UseVisualStyleBackColor = true;
-            button8.Click += button8_Click;
+            team_add.Font = new Font("Segoe UI", 7F);
+            team_add.Location = new Point(532, 26);
+            team_add.Margin = new Padding(3, 2, 3, 2);
+            team_add.Name = "team_add";
+            team_add.Size = new Size(27, 32);
+            team_add.TabIndex = 22;
+            team_add.Text = "+";
+            team_add.UseVisualStyleBackColor = true;
+            team_add.Click += team_add_Click;
             // 
             // dataGridView2
             // 
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AllowUserToDeleteRows = false;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Column9, Column10 });
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Column9, Column10, Team_Id });
             dataGridView2.Location = new Point(7, 26);
             dataGridView2.Margin = new Padding(3, 2, 3, 2);
             dataGridView2.Name = "dataGridView2";
+            dataGridView2.ReadOnly = true;
+            dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 51;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.Size = new Size(518, 188);
@@ -269,6 +213,15 @@
             Column10.ReadOnly = true;
             Column10.Width = 220;
             // 
+            // Team_Id
+            // 
+            Team_Id.HeaderText = "ID";
+            Team_Id.MinimumWidth = 6;
+            Team_Id.Name = "Team_Id";
+            Team_Id.ReadOnly = true;
+            Team_Id.Visible = false;
+            Team_Id.Width = 125;
+            // 
             // button5
             // 
             button5.Font = new Font("Segoe UI", 9F);
@@ -279,7 +232,7 @@
             button5.TabIndex = 4;
             button5.Text = "Отмена";
             button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click_1;
+            button5.Click += cancel_Click_1;
             // 
             // button3
             // 
@@ -291,10 +244,14 @@
             button3.TabIndex = 3;
             button3.Text = "ОК";
             button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click_1;
+            button3.Click += ok_Click_1;
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(finish_date_fact);
+            groupBox1.Controls.Add(label7);
+            groupBox1.Controls.Add(start_date_fact);
+            groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(start_date_plan);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(description);
@@ -303,7 +260,7 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(responsible_id);
             groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(button6);
+            groupBox1.Controls.Add(responsible___);
             groupBox1.Controls.Add(creation_date);
             groupBox1.Controls.Add(finish_date_plan);
             groupBox1.Controls.Add(label8);
@@ -316,6 +273,42 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Основное";
+            // 
+            // finish_date_fact
+            // 
+            finish_date_fact.Format = DateTimePickerFormat.Short;
+            finish_date_fact.Location = new Point(589, 294);
+            finish_date_fact.Margin = new Padding(3, 2, 3, 2);
+            finish_date_fact.Name = "finish_date_fact";
+            finish_date_fact.Size = new Size(175, 27);
+            finish_date_fact.TabIndex = 32;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(589, 272);
+            label7.Name = "label7";
+            label7.Size = new Size(176, 20);
+            label7.TabIndex = 31;
+            label7.Text = "Дата завершения (факт)";
+            // 
+            // start_date_fact
+            // 
+            start_date_fact.Format = DateTimePickerFormat.Short;
+            start_date_fact.Location = new Point(397, 294);
+            start_date_fact.Margin = new Padding(3, 2, 3, 2);
+            start_date_fact.Name = "start_date_fact";
+            start_date_fact.Size = new Size(175, 27);
+            start_date_fact.TabIndex = 30;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(397, 272);
+            label4.Name = "label4";
+            label4.Size = new Size(139, 20);
+            label4.TabIndex = 29;
+            label4.Text = "Дата начала (факт)";
             // 
             // start_date_plan
             // 
@@ -372,6 +365,7 @@
             // 
             // responsible_id
             // 
+            responsible_id.DropDownStyle = ComboBoxStyle.DropDownList;
             responsible_id.FormattingEnabled = true;
             responsible_id.Location = new Point(397, 50);
             responsible_id.Margin = new Padding(3, 2, 3, 2);
@@ -388,16 +382,16 @@
             label6.TabIndex = 18;
             label6.Text = "Дата создания";
             // 
-            // button6
+            // responsible___
             // 
-            button6.Location = new Point(741, 50);
-            button6.Margin = new Padding(3, 2, 3, 2);
-            button6.Name = "button6";
-            button6.Size = new Size(27, 30);
-            button6.TabIndex = 20;
-            button6.Text = "...";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
+            responsible___.Location = new Point(741, 50);
+            responsible___.Margin = new Padding(3, 2, 3, 2);
+            responsible___.Name = "responsible___";
+            responsible___.Size = new Size(27, 30);
+            responsible___.TabIndex = 20;
+            responsible___.Text = "...";
+            responsible___.UseVisualStyleBackColor = true;
+            responsible___.Click += add_responsible_Click;
             // 
             // creation_date
             // 
@@ -470,11 +464,11 @@
         private DataGridView dataGridView1;
         private Panel panel1;
         private GroupBox groupBox2;
-        private Button button9;
-        private Button button8;
+        private Button team_remove;
+        private Button team_add;
         private DataGridView dataGridView2;
         private Button button5;
-        private Button button6;
+        private Button responsible___;
         private Label label8;
         private ComboBox responsible_id;
         private Button button3;
@@ -489,15 +483,12 @@
         private Label label5;
         private DateTimePicker start_date_plan;
         private Label label9;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column7;
-        private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column9;
         private DataGridViewTextBoxColumn Column10;
+        private DataGridViewTextBoxColumn Team_Id;
+        private DateTimePicker finish_date_fact;
+        private Label label7;
+        private DateTimePicker start_date_fact;
+        private Label label4;
     }
 }

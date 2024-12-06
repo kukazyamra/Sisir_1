@@ -44,4 +44,17 @@ public partial class Employee
     public virtual Position Position { get; set; } = null!;
 
     public virtual ICollection<ProjectEmployee> ProjectEmployees { get; set; } = new List<ProjectEmployee>();
+    public override string ToString()
+    {
+        // Get the first letter of the Name and Patronymic (if not null)
+        char firstNameInitial = Name.Length > 0 ? Name[0] : ' ';
+        char patronymicInitial = Patronymic?.Length > 0 ? Patronymic[0] : ' ';
+
+        // Get the Position name (assuming Position has a property called Name)
+        string positionName = Position != null ? Position.ToString() : "Unknown Position";
+
+        // Construct the desired format
+        return $"{Surname} {firstNameInitial}.{patronymicInitial}. - {positionName}";
+    }
+
 }

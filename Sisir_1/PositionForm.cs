@@ -14,6 +14,12 @@ namespace Sisir_1
     public partial class PositionForm : Form
     {
         private int currentId = 0;
+        private EmployeeForm? employeeForm;
+        public PositionForm(EmployeeForm form)
+        {
+            this.employeeForm = form;
+            InitializeComponent();
+        }
         public PositionForm()
         {
             InitializeComponent();
@@ -58,7 +64,7 @@ namespace Sisir_1
             using (var context = new HrDepartmentContext())
             {
                 // Получаем все продукты из базы данных
-                var positions = context.Positions.ToList();
+                var positions = context.Positions.OrderBy(e => e.Id).ToList();
 
                 // Привязываем список продуктов к DataGridView
                 dataGridView1.DataSource = positions;
@@ -95,8 +101,10 @@ namespace Sisir_1
 
         private void ok_Click_1(object sender, EventArgs e)
         {
+
             if (Validate())
             {
+                int? id = null;
                 using (var context = new HrDepartmentContext())
                 {
                     if (currentId != 0)
@@ -109,6 +117,7 @@ namespace Sisir_1
                             recordToUpdate.Name = name.Text;
                             recordToUpdate.Salary = decimal.Parse(salary.Text);
                             context.SaveChanges();
+                            id = recordToUpdate.Id;
                         }
                         else
                         {
@@ -124,11 +133,16 @@ namespace Sisir_1
 
                         // Сохраняем изменения в базе данных
                         context.SaveChanges();
+                        id = position.Id;
                     }
                 }
                 currentId = 0;
                 ClearInputs();
                 ShowTable();
+                if (employeeForm != null)
+                {
+                    employeeForm.UpdatePositionsCombobox(id);
+                }
             }
             else
             {
@@ -170,7 +184,11 @@ namespace Sisir_1
                         context.SaveChanges();
                     }
                 }
-                MessageBox.Show("Объект успешно удален.");
+
+                if (employeeForm != null)
+                {
+                    employeeForm.UpdatePositionsCombobox();
+                }
                 FillTable();
             }
             else
@@ -182,6 +200,27 @@ namespace Sisir_1
         private void PositionForm_Load(object sender, EventArgs e)
         {
             FillTable();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (employeeForm!=null && e.RowIndex >= 0)
+            {
+                // Получаем текущую строку
+                var row = dataGridView1.Rows[e.RowIndex];
+
+                // Предполагаем, что ID хранится в колонке с именем "Id"
+                var idValue = row.Cells["Id"].Value;
+
+                if (idValue != null)
+                {
+                    int id = Convert.ToInt32(idValue);
+                    employeeForm.UpdatePositionsCombobox(id);
+                    this.Close();
+
+                    // Здесь можно выполнить любое действие с этим ID
+                }
+            }
         }
     }
 }

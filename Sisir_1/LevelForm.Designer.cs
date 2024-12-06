@@ -61,6 +61,7 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(401, 262);
             dataGridView1.TabIndex = 7;
+            dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             // 
             // Column1
             // 

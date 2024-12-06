@@ -12,4 +12,8 @@ public partial class Position
     public decimal Salary { get; set; }
 
     public virtual ICollection<Employee> Employees { get; set; } = new List<Employee>();
+    public override string ToString()
+    {
+        return Name; // Возвращаем название должности
+    }
 }

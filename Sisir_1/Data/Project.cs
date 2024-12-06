@@ -20,6 +20,6 @@ public partial class Project
     public DateOnly EndDatePlan { get; set; }
 
     public DateOnly? EndDateFact { get; set; }
-
+  
     public virtual ICollection<ProjectEmployee> ProjectEmployees { get; set; } = new List<ProjectEmployee>();
 }

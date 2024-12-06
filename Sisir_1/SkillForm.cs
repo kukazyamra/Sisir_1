@@ -7,10 +7,17 @@ namespace Sisir_1
     {
         private int currentId = 0;
 
+        private EmployeeForm? employeeForm;
         public SkillForm()
         {
             InitializeComponent();
         }
+        public SkillForm(EmployeeForm form)
+        {
+            this.employeeForm = form;
+            InitializeComponent();
+        }
+
         private void ShowInputs()
         {
             panel1.Visible = true;
@@ -84,12 +91,16 @@ namespace Sisir_1
                 currentId = 0;
                 ClearInputs();
                 ShowTable();
+                if (employeeForm != null)
+                {
+                    employeeForm.UpdateSkills();
+                }
             }
             else
             {
                 MessageBox.Show("Вы заполнили не все обязательные поля формы!", "Ошибка");
             }
-            
+
         }
 
         private void cancel_Click_1(object sender, EventArgs e)
@@ -104,7 +115,7 @@ namespace Sisir_1
             using (var context = new HrDepartmentContext())
             {
                 // Получаем все продукты из базы данных
-                var products = context.Skills.ToList();
+                var products = context.Skills.OrderBy(e => e.Id).ToList();
 
                 // Привязываем список продуктов к DataGridView
                 dataGridView1.DataSource = products;
@@ -140,7 +151,10 @@ namespace Sisir_1
                         context.SaveChanges();
                     }
                 }
-                MessageBox.Show("Объект успешно удален.");
+                if (employeeForm != null)
+                {
+                    employeeForm.UpdateSkills();
+                }
                 FillTable();
             }
             else
@@ -165,6 +179,27 @@ namespace Sisir_1
             else
             {
                 MessageBox.Show("Пожалуйста, выберите строку для изменения.");
+            }
+        }
+
+       
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (employeeForm != null)
+            {
+                var row = dataGridView1.Rows[e.RowIndex];
+
+                // Предполагаем, что ID хранится в колонке с именем "Id"
+                var idValue = row.Cells["Id"].Value;
+
+                if (idValue != null)
+                {
+                    int id = Convert.ToInt32(idValue);
+                    var form = new Skill_level(employeeForm, id);
+                    form.Show();
+                }
+
             }
         }
     }

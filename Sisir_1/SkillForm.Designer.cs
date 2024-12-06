@@ -57,6 +57,7 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(373, 185);
             dataGridView1.TabIndex = 28;
+            dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             // 
             // label1
             // 
@@ -151,7 +152,7 @@
             panel1.Controls.Add(cancel);
             panel1.Controls.Add(ok);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(14, 46);
+            panel1.Location = new Point(17, 46);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
             panel1.Size = new Size(375, 182);
