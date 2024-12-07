@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Sisir_1.Data;
 using System.Data;
+using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
@@ -9,7 +10,7 @@ namespace Sisir_1
     public partial class ProjectForm : Form
     {
         private int currentId = 0;
-        List<int> temporaryTeam;
+        public List<int> temporaryTeam;
         private void ClearInputs()
         {
             name.Text = string.Empty;
@@ -17,7 +18,7 @@ namespace Sisir_1
             responsible_id.SelectedIndex = -1;
             start_date_fact.Value = DateTime.Today;
             start_date_plan.Value = DateTime.Today;
-            finish_date_fact.Value = DateTime.Today;
+            finish_date_plan.Value = DateTime.Today;
             finish_date_fact.Value = DateTime.Today;
             creation_date.Value = DateTime.Today;
         }
@@ -53,14 +54,15 @@ namespace Sisir_1
                 dataGridView1.Columns["EndDateFact"].HeaderText = "Дата завершения (факт)"; // Фактическая дата окончания
 
             }
-
-
             dataGridView1.ClearSelection();
 
         }
 
-        private void ShowInputs(int? id = null)
+        private void ShowInputs()
         {
+
+         
+            // Пустой формат
             panel1.Visible = true;
             dataGridView1.Visible = false;
             add.Enabled = false;
@@ -71,7 +73,39 @@ namespace Sisir_1
             UpdateTeam();
             if (currentId != 0)
             {
+                using (var context = new HrDepartmentContext())
+                {
+                    var record = context.Projects.SingleOrDefault(s => s.Id == currentId);
+                    name.Text = record.Name;
+                    description.Text = record.Description;
+                    creation_date.Value = record.CreationDate.ToDateTime(TimeOnly.MinValue);
+                    start_date_plan.Value = record.StartDatePlan.ToDateTime(TimeOnly.MinValue);
+                    if (record.StartDateFact.HasValue)
+                    {
+                        start_date_fact.Value = record.StartDateFact.Value.ToDateTime(TimeOnly.MinValue);
+                    }
 
+                    finish_date_plan.Value = record.EndDatePlan.ToDateTime(TimeOnly.MinValue);
+
+                    if (record.EndDateFact.HasValue)
+                    {
+                        finish_date_fact.Value = record.EndDateFact.Value.ToDateTime(TimeOnly.MinValue);
+                    }
+                    int responsibleId = context.ProjectEmployees
+                        .Where(e => e.ProjectId == currentId && e.IsResponsible)
+                        .Select(e => e.EmployeeId)
+                        .FirstOrDefault();
+
+                    foreach (var item in responsible_id.Items)
+                    {
+                        if (item is Employee employee && employee.Id == responsibleId)
+                        {
+                            responsible_id.SelectedItem = item;
+                            break;
+                        }
+                    }
+                    UpdateTeam(record.Id);
+                }
             }
             //ДОБАВИТЬ ДЛЯ РЕДАКТИРОВАНИЯ
         }
@@ -86,16 +120,55 @@ namespace Sisir_1
         }
         private bool Validate()
         {
+            var fields = new Control[] { name, description, creation_date, responsible_id, start_date_fact, start_date_plan, finish_date_fact, finish_date_plan };
+
+            foreach (var field in fields)
+            {
+                if (string.IsNullOrWhiteSpace(field.Text))
+                {
+                    return false;
+                }
+            }
             return true;
         }
         public ProjectForm()
         {
             InitializeComponent();
         }
-        public void UpdateTeam()
+        public void UpdateTeam(int? id = null)
         {
+            dataGridView2.Rows.Clear();
+            using (var context = new HrDepartmentContext())
+            {
+                if (id != null)
+                {
+                    var team = context.ProjectEmployees
+                        .Where(es => es.ProjectId == id && es.IsResponsible == false)
+                        .ToList();
+                    foreach (var member in team)
+                    {
+                        temporaryTeam.Add(member.EmployeeId);
+                    }
+                }
+                foreach (var member in temporaryTeam)
+                {
+                    var record = context.Employees.Find(member);
+                    if (record != null)
+                    {
+                        char firstNameInitial = record.Name.Length > 0 ? Name[0] : ' ';
+                        char patronymicInitial = record.Patronymic?.Length > 0 ? record.Patronymic[0] : ' ';
 
+                        // Get the Position name (assuming Position has a property called Name)
+
+                        // Construct the desired format
+
+                        dataGridView2.Rows.Add($"{record.Surname} {firstNameInitial}.{patronymicInitial}.", record.Position, record.Id);
+                    }
+
+                }
+            }
         }
+
         public void UpdateResponsibleCombobox(int? id = null)
         {
             using (var context = new HrDepartmentContext())
@@ -111,15 +184,13 @@ namespace Sisir_1
                     responsible_id.Items.Add(employee);
                 }
 
-                // Устанавливаем отображаемое значение (то, что увидит пользователь)
                 responsible_id.DisplayMember = "ToString";
-                // Устанавливаем значение, которое будет храниться при выборе (например, ID)
                 responsible_id.ValueMember = "Id";
                 if (id.HasValue)
                 {
                     foreach (var item in responsible_id.Items)
                     {
-                        if (item is Level level && level.Id == id.Value)
+                        if (item is Employee employee && employee.Id == id.Value)
                         {
                             responsible_id.SelectedItem = item;
                             break;
@@ -151,85 +222,88 @@ namespace Sisir_1
                 {
                     if (currentId != 0)
                     {
-                    //    var recordToUpdate = context.Employees.SingleOrDefault(s => s.Id == currentId);
+                        MessageBox.Show("edit");
+                        var recordToUpdate = context.Projects.SingleOrDefault(s => s.Id == currentId);
 
-                    //    if (recordToUpdate != null)
-                    //    {
-                    //        recordToUpdate.Surname = surname.Text;                // Фамилия из TextBox
-                    //        recordToUpdate.Name = name.Text;               // Имя из TextBox
-                    //        recordToUpdate.Patronymic = patronymic.Text == "" ? null : patronymic.Text;         // Отчество из TextBox
-                    //        recordToUpdate.Birthdate = DateOnly.FromDateTime(birthday.Value); // Дата рождения из DateTimePicker
-                    //        recordToUpdate.PassportSeries = series.Text; // Серия паспорта
-                    //        recordToUpdate.PassportNumber = number.Text; // Номер паспорта
-                    //        recordToUpdate.IssuedBy = issued_by.Text;          // Кем выдан
-                    //        recordToUpdate.IssueDate = DateOnly.FromDateTime(issue_date.Value); // Дата выдачи паспорта
-                    //        recordToUpdate.RegistrationAddress = reegistration_address.Text; // Адрес регистрации
-                    //        recordToUpdate.ResidenceAddress = residential_address.Text;       // Адрес проживания
-                    //        recordToUpdate.Phone = phone.Text;                   // Телефон
-                    //        recordToUpdate.Email = email.Text == "" ? null : email.Text;           // Email
-                    //        recordToUpdate.Telegram = telegram.Text == "" ? null : telegram.Text;            // Telegram
+                        if (recordToUpdate != null)
+                        {
+                            // Фамилия из TextBox
+                            recordToUpdate.Name = name.Text;
+                            recordToUpdate.Description = description.Text;
+                            recordToUpdate.CreationDate = DateOnly.FromDateTime(creation_date.Value);
+                            recordToUpdate.StartDatePlan = DateOnly.FromDateTime(start_date_plan.Value);
+                            recordToUpdate.EndDatePlan = DateOnly.FromDateTime(finish_date_plan.Value);
+                            recordToUpdate.EndDateFact = DateOnly.FromDateTime(finish_date_plan.Value);
+                            recordToUpdate.StartDateFact = DateOnly.FromDateTime(start_date_fact.Value);
 
-                    //        // Получаем выбранные значения из ComboBox
-                    //        recordToUpdate.PositionId = ((Position)position_id.SelectedItem).Id; // ID должности
-                    //        recordToUpdate.LevelId = ((Level)level_id.SelectedItem)?.Id;
-                    //        if (recordToUpdate.LevelId == 0)
-                    //        {
-                    //            recordToUpdate.LevelId = null;
-                    //        }
-                    //        var employeeSkills = context.EmployeeSkills
-                    //            .Where(es => es.EmployeeId == recordToUpdate.Id)
-                    //            .ToList();
+                            var old_responsible = context.ProjectEmployees.Where(e => e.ProjectId == recordToUpdate.Id && e.IsResponsible == true).ToList();
+                            context.ProjectEmployees.RemoveRange(old_responsible);
 
-                    //        // Удаляем все записи из таблицы EmployeeSkill, соответствующие данному сотруднику
-                    //        context.EmployeeSkills.RemoveRange(employeeSkills);
+                            var employeeId = ((Employee)responsible_id.SelectedItem).Id;
+                            var responsible = new ProjectEmployee
+                            {
+                                EmployeeId = employeeId,
+                                ProjectId = recordToUpdate.Id,
+                                IsResponsible = true
+                            };
+                            context.ProjectEmployees.Add(responsible);
+                            context.SaveChanges();
 
-                    //        // Сохраняем изменения в базе данных
-                    //        context.SaveChanges();
+                            var old_team = context.ProjectEmployees.Where(e => e.ProjectId == recordToUpdate.Id && e.IsResponsible == false).ToList();
+                            context.ProjectEmployees.RemoveRange(old_team);
+                            context.SaveChanges();
+                            foreach (var member in temporaryTeam)
+                            {
+                                var projectEmployee = new ProjectEmployee
+                                {
+                                    EmployeeId = member,
+                                    ProjectId = recordToUpdate.Id,
+                                    IsResponsible = false
+                                };
 
-                    //        foreach (var skill in temporarySkills)
-                    //        {
-                    //            var employeeSkill = new EmployeeSkill
-                    //            {
-                    //                EmployeeId = recordToUpdate.Id,
-                    //                SkillId = skill.Key,
-                    //                SkillLevel = skill.Value
-                    //            };
-                    //            context.EmployeeSkills.Add(employeeSkill);
-                    //            context.SaveChanges();
-                    //        }
-
-                    //    }
-                    //    else
-                    //    {
-                    //        MessageBox.Show("Запись не найдена для редактирования.");
-                    //    }
+                                context.ProjectEmployees.Add(projectEmployee);
+                                context.SaveChanges();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Запись не найдена для редактирования.");
+                        }
                     }
                     else
                     {
                         var project = new Project
                         {
-                           
                             Name = name.Text,
                             Description = description.Text,
                             CreationDate = DateOnly.FromDateTime(creation_date.Value),
                             StartDatePlan = DateOnly.FromDateTime(start_date_plan.Value),
                             EndDatePlan = DateOnly.FromDateTime(finish_date_plan.Value),
-                             // ID уровня (может быть null)
+                            // ID уровня (может быть null)
                         };
                         context.Projects.Add(project);
                         context.SaveChanges();
-                        //foreach (var skill in temporarySkills)
-                        //{
-                        //    var employeeSkill = new EmployeeSkill
-                        //    {
-                        //        EmployeeId = newEmployee.Id,
-                        //        SkillId = skill.Key,
-                        //        SkillLevel = skill.Value
-                        //    };
+                        var employeeId = ((Employee)responsible_id.SelectedItem).Id;
+                        var responsible = new ProjectEmployee
+                        {
+                            EmployeeId = employeeId,
+                            ProjectId = project.Id,
+                            IsResponsible = true
+                        };
+                        context.ProjectEmployees.Add(responsible);
+                        context.SaveChanges();
+                        foreach (var member in temporaryTeam)
+                        {
+                            var projectEmployee = new ProjectEmployee
+                            {
+                                EmployeeId = member,
+                                ProjectId = project.Id,
+                                IsResponsible = false
+                            };
 
-                        //    context.EmployeeSkills.Add(employeeSkill);
-                        //    context.SaveChanges();
-                        //}
+                            context.ProjectEmployees.Add(projectEmployee);
+                            context.SaveChanges();
+                        }
 
                     }
                 }
@@ -252,13 +326,13 @@ namespace Sisir_1
 
         private void add_responsible_Click(object sender, EventArgs e)
         {
-            var form = new EmployeeForm();
+            var form = new EmployeeForm(this, "responsible");
             form.Show();
         }
 
         private void team_add_Click(object sender, EventArgs e)
         {
-            var form = new EmployeeForm();
+            var form = new EmployeeForm(this, "team");
             form.Show();
         }
 
@@ -269,7 +343,16 @@ namespace Sisir_1
 
         private void edit_Click(object sender, EventArgs e)
         {
-
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                var selectedRow = dataGridView1.SelectedRows[0];
+                currentId = Convert.ToInt32(selectedRow.Cells[0].Value);
+                ShowInputs();
+            }
+            else
+            {
+                MessageBox.Show("Пожалуйста, выберите строку для изменения.");
+            }
         }
 
         private void delete_Click(object sender, EventArgs e)
@@ -279,9 +362,19 @@ namespace Sisir_1
 
         private void team_remove_Click(object sender, EventArgs e)
         {
-
+            if (dataGridView2.SelectedRows.Count > 0)
+            {
+                var selectedRow = dataGridView2.SelectedRows[0];
+                int skillId = Convert.ToInt32(selectedRow.Cells[2].Value);
+                temporaryTeam.Remove(skillId);
+                UpdateTeam();
+            }
+            else
+            {
+                MessageBox.Show("Вы не выбрали навык для удаления.");
+            }
         }
 
-
+        
     }
 }

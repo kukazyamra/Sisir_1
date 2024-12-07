@@ -7,8 +7,16 @@ namespace Sisir_1
     {
 
         private int currentId = 0;
+        private string mode;
+        public ProjectForm projectForm;
         public Dictionary<int, int?> temporarySkills;
 
+        public EmployeeForm (ProjectForm form, string mode_)
+        {
+            this.projectForm = form;
+            this.mode = mode_;
+            InitializeComponent();
+        }
         private void ClearInputs()
         {
             name.Text = string.Empty;
@@ -51,7 +59,6 @@ namespace Sisir_1
                         dataGridView2.Rows.Add(record.Name, kvp.Value, kvp.Key);
 
                     }
-
                 }
             }
 
@@ -266,6 +273,7 @@ namespace Sisir_1
 
         private void ok_Click(object sender, EventArgs e)
         {
+            int? id = null;
             if (Validate())
             {
                 using (var context = new HrDepartmentContext())
@@ -306,6 +314,7 @@ namespace Sisir_1
 
                             // Сохраняем изменения в базе данных
                             context.SaveChanges();
+                            id = recordToUpdate.Id;
 
                             foreach (var skill in temporarySkills)
                             {
@@ -355,6 +364,7 @@ namespace Sisir_1
                         context.Employees.Add(newEmployee);
 
                         context.SaveChanges();
+                        id = newEmployee.Id;
 
                         foreach (var skill in temporarySkills)
                         {
@@ -371,9 +381,18 @@ namespace Sisir_1
 
                     }
                 }
+                
                 currentId = 0;
                 ClearInputs();
                 ShowTable();
+                if (projectForm != null&&mode=="responsible")
+                {
+                    projectForm.UpdateResponsibleCombobox(id);
+                }
+                if (projectForm != null && mode == "team")
+                {
+                    projectForm.UpdateTeam();
+                }
             }
             else
             {
@@ -455,6 +474,15 @@ namespace Sisir_1
                         context.SaveChanges();
                     }
                 }
+                if (projectForm != null&&mode=="responsible")
+                {
+                    projectForm.UpdateResponsibleCombobox();
+                }
+                if (projectForm != null && mode == "team")
+                {
+                    projectForm.UpdateTeam();
+                }
+
                 MessageBox.Show("Объект успешно удален.");
                 FillTable();
             }
@@ -464,7 +492,7 @@ namespace Sisir_1
             }
         }
 
-       
+
 
         private void button9_Click(object sender, EventArgs e)
         {
@@ -478,6 +506,35 @@ namespace Sisir_1
             else
             {
                 MessageBox.Show("Вы не выбрали навык для удаления.");
+            }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (projectForm != null && e.RowIndex >= 0)
+            {
+                var row = dataGridView1.Rows[e.RowIndex];
+
+                // Предполагаем, что ID хранится в колонке с именем "Id"
+                var idValue = row.Cells["Id"].Value;
+                if (idValue != null)
+                {
+                    int id = Convert.ToInt32(idValue);
+                    if (mode == "responsible")
+                    {
+                        projectForm.UpdateResponsibleCombobox(id);
+                        this.Close();
+                    }
+                    if (mode == "team")
+                    {
+                        projectForm.temporaryTeam.Add(id);
+                        projectForm.UpdateTeam();
+                        this.Close();
+
+                    }
+
+
+                }
             }
         }
     }
