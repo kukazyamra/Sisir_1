@@ -243,10 +243,10 @@
             // add
             // 
             add.Font = new Font("Segoe UI", 9F);
-            add.Location = new Point(948, 88);
-            add.Margin = new Padding(4, 2, 4, 2);
+            add.Location = new Point(682, 54);
+            add.Margin = new Padding(3, 2, 3, 2);
             add.Name = "add";
-            add.Size = new Size(112, 38);
+            add.Size = new Size(79, 22);
             add.TabIndex = 1;
             add.Text = "Добавить";
             add.UseVisualStyleBackColor = true;
@@ -255,10 +255,10 @@
             // edit
             // 
             edit.Font = new Font("Segoe UI", 9F);
-            edit.Location = new Point(948, 132);
-            edit.Margin = new Padding(4, 2, 4, 2);
+            edit.Location = new Point(682, 81);
+            edit.Margin = new Padding(3, 2, 3, 2);
             edit.Name = "edit";
-            edit.Size = new Size(112, 38);
+            edit.Size = new Size(79, 22);
             edit.TabIndex = 2;
             edit.Text = "Изменить";
             edit.UseVisualStyleBackColor = true;
@@ -267,10 +267,10 @@
             // delete
             // 
             delete.Font = new Font("Segoe UI", 9F);
-            delete.Location = new Point(948, 242);
-            delete.Margin = new Padding(4, 2, 4, 2);
+            delete.Location = new Point(682, 147);
+            delete.Margin = new Padding(3, 2, 3, 2);
             delete.Name = "delete";
-            delete.Size = new Size(112, 38);
+            delete.Size = new Size(79, 22);
             delete.TabIndex = 4;
             delete.Text = "Удалить";
             delete.UseVisualStyleBackColor = true;
@@ -280,10 +280,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F);
-            label1.Location = new Point(14, 12);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(10, 8);
             label1.Name = "label1";
-            label1.Size = new Size(168, 38);
+            label1.Size = new Size(115, 25);
             label1.TabIndex = 5;
             label1.Text = "Сотрудники";
             // 
@@ -297,11 +296,11 @@
             groupBox1.Controls.Add(patronymic);
             groupBox1.Controls.Add(surname);
             groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(4, 2);
-            groupBox1.Margin = new Padding(4, 2, 4, 2);
+            groupBox1.Location = new Point(3, 2);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4, 2, 4, 2);
-            groupBox1.Size = new Size(899, 108);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(657, 64);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Основное";
@@ -309,73 +308,69 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(514, 32);
-            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Location = new Point(360, 20);
             label7.Name = "label7";
-            label7.Size = new Size(88, 25);
+            label7.Size = new Size(58, 15);
             label7.TabIndex = 18;
             label7.Text = "Отчество";
             // 
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(261, 38);
-            label20.Margin = new Padding(4, 0, 4, 0);
+            label20.Location = new Point(183, 22);
             label20.Name = "label20";
-            label20.Size = new Size(47, 25);
+            label20.Size = new Size(31, 15);
             label20.TabIndex = 16;
             label20.Text = "Имя";
             // 
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(770, 38);
-            label18.Margin = new Padding(4, 0, 4, 0);
+            label18.Location = new Point(539, 22);
             label18.Name = "label18";
-            label18.Size = new Size(43, 25);
+            label18.Size = new Size(28, 15);
             label18.TabIndex = 14;
             label18.Text = "Д.р.";
             // 
             // birthday
             // 
             birthday.Format = DateTimePickerFormat.Short;
-            birthday.Location = new Point(770, 62);
-            birthday.Margin = new Padding(4, 2, 4, 2);
+            birthday.Location = new Point(539, 38);
+            birthday.Margin = new Padding(3, 2, 3, 2);
             birthday.Name = "birthday";
-            birthday.Size = new Size(115, 31);
+            birthday.Size = new Size(113, 23);
             birthday.TabIndex = 12;
             // 
             // name
             // 
-            name.Location = new Point(261, 62);
-            name.Margin = new Padding(4, 2, 4, 2);
+            name.Location = new Point(183, 38);
+            name.Margin = new Padding(3, 2, 3, 2);
             name.Name = "name";
-            name.Size = new Size(235, 31);
+            name.Size = new Size(166, 23);
             name.TabIndex = 3;
             // 
             // patronymic
             // 
-            patronymic.Location = new Point(514, 62);
-            patronymic.Margin = new Padding(4, 2, 4, 2);
+            patronymic.Location = new Point(360, 38);
+            patronymic.Margin = new Padding(3, 2, 3, 2);
             patronymic.Name = "patronymic";
-            patronymic.Size = new Size(235, 31);
+            patronymic.Size = new Size(166, 23);
             patronymic.TabIndex = 5;
             // 
             // surname
             // 
-            surname.Location = new Point(8, 62);
-            surname.Margin = new Padding(4, 2, 4, 2);
+            surname.Location = new Point(5, 38);
+            surname.Margin = new Padding(3, 2, 3, 2);
             surname.Name = "surname";
-            surname.Size = new Size(235, 31);
+            surname.Size = new Size(166, 23);
             surname.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(8, 32);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(5, 20);
             label2.Name = "label2";
-            label2.Size = new Size(85, 25);
+            label2.Size = new Size(58, 15);
             label2.TabIndex = 0;
             label2.Text = "Фамилия";
             // 
@@ -393,11 +388,11 @@
             groupBox3.Controls.Add(issued_by);
             groupBox3.Controls.Add(number);
             groupBox3.Controls.Add(series);
-            groupBox3.Location = new Point(4, 132);
-            groupBox3.Margin = new Padding(4, 2, 4, 2);
+            groupBox3.Location = new Point(3, 80);
+            groupBox3.Margin = new Padding(3, 2, 3, 2);
             groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new Padding(4, 2, 4, 2);
-            groupBox3.Size = new Size(899, 188);
+            groupBox3.Padding = new Padding(3, 2, 3, 2);
+            groupBox3.Size = new Size(657, 112);
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
             groupBox3.Text = "Паспортные данные";
@@ -405,119 +400,113 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(770, 38);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(539, 22);
             label3.Name = "label3";
-            label3.Size = new Size(116, 25);
+            label3.Size = new Size(76, 15);
             label3.TabIndex = 27;
             label3.Text = "Дата выдачи";
             // 
             // label25
             // 
             label25.AutoSize = true;
-            label25.Location = new Point(459, 115);
-            label25.Margin = new Padding(4, 0, 4, 0);
+            label25.Location = new Point(341, 69);
             label25.Name = "label25";
-            label25.Size = new Size(170, 25);
+            label25.Size = new Size(112, 15);
             label25.TabIndex = 26;
             label25.Text = "Адрес проживания";
             // 
             // label23
             // 
             label23.AutoSize = true;
-            label23.Location = new Point(12, 115);
-            label23.Margin = new Padding(4, 0, 4, 0);
+            label23.Location = new Point(9, 69);
             label23.Name = "label23";
-            label23.Size = new Size(170, 25);
+            label23.Size = new Size(113, 15);
             label23.TabIndex = 24;
             label23.Text = "Адрес регистрации";
             // 
             // label21
             // 
             label21.AutoSize = true;
-            label21.Location = new Point(261, 38);
-            label21.Margin = new Padding(4, 0, 4, 0);
+            label21.Location = new Point(183, 22);
             label21.Name = "label21";
-            label21.Size = new Size(101, 25);
+            label21.Size = new Size(66, 15);
             label21.TabIndex = 22;
             label21.Text = "Кем выдан";
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(138, 38);
-            label15.Margin = new Padding(4, 0, 4, 0);
+            label15.Location = new Point(96, 22);
             label15.Name = "label15";
-            label15.Size = new Size(69, 25);
+            label15.Size = new Size(45, 15);
             label15.TabIndex = 20;
             label15.Text = "Номер";
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(12, 38);
-            label13.Margin = new Padding(4, 0, 4, 0);
+            label13.Location = new Point(9, 22);
             label13.Name = "label13";
-            label13.Size = new Size(62, 25);
+            label13.Size = new Size(41, 15);
             label13.TabIndex = 18;
             label13.Text = "Серия";
             // 
             // issue_date
             // 
             issue_date.Format = DateTimePickerFormat.Short;
-            issue_date.Location = new Point(770, 62);
-            issue_date.Margin = new Padding(4, 2, 4, 2);
+            issue_date.Location = new Point(539, 38);
+            issue_date.Margin = new Padding(3, 2, 3, 2);
             issue_date.Name = "issue_date";
-            issue_date.Size = new Size(115, 31);
+            issue_date.Size = new Size(113, 23);
             issue_date.TabIndex = 17;
             // 
             // residential_address
             // 
-            residential_address.Location = new Point(459, 142);
-            residential_address.Margin = new Padding(4, 2, 4, 2);
+            residential_address.Location = new Point(337, 85);
+            residential_address.Margin = new Padding(3, 2, 3, 2);
             residential_address.Name = "residential_address";
-            residential_address.Size = new Size(426, 31);
+            residential_address.Size = new Size(315, 23);
             residential_address.TabIndex = 16;
             // 
             // reegistration_address
             // 
-            reegistration_address.Location = new Point(11, 142);
-            reegistration_address.Margin = new Padding(4, 2, 4, 2);
+            reegistration_address.Location = new Point(8, 86);
+            reegistration_address.Margin = new Padding(3, 2, 3, 2);
             reegistration_address.Name = "reegistration_address";
-            reegistration_address.Size = new Size(426, 31);
+            reegistration_address.Size = new Size(315, 23);
             reegistration_address.TabIndex = 14;
             // 
             // issued_by
             // 
-            issued_by.Location = new Point(261, 62);
-            issued_by.Margin = new Padding(4, 2, 4, 2);
+            issued_by.Location = new Point(183, 38);
+            issued_by.Margin = new Padding(3, 2, 3, 2);
             issued_by.Name = "issued_by";
-            issued_by.Size = new Size(490, 31);
+            issued_by.Size = new Size(344, 23);
             issued_by.TabIndex = 12;
             // 
             // number
             // 
-            number.Location = new Point(138, 62);
-            number.Margin = new Padding(4, 2, 4, 2);
+            number.Location = new Point(96, 38);
+            number.Margin = new Padding(3, 2, 3, 2);
             number.Name = "number";
-            number.Size = new Size(105, 31);
+            number.Size = new Size(75, 23);
             number.TabIndex = 3;
             // 
             // series
             // 
-            series.Location = new Point(11, 62);
-            series.Margin = new Padding(4, 2, 4, 2);
+            series.Location = new Point(8, 38);
+            series.Margin = new Padding(3, 2, 3, 2);
             series.Name = "series";
-            series.Size = new Size(105, 31);
+            series.Size = new Size(75, 23);
             series.TabIndex = 1;
             // 
             // ok
             // 
             ok.Font = new Font("Segoe UI", 9F);
-            ok.Location = new Point(641, 902);
-            ok.Margin = new Padding(4, 2, 4, 2);
+            ok.Location = new Point(449, 542);
+            ok.Margin = new Padding(3, 2, 3, 2);
             ok.Name = "ok";
-            ok.Size = new Size(112, 38);
+            ok.Size = new Size(79, 22);
             ok.TabIndex = 3;
             ok.Text = "ОК";
             ok.UseVisualStyleBackColor = true;
@@ -526,10 +515,10 @@
             // cancel
             // 
             cancel.Font = new Font("Segoe UI", 9F);
-            cancel.Location = new Point(795, 902);
-            cancel.Margin = new Padding(4, 2, 4, 2);
+            cancel.Location = new Point(556, 542);
+            cancel.Margin = new Padding(3, 2, 3, 2);
             cancel.Name = "cancel";
-            cancel.Size = new Size(112, 38);
+            cancel.Size = new Size(79, 22);
             cancel.TabIndex = 4;
             cancel.Text = "Отмена";
             cancel.UseVisualStyleBackColor = true;
@@ -543,21 +532,21 @@
             groupBox4.Controls.Add(label10);
             groupBox4.Controls.Add(position_id);
             groupBox4.Controls.Add(level_id);
-            groupBox4.Location = new Point(4, 342);
-            groupBox4.Margin = new Padding(4, 2, 4, 2);
+            groupBox4.Location = new Point(3, 206);
+            groupBox4.Margin = new Padding(3, 2, 3, 2);
             groupBox4.Name = "groupBox4";
-            groupBox4.Padding = new Padding(4, 2, 4, 2);
-            groupBox4.Size = new Size(899, 100);
+            groupBox4.Padding = new Padding(3, 2, 3, 2);
+            groupBox4.Size = new Size(657, 60);
             groupBox4.TabIndex = 5;
             groupBox4.TabStop = false;
             groupBox4.Text = "Положение в компании";
             // 
             // level_form
             // 
-            level_form.Location = new Point(716, 55);
-            level_form.Margin = new Padding(4, 2, 4, 2);
+            level_form.Location = new Point(501, 33);
+            level_form.Margin = new Padding(3, 2, 3, 2);
             level_form.Name = "level_form";
-            level_form.Size = new Size(34, 40);
+            level_form.Size = new Size(24, 24);
             level_form.TabIndex = 21;
             level_form.Text = "...";
             level_form.UseVisualStyleBackColor = true;
@@ -565,10 +554,10 @@
             // 
             // position_form
             // 
-            position_form.Location = new Point(406, 58);
-            position_form.Margin = new Padding(4, 2, 4, 2);
+            position_form.Location = new Point(284, 34);
+            position_form.Margin = new Padding(3, 2, 3, 2);
             position_form.Name = "position_form";
-            position_form.Size = new Size(34, 38);
+            position_form.Size = new Size(24, 22);
             position_form.TabIndex = 20;
             position_form.Text = "...";
             position_form.UseVisualStyleBackColor = true;
@@ -577,20 +566,18 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(8, 28);
-            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Location = new Point(5, 16);
             label8.Name = "label8";
-            label8.Size = new Size(102, 25);
+            label8.Size = new Size(69, 15);
             label8.TabIndex = 19;
             label8.Text = "Должность";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(459, 28);
-            label10.Margin = new Padding(4, 0, 4, 0);
+            label10.Location = new Point(321, 16);
             label10.Name = "label10";
-            label10.Size = new Size(82, 25);
+            label10.Size = new Size(53, 15);
             label10.TabIndex = 18;
             label10.Text = "Уровень";
             // 
@@ -598,20 +585,20 @@
             // 
             position_id.DropDownStyle = ComboBoxStyle.DropDownList;
             position_id.FormattingEnabled = true;
-            position_id.Location = new Point(12, 58);
-            position_id.Margin = new Padding(4, 2, 4, 2);
+            position_id.Location = new Point(9, 34);
+            position_id.Margin = new Padding(3, 2, 3, 2);
             position_id.Name = "position_id";
-            position_id.Size = new Size(383, 33);
+            position_id.Size = new Size(269, 23);
             position_id.TabIndex = 8;
             // 
             // level_id
             // 
             level_id.DropDownStyle = ComboBoxStyle.DropDownList;
             level_id.FormattingEnabled = true;
-            level_id.Location = new Point(459, 58);
-            level_id.Margin = new Padding(4, 2, 4, 2);
+            level_id.Location = new Point(321, 34);
+            level_id.Margin = new Padding(3, 2, 3, 2);
             level_id.Name = "level_id";
-            level_id.Size = new Size(250, 33);
+            level_id.Size = new Size(176, 23);
             level_id.TabIndex = 10;
             // 
             // groupBox5
@@ -622,11 +609,11 @@
             groupBox5.Controls.Add(label4);
             groupBox5.Controls.Add(phone);
             groupBox5.Controls.Add(email);
-            groupBox5.Location = new Point(4, 462);
-            groupBox5.Margin = new Padding(4, 2, 4, 2);
+            groupBox5.Location = new Point(3, 278);
+            groupBox5.Margin = new Padding(3, 2, 3, 2);
             groupBox5.Name = "groupBox5";
-            groupBox5.Padding = new Padding(4, 2, 4, 2);
-            groupBox5.Size = new Size(899, 105);
+            groupBox5.Padding = new Padding(3, 2, 3, 2);
+            groupBox5.Size = new Size(657, 63);
             groupBox5.TabIndex = 6;
             groupBox5.TabStop = false;
             groupBox5.Text = "Контактные данные";
@@ -634,55 +621,52 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(261, 28);
-            label12.Margin = new Padding(4, 0, 4, 0);
+            label12.Location = new Point(183, 16);
             label12.Name = "label12";
-            label12.Size = new Size(54, 25);
+            label12.Size = new Size(36, 15);
             label12.TabIndex = 2;
             label12.Text = "Email";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(514, 28);
-            label11.Margin = new Padding(4, 0, 4, 0);
+            label11.Location = new Point(360, 16);
             label11.Name = "label11";
-            label11.Size = new Size(83, 25);
+            label11.Size = new Size(55, 15);
             label11.TabIndex = 4;
             label11.Text = "Telegram";
             // 
             // telegram
             // 
-            telegram.Location = new Point(514, 58);
-            telegram.Margin = new Padding(4, 2, 4, 2);
+            telegram.Location = new Point(360, 34);
+            telegram.Margin = new Padding(3, 2, 3, 2);
             telegram.Name = "telegram";
-            telegram.Size = new Size(235, 31);
+            telegram.Size = new Size(166, 23);
             telegram.TabIndex = 5;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 28);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(9, 16);
             label4.Name = "label4";
-            label4.Size = new Size(81, 25);
+            label4.Size = new Size(55, 15);
             label4.TabIndex = 14;
             label4.Text = "Телефон";
             // 
             // phone
             // 
-            phone.Location = new Point(12, 58);
-            phone.Margin = new Padding(4, 2, 4, 2);
+            phone.Location = new Point(9, 34);
+            phone.Margin = new Padding(3, 2, 3, 2);
             phone.Name = "phone";
-            phone.Size = new Size(230, 31);
+            phone.Size = new Size(162, 23);
             phone.TabIndex = 1;
             // 
             // email
             // 
-            email.Location = new Point(268, 58);
-            email.Margin = new Padding(4, 2, 4, 2);
+            email.Location = new Point(187, 34);
+            email.Margin = new Padding(3, 2, 3, 2);
             email.Name = "email";
-            email.Size = new Size(230, 31);
+            email.Size = new Size(162, 23);
             email.TabIndex = 3;
             // 
             // panel1
@@ -694,23 +678,22 @@
             panel1.Controls.Add(groupBox3);
             panel1.Controls.Add(ok);
             panel1.Controls.Add(groupBox1);
-            panel1.Location = new Point(10, 88);
-            panel1.Margin = new Padding(4, 2, 4, 2);
+            panel1.Location = new Point(10, 45);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(908, 945);
+            panel1.Size = new Size(670, 567);
             panel1.TabIndex = 6;
             panel1.Visible = false;
+            panel1.Paint += panel1_Paint;
             // 
             // groupBox2
             // 
             groupBox2.Controls.Add(button9);
             groupBox2.Controls.Add(button8);
             groupBox2.Controls.Add(dataGridView2);
-            groupBox2.Location = new Point(11, 592);
-            groupBox2.Margin = new Padding(4, 5, 4, 5);
+            groupBox2.Location = new Point(8, 356);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(4, 5, 4, 5);
-            groupBox2.Size = new Size(891, 290);
+            groupBox2.Size = new Size(652, 174);
             groupBox2.TabIndex = 8;
             groupBox2.TabStop = false;
             groupBox2.Text = "Навыки";
@@ -718,10 +701,10 @@
             // button9
             // 
             button9.Font = new Font("Segoe UI", 7F);
-            button9.Location = new Point(462, 82);
-            button9.Margin = new Padding(4, 2, 4, 2);
+            button9.Location = new Point(324, 50);
+            button9.Margin = new Padding(3, 2, 3, 2);
             button9.Name = "button9";
-            button9.Size = new Size(34, 38);
+            button9.Size = new Size(24, 22);
             button9.TabIndex = 23;
             button9.Text = "-";
             button9.UseVisualStyleBackColor = true;
@@ -730,10 +713,10 @@
             // button8
             // 
             button8.Font = new Font("Segoe UI", 7F);
-            button8.Location = new Point(462, 35);
-            button8.Margin = new Padding(4, 2, 4, 2);
+            button8.Location = new Point(324, 21);
+            button8.Margin = new Padding(3, 2, 3, 2);
             button8.Name = "button8";
-            button8.Size = new Size(34, 40);
+            button8.Size = new Size(24, 24);
             button8.TabIndex = 22;
             button8.Text = "+";
             button8.UseVisualStyleBackColor = true;
@@ -745,15 +728,15 @@
             dataGridView2.AllowUserToDeleteRows = false;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Skill_name, Skill_level, Skill_id });
-            dataGridView2.Location = new Point(9, 35);
-            dataGridView2.Margin = new Padding(4, 2, 4, 2);
+            dataGridView2.Location = new Point(6, 21);
+            dataGridView2.Margin = new Padding(3, 2, 3, 2);
             dataGridView2.MultiSelect = false;
             dataGridView2.Name = "dataGridView2";
             dataGridView2.ReadOnly = true;
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 51;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.Size = new Size(446, 235);
+            dataGridView2.Size = new Size(312, 141);
             dataGridView2.TabIndex = 7;
             // 
             // Skill_name
@@ -787,14 +770,14 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.ColumnHeadersHeight = 29;
-            dataGridView1.Location = new Point(14, 88);
-            dataGridView1.Margin = new Padding(4, 4, 4, 4);
+            dataGridView1.Location = new Point(10, 54);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(904, 569);
+            dataGridView1.Size = new Size(660, 341);
             dataGridView1.TabIndex = 7;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             // 
@@ -936,16 +919,16 @@
             // 
             // EmployeeForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1638, 1048);
+            ClientSize = new Size(827, 637);
             Controls.Add(dataGridView1);
             Controls.Add(panel1);
             Controls.Add(label1);
             Controls.Add(delete);
             Controls.Add(edit);
             Controls.Add(add);
-            Margin = new Padding(4, 2, 4, 2);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "EmployeeForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Справочник сотрудников";

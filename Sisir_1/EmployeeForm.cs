@@ -11,7 +11,7 @@ namespace Sisir_1
         public ProjectForm projectForm;
         public Dictionary<int, int?> temporarySkills;
 
-        public EmployeeForm (ProjectForm form, string mode_)
+        public EmployeeForm(ProjectForm form, string mode_)
         {
             this.projectForm = form;
             this.mode = mode_;
@@ -22,11 +22,9 @@ namespace Sisir_1
             name.Text = string.Empty;
             surname.Text = string.Empty;
             patronymic.Text = string.Empty;
-            birthday.Value = DateTime.Today;
             series.Text = string.Empty;
             number.Text = string.Empty;
             issued_by.Text = string.Empty;
-            issue_date.Value = DateTime.Today;
             reegistration_address.Text = string.Empty;
             residential_address.Text = string.Empty;
             phone.Text = string.Empty;
@@ -34,6 +32,12 @@ namespace Sisir_1
             email.Text = string.Empty;
             position_id.SelectedIndex = -1;
             level_id.SelectedIndex = -1;
+            var datePickers = new[] { birthday, issue_date };
+            foreach (var datePicker in datePickers)
+            {
+                datePicker.Format = DateTimePickerFormat.Custom;
+                datePicker.CustomFormat = " "; // Устанавливаем пустой формат по умолчанию
+            }
 
         }
         public void UpdateSkills(int? id = null)
@@ -159,10 +163,12 @@ namespace Sisir_1
                     name.Text = record.Name;
                     surname.Text = record.Surname;
                     patronymic.Text = record.Patronymic;
+                    birthday.CustomFormat = "dd.MM.yyyy";
                     birthday.Value = record.Birthdate.ToDateTime(TimeOnly.MinValue);
                     series.Text = record.PassportSeries;
                     number.Text = record.PassportNumber;
                     issued_by.Text = record.IssuedBy;
+                    issue_date.CustomFormat = "dd.MM.yyyy";
                     issue_date.Value = record.IssueDate.ToDateTime(TimeOnly.MinValue);
                     reegistration_address.Text = record.RegistrationAddress;
                     residential_address.Text = record.ResidenceAddress;
@@ -381,11 +387,11 @@ namespace Sisir_1
 
                     }
                 }
-                
+
                 currentId = 0;
                 ClearInputs();
                 ShowTable();
-                if (projectForm != null&&mode=="responsible")
+                if (projectForm != null && mode == "responsible")
                 {
                     projectForm.UpdateResponsibleCombobox(id);
                 }
@@ -414,6 +420,13 @@ namespace Sisir_1
         private void Employee_Load_1(object sender, EventArgs e)
         {
             FillTable();
+            var datePickers = new[] { birthday, issue_date };
+            foreach (var datePicker in datePickers)
+            {
+                datePicker.Format = DateTimePickerFormat.Custom;
+                datePicker.CustomFormat = " "; // Устанавливаем пустой формат по умолчанию
+                datePicker.ValueChanged += UniversalDateTimePicker_ValueChanged;
+            }
         }
 
 
@@ -469,12 +482,21 @@ namespace Sisir_1
 
                     if (employeeToDelete != null)
                     {
-
-                        context.Employees.Remove(employeeToDelete);
-                        context.SaveChanges();
+                        try
+                        {
+                            context.Employees.Remove(employeeToDelete);
+                            context.SaveChanges();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Данного сотрудника невозможно удалить, так как он задействован уже задействован в проектах", "Ошибка");
+                        }
+                          
+                       
+                        
                     }
                 }
-                if (projectForm != null&&mode=="responsible")
+                if (projectForm != null && mode == "responsible")
                 {
                     projectForm.UpdateResponsibleCombobox();
                 }
@@ -483,7 +505,6 @@ namespace Sisir_1
                     projectForm.UpdateTeam();
                 }
 
-                MessageBox.Show("Объект успешно удален.");
                 FillTable();
             }
             else
@@ -536,6 +557,19 @@ namespace Sisir_1
 
                 }
             }
+        }
+        private void UniversalDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            if (sender is DateTimePicker dateTimePicker)
+            {
+                // Устанавливаем формат для отображения выбранной даты
+                dateTimePicker.CustomFormat = "dd.MM.yyyy"; // Ваш желаемый формат
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

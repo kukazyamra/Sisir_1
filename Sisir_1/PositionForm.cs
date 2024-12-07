@@ -179,9 +179,16 @@ namespace Sisir_1
 
                     if (positionToDelete != null)
                     {
-
-                        context.Positions.Remove(positionToDelete);
-                        context.SaveChanges();
+                        try
+                        {
+                            context.Positions.Remove(positionToDelete);
+                            context.SaveChanges();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Данную должность невозможно удалить, так как есть сотрудники с этой должностью", "Ошибка");
+                        }
+                        
                     }
                 }
 

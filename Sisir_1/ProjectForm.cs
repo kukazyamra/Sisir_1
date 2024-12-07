@@ -1,9 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Sisir_1.Data;
+﻿using Sisir_1.Data;
 using System.Data;
-using System.Windows.Forms;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Sisir_1
 {
@@ -16,10 +12,13 @@ namespace Sisir_1
             name.Text = string.Empty;
             description.Text = string.Empty;
             responsible_id.SelectedIndex = -1;
-            start_date_fact.Value = DateTime.Today;
-            start_date_plan.Value = DateTime.Today;
-            finish_date_plan.Value = DateTime.Today;
-            finish_date_fact.Value = DateTime.Today;
+            var datePickers = new[] { start_date_plan, start_date_fact, finish_date_fact, finish_date_plan };
+            foreach (var datePicker in datePickers)
+            {
+                datePicker.Format = DateTimePickerFormat.Custom;
+                datePicker.CustomFormat = " "; // Устанавливаем пустой формат по умолчанию
+            }
+
             creation_date.Value = DateTime.Today;
         }
 
@@ -47,11 +46,31 @@ namespace Sisir_1
                 dataGridView1.Columns[0].Visible = false; // Скрываем первый столбец
                 dataGridView1.Columns["Name"].HeaderText = "Название"; // Название проекта
                 dataGridView1.Columns["Description"].HeaderText = "Описание"; // Описание проекта
+                dataGridView1.Columns["Description"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dataGridView1.Columns["Description"].Width = 300;
+
+                // Устанавливаем фиксированную ширину для этой колонки
+
                 dataGridView1.Columns["CreationDate"].HeaderText = "Дата создания"; // Дата создания
+                dataGridView1.Columns["CreationDate"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dataGridView1.Columns["CreationDate"].Width = 80;
                 dataGridView1.Columns["StartDatePlan"].HeaderText = "Дата начала (план)"; // Плановая дата начала
                 dataGridView1.Columns["StartDateFact"].HeaderText = "Данача начала (факт)"; // Фактическая дата начала
                 dataGridView1.Columns["EndDatePlan"].HeaderText = "Дата завершения (план)"; // Плановая дата окончания
                 dataGridView1.Columns["EndDateFact"].HeaderText = "Дата завершения (факт)"; // Фактическая дата окончания
+
+                dataGridView1.Columns["StartDatePlan"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dataGridView1.Columns["StartDatePlan"].Width = 80;
+
+                dataGridView1.Columns["StartDateFact"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dataGridView1.Columns["StartDateFact"].Width = 80;
+
+                dataGridView1.Columns["EndDatePlan"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dataGridView1.Columns["EndDatePlan"].Width = 80;
+
+                dataGridView1.Columns["EndDateFact"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dataGridView1.Columns["EndDateFact"].Width = 80;
+
 
             }
             dataGridView1.ClearSelection();
@@ -61,7 +80,7 @@ namespace Sisir_1
         private void ShowInputs()
         {
 
-         
+
             // Пустой формат
             panel1.Visible = true;
             dataGridView1.Visible = false;
@@ -80,15 +99,18 @@ namespace Sisir_1
                     description.Text = record.Description;
                     creation_date.Value = record.CreationDate.ToDateTime(TimeOnly.MinValue);
                     start_date_plan.Value = record.StartDatePlan.ToDateTime(TimeOnly.MinValue);
+                    start_date_plan.CustomFormat = "dd.MM.yyyy";
                     if (record.StartDateFact.HasValue)
                     {
+                        start_date_fact.CustomFormat = "dd.MM.yyyy";
                         start_date_fact.Value = record.StartDateFact.Value.ToDateTime(TimeOnly.MinValue);
                     }
 
                     finish_date_plan.Value = record.EndDatePlan.ToDateTime(TimeOnly.MinValue);
-
+                    finish_date_plan.CustomFormat = "dd.MM.yyyy";
                     if (record.EndDateFact.HasValue)
                     {
+                        finish_date_fact.CustomFormat = "dd.MM.yyyy";
                         finish_date_fact.Value = record.EndDateFact.Value.ToDateTime(TimeOnly.MinValue);
                     }
                     int responsibleId = context.ProjectEmployees
@@ -120,7 +142,7 @@ namespace Sisir_1
         }
         private bool Validate()
         {
-            var fields = new Control[] { name, description, creation_date, responsible_id, start_date_fact, start_date_plan, finish_date_fact, finish_date_plan };
+            var fields = new Control[] { name, description, creation_date, responsible_id, finish_date_plan, start_date_plan };
 
             foreach (var field in fields)
             {
@@ -222,7 +244,6 @@ namespace Sisir_1
                 {
                     if (currentId != 0)
                     {
-                        MessageBox.Show("edit");
                         var recordToUpdate = context.Projects.SingleOrDefault(s => s.Id == currentId);
 
                         if (recordToUpdate != null)
@@ -233,8 +254,9 @@ namespace Sisir_1
                             recordToUpdate.CreationDate = DateOnly.FromDateTime(creation_date.Value);
                             recordToUpdate.StartDatePlan = DateOnly.FromDateTime(start_date_plan.Value);
                             recordToUpdate.EndDatePlan = DateOnly.FromDateTime(finish_date_plan.Value);
-                            recordToUpdate.EndDateFact = DateOnly.FromDateTime(finish_date_plan.Value);
-                            recordToUpdate.StartDateFact = DateOnly.FromDateTime(start_date_fact.Value);
+                            if (!string.IsNullOrWhiteSpace(finish_date_fact.Text)) { recordToUpdate.EndDateFact = DateOnly.FromDateTime(finish_date_fact.Value); }
+                            if (!string.IsNullOrWhiteSpace(start_date_fact.Text)) { recordToUpdate.StartDateFact = DateOnly.FromDateTime(start_date_fact.Value); }
+
 
                             var old_responsible = context.ProjectEmployees.Where(e => e.ProjectId == recordToUpdate.Id && e.IsResponsible == true).ToList();
                             context.ProjectEmployees.RemoveRange(old_responsible);
@@ -338,6 +360,13 @@ namespace Sisir_1
 
         private void Project_Load(object sender, EventArgs e)
         {
+            var datePickers = new[] { start_date_plan, start_date_fact, finish_date_fact, finish_date_plan };
+            foreach (var datePicker in datePickers)
+            {
+                datePicker.Format = DateTimePickerFormat.Custom;
+                datePicker.CustomFormat = " "; // Устанавливаем пустой формат по умолчанию
+                datePicker.ValueChanged += UniversalDateTimePicker_ValueChanged;
+            }
             FillTable();
         }
 
@@ -357,7 +386,35 @@ namespace Sisir_1
 
         private void delete_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                var selectedRow = dataGridView1.SelectedRows[0];
+                int projId = Convert.ToInt32(selectedRow.Cells[0].Value);
+                using (var context = new HrDepartmentContext())
+                {
 
+                    var projToDelete = context.Projects.SingleOrDefault(s => s.Id == projId);
+
+                    if (projToDelete != null)
+                    {
+                        try
+                        {
+                            context.Projects.Remove(projToDelete);
+                            context.SaveChanges();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Данный проект невозможно удалить, так как для него уже собрана команда", "Ошибка");
+                        }        
+                    }
+                }
+
+                FillTable();
+            }
+            else
+            {
+                MessageBox.Show("Пожалуйста, выберите строку для удаления.");
+            }
         }
 
         private void team_remove_Click(object sender, EventArgs e)
@@ -375,6 +432,13 @@ namespace Sisir_1
             }
         }
 
-        
+        private void UniversalDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            if (sender is DateTimePicker dateTimePicker)
+            {
+                // Устанавливаем формат для отображения выбранной даты
+                dateTimePicker.CustomFormat = "dd.MM.yyyy"; // Ваш желаемый формат
+            }
+        }
     }
 }

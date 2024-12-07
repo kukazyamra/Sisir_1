@@ -146,9 +146,15 @@ namespace Sisir_1
 
                     if (skillToDelete != null)
                     {
-
-                        context.Skills.Remove(skillToDelete);
-                        context.SaveChanges();
+                        try
+                        {
+                            context.Skills.Remove(skillToDelete);
+                            context.SaveChanges();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Данный навык невозможно удалить, так как он присвоен некоторым сотрудникам", "Ошибка");
+                        }
                     }
                 }
                 if (employeeForm != null)
