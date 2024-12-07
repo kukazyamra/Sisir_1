@@ -81,7 +81,10 @@ namespace Sisir_1
         {
 
 
-            // Пустой формат
+            label4.Visible = false;
+            label7.Visible = false;
+            start_date_fact.Visible = false;
+            finish_date_fact.Visible = false;
             panel1.Visible = true;
             dataGridView1.Visible = false;
             add.Enabled = false;
@@ -94,6 +97,10 @@ namespace Sisir_1
             {
                 using (var context = new HrDepartmentContext())
                 {
+                    label4.Visible = true;
+                    label7.Visible = true;
+                    start_date_fact.Visible = true;
+                    finish_date_fact.Visible = true;
                     var record = context.Projects.SingleOrDefault(s => s.Id == currentId);
                     name.Text = record.Name;
                     description.Text = record.Description;
@@ -177,7 +184,8 @@ namespace Sisir_1
                     var record = context.Employees.Find(member);
                     if (record != null)
                     {
-                        char firstNameInitial = record.Name.Length > 0 ? Name[0] : ' ';
+                        char firstNameInitial = record.Name[0];
+                        
                         char patronymicInitial = record.Patronymic?.Length > 0 ? record.Patronymic[0] : ' ';
 
                         // Get the Position name (assuming Position has a property called Name)
@@ -405,7 +413,7 @@ namespace Sisir_1
                         catch
                         {
                             MessageBox.Show("Данный проект невозможно удалить, так как для него уже собрана команда", "Ошибка");
-                        }        
+                        }
                     }
                 }
 
@@ -439,6 +447,23 @@ namespace Sisir_1
                 // Устанавливаем формат для отображения выбранной даты
                 dateTimePicker.CustomFormat = "dd.MM.yyyy"; // Ваш желаемый формат
             }
+        }
+
+        private void responsible_id_SelectedValueChanged(object sender, EventArgs e)
+        {
+            var selectedEmployee = responsible_id.SelectedItem as Employee;
+            if (temporaryTeam!=null)
+            {
+                for (int i = 0; i < temporaryTeam.Count; i++)
+                {
+                    if (selectedEmployee!=null && temporaryTeam[i] == selectedEmployee.Id)
+                    {
+                        temporaryTeam.RemoveAt(i);
+                        UpdateTeam();
+                    }
+                }
+            }
+           
         }
     }
 }

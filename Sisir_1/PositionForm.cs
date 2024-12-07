@@ -142,6 +142,7 @@ namespace Sisir_1
                 if (employeeForm != null)
                 {
                     employeeForm.UpdatePositionsCombobox(id);
+                    this.Close();
                 }
             }
             else

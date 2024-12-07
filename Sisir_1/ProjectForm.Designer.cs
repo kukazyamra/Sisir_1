@@ -355,6 +355,7 @@
             responsible_id.Name = "responsible_id";
             responsible_id.Size = new Size(337, 28);
             responsible_id.TabIndex = 8;
+            responsible_id.SelectedValueChanged += responsible_id_SelectedValueChanged;
             // 
             // label6
             // 
@@ -449,7 +450,7 @@
         private Button button5;
         private Button responsible___;
         private Label label8;
-        private ComboBox responsible_id;
+        public ComboBox responsible_id;
         private Button button3;
         private GroupBox groupBox1;
         private TextBox name;

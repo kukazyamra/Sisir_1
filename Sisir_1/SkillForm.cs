@@ -160,6 +160,7 @@ namespace Sisir_1
                 if (employeeForm != null)
                 {
                     employeeForm.UpdateSkills();
+                    this.Close();
                 }
                 FillTable();
             }
@@ -203,6 +204,7 @@ namespace Sisir_1
                 {
                     int id = Convert.ToInt32(idValue);
                     var form = new Skill_level(employeeForm, id);
+                    this.Close();
                     form.Show();
                 }
 

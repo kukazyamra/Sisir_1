@@ -133,6 +133,7 @@ namespace Sisir_1
                 if (employeeForm != null)
                 {
                     employeeForm.UpdateLevelsCombobox(id);
+                    this.Close();
                 }
             }
             else

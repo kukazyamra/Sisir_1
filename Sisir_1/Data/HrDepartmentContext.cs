@@ -105,7 +105,7 @@ public partial class HrDepartmentContext : DbContext
 
             entity.HasOne(d => d.Employee).WithMany(p => p.EmployeeSkills)
                 .HasForeignKey(d => d.EmployeeId)
-                .OnDelete(DeleteBehavior.Restrict)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("fk_employee");
 
             entity.HasOne(d => d.Skill).WithMany(p => p.EmployeeSkills)

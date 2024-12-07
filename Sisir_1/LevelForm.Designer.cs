@@ -116,7 +116,7 @@
             // cancel
             // 
             cancel.Font = new Font("Segoe UI", 9F);
-            cancel.Location = new Point(307, 182);
+            cancel.Location = new Point(308, 140);
             cancel.Margin = new Padding(3, 2, 3, 2);
             cancel.Name = "cancel";
             cancel.Size = new Size(90, 30);
@@ -128,7 +128,7 @@
             // ok
             // 
             ok.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            ok.Location = new Point(197, 182);
+            ok.Location = new Point(194, 140);
             ok.Margin = new Padding(3, 2, 3, 2);
             ok.Name = "ok";
             ok.Size = new Size(90, 30);
@@ -194,7 +194,7 @@
             panel1.Location = new Point(14, 48);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(401, 234);
+            panel1.Size = new Size(401, 198);
             panel1.TabIndex = 19;
             panel1.Visible = false;
             // 
@@ -202,7 +202,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(561, 384);
+            ClientSize = new Size(561, 367);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);
             Controls.Add(label1);

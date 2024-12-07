@@ -548,9 +548,32 @@ namespace Sisir_1
                     }
                     if (mode == "team")
                     {
-                        projectForm.temporaryTeam.Add(id);
-                        projectForm.UpdateTeam();
-                        this.Close();
+
+                        var selectedEmployee = projectForm.responsible_id.SelectedItem as Employee;
+                        if (selectedEmployee != null)
+                        {
+                            if (id == selectedEmployee.Id)
+                            {
+                                MessageBox.Show("Этот сотрудник уже есть в команде (ответственный)");
+                                return;
+                            }
+                        }
+     
+                        if (projectForm.temporaryTeam.IndexOf(id) == -1)
+                        {
+                            projectForm.temporaryTeam.Add(id);
+                            projectForm.UpdateTeam();
+                            this.Close();
+
+                        }
+                        else
+                        {
+
+                            MessageBox.Show("Этот сотрудник уже есть в команде");
+                        }
+
+
+                       
 
                     }
 

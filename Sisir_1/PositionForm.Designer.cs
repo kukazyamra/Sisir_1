@@ -162,7 +162,7 @@
             // cancel
             // 
             cancel.Font = new Font("Segoe UI", 9F);
-            cancel.Location = new Point(265, 154);
+            cancel.Location = new Point(266, 140);
             cancel.Margin = new Padding(3, 2, 3, 2);
             cancel.Name = "cancel";
             cancel.Size = new Size(90, 30);
@@ -174,7 +174,7 @@
             // ok
             // 
             ok.Font = new Font("Segoe UI", 9F);
-            ok.Location = new Point(170, 154);
+            ok.Location = new Point(170, 140);
             ok.Margin = new Padding(3, 2, 3, 2);
             ok.Name = "ok";
             ok.Size = new Size(90, 30);
@@ -194,7 +194,7 @@
             panel1.Location = new Point(14, 58);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(379, 208);
+            panel1.Size = new Size(379, 186);
             panel1.TabIndex = 25;
             panel1.Visible = false;
             // 
