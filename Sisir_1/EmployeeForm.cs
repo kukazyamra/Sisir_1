@@ -394,10 +394,12 @@ namespace Sisir_1
                 if (projectForm != null && mode == "responsible")
                 {
                     projectForm.UpdateResponsibleCombobox(id);
+                    this.Close();
                 }
                 if (projectForm != null && mode == "team")
                 {
                     projectForm.UpdateTeam();
+                    this.Close();
                 }
             }
             else
@@ -571,9 +573,6 @@ namespace Sisir_1
 
                             MessageBox.Show("Этот сотрудник уже есть в команде");
                         }
-
-
-                       
 
                     }
 
