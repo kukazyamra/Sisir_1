@@ -203,9 +203,21 @@ namespace Sisir_1
             {
                 if (string.IsNullOrWhiteSpace(field.Text))
                 {
+                    MessageBox.Show("Вы заполнили не все обязательные поля формы!", "Ошибка");
                     return false;
                 }
             }
+            if (series.Text.Length != 4)
+            {
+                MessageBox.Show("В серии паспорта должно быть 4 цифры", "Ошибка");
+                return false;
+            }
+            if (number.Text.Length != 6)
+            {
+                MessageBox.Show("В номере паспорта должно быть 6 цифр", "Ошибка");
+                return false;
+            }
+
             return true;
 
         }
@@ -401,10 +413,6 @@ namespace Sisir_1
                     projectForm.UpdateTeam();
                     this.Close();
                 }
-            }
-            else
-            {
-                MessageBox.Show("Вы заполнили не все обязательные поля формы!", "Ошибка");
             }
 
         }

@@ -125,7 +125,7 @@
             // cancel
             // 
             cancel.Font = new Font("Segoe UI", 9F);
-            cancel.Location = new Point(281, 130);
+            cancel.Location = new Point(277, 132);
             cancel.Margin = new Padding(3, 2, 3, 2);
             cancel.Name = "cancel";
             cancel.Size = new Size(90, 30);
@@ -137,7 +137,7 @@
             // ok
             // 
             ok.Font = new Font("Segoe UI", 9F);
-            ok.Location = new Point(184, 130);
+            ok.Location = new Point(180, 132);
             ok.Margin = new Padding(3, 2, 3, 2);
             ok.Name = "ok";
             ok.Size = new Size(90, 30);
@@ -163,7 +163,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(755, 587);
+            ClientSize = new Size(543, 333);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);
             Controls.Add(label1);

@@ -124,7 +124,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(789, 456);
+            dataGridView1.Size = new Size(789, 584);
             dataGridView1.TabIndex = 10;
             // 
             // panel1
@@ -133,9 +133,9 @@
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(groupBox1);
-            panel1.Location = new Point(5, 55);
+            panel1.Location = new Point(12, 59);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 677);
+            panel1.Size = new Size(800, 664);
             panel1.TabIndex = 11;
             panel1.Visible = false;
             // 
@@ -355,7 +355,6 @@
             responsible_id.Name = "responsible_id";
             responsible_id.Size = new Size(337, 28);
             responsible_id.TabIndex = 8;
-            responsible_id.SelectedValueChanged += responsible_id_SelectedValueChanged;
             // 
             // label6
             // 

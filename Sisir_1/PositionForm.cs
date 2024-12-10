@@ -115,7 +115,7 @@ namespace Sisir_1
                         if (recordToUpdate != null)
                         {
                             recordToUpdate.Name = name.Text;
-                            recordToUpdate.Salary = decimal.Parse(salary.Text);
+                            recordToUpdate.Salary = decimal.Parse(salary.Text.Replace('.',','));
                             context.SaveChanges();
                             id = recordToUpdate.Id;
                         }
@@ -126,7 +126,7 @@ namespace Sisir_1
                     }
                     else
                     {
-                        var position = new Position { Name = name.Text, Salary = decimal.Parse(salary.Text) };
+                        var position = new Position { Name = name.Text, Salary = decimal.Parse(salary.Text.Replace('.', ',')) };
 
                         // Добавляем новый навык в таблицу Skills
                         context.Positions.Add(position);

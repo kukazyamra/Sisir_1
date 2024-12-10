@@ -104,7 +104,7 @@ namespace Sisir_1
                         if (recordToUpdate != null)
                         {
                             recordToUpdate.Name = name.Text;
-                            recordToUpdate.Coefficient = decimal.Parse(coefficient.Text);
+                            recordToUpdate.Coefficient = decimal.Parse(coefficient.Text.Replace('.',','));
                             context.SaveChanges();
                             id = recordToUpdate.Id;
 
@@ -116,7 +116,7 @@ namespace Sisir_1
                     }
                     else
                     {
-                        var level = new Level { Name = name.Text, Coefficient = decimal.Parse(coefficient.Text) };
+                        var level = new Level { Name = name.Text, Coefficient = decimal.Parse(coefficient.Text.Replace('.',',')) };
 
                         // Добавляем новый навык в таблицу Skills
                         context.Levels.Add(level);

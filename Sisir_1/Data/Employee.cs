@@ -48,13 +48,14 @@ public partial class Employee
     {
         // Get the first letter of the Name and Patronymic (if not null)
         char firstNameInitial = Name.Length > 0 ? Name[0] : ' ';
-        char patronymicInitial = Patronymic?.Length > 0 ? Patronymic[0] : ' ';
+        char? patronymicInitial = Patronymic?.Length > 0 ? Patronymic[0] : null;
 
         // Get the Position name (assuming Position has a property called Name)
         string positionName = Position != null ? Position.ToString() : "Unknown Position";
-
+        if (patronymicInitial != null) return $"{Surname} {firstNameInitial}.{patronymicInitial}. - {positionName}";
+        else return $"{Surname} {firstNameInitial}. - {positionName}";
         // Construct the desired format
-        return $"{Surname} {firstNameInitial}.{patronymicInitial}. - {positionName}";
+
     }
 
 }

@@ -149,12 +149,32 @@ namespace Sisir_1
         }
         private bool Validate()
         {
-            var fields = new Control[] { name, description, creation_date, responsible_id, finish_date_plan, start_date_plan };
+            var fields = new Control[] { name, description, creation_date, finish_date_plan, start_date_plan };
 
             foreach (var field in fields)
             {
                 if (string.IsNullOrWhiteSpace(field.Text))
                 {
+                    MessageBox.Show("Вы заполнили не все обязательные поля формы", "Ошибка");
+                    return false;
+                }
+            }
+            if (finish_date_plan.Value<start_date_plan.Value)
+            {
+                MessageBox.Show("Плановая дата завершения не может быть раньше плановой даты начала", "Ошибка");
+                return false;
+            }
+
+            if (!string.IsNullOrWhiteSpace(finish_date_fact.Text))
+            {
+                if (string.IsNullOrWhiteSpace(start_date_fact.Text))
+                {
+                    MessageBox.Show("Вы указали фактическую дату завершения, но не указали фактическую дату начала", "Ошибка");
+                    return false;
+                }
+                if (finish_date_fact.Value<start_date_fact.Value)
+                {
+                    MessageBox.Show("Фактическая дата завершения не может быть раньше фактической даты начала", "Ошибка");
                     return false;
                 }
             }
@@ -186,13 +206,14 @@ namespace Sisir_1
                     {
                         char firstNameInitial = record.Name[0];
                         
-                        char patronymicInitial = record.Patronymic?.Length > 0 ? record.Patronymic[0] : ' ';
+                        char? patronymicInitial = record.Patronymic?.Length > 0 ? record.Patronymic[0] : null;
+                        if (patronymicInitial != null) dataGridView2.Rows.Add($"{record.Surname} {firstNameInitial}.{patronymicInitial}.", record.Position, record.Id);
+                        else dataGridView2.Rows.Add($"{record.Surname} {firstNameInitial}.", record.Position, record.Id);
 
                         // Get the Position name (assuming Position has a property called Name)
 
                         // Construct the desired format
 
-                        dataGridView2.Rows.Add($"{record.Surname} {firstNameInitial}.{patronymicInitial}.", record.Position, record.Id);
                     }
 
                 }
@@ -268,31 +289,38 @@ namespace Sisir_1
 
                             var old_responsible = context.ProjectEmployees.Where(e => e.ProjectId == recordToUpdate.Id && e.IsResponsible == true).ToList();
                             context.ProjectEmployees.RemoveRange(old_responsible);
-
-                            var employeeId = ((Employee)responsible_id.SelectedItem).Id;
-                            var responsible = new ProjectEmployee
-                            {
-                                EmployeeId = employeeId,
-                                ProjectId = recordToUpdate.Id,
-                                IsResponsible = true
-                            };
-                            context.ProjectEmployees.Add(responsible);
-                            context.SaveChanges();
-
                             var old_team = context.ProjectEmployees.Where(e => e.ProjectId == recordToUpdate.Id && e.IsResponsible == false).ToList();
                             context.ProjectEmployees.RemoveRange(old_team);
                             context.SaveChanges();
+                            var employeeId = -1000;
+                            if (!string.IsNullOrWhiteSpace(responsible_id.Text))
+                            {
+                                employeeId = ((Employee)responsible_id.SelectedItem).Id;
+                                var responsible = new ProjectEmployee
+                                {
+                                    EmployeeId = employeeId,
+                                    ProjectId = recordToUpdate.Id,
+                                    IsResponsible = true
+                                };
+                                context.ProjectEmployees.Add(responsible);
+                                context.SaveChanges();
+                            }
+                               
                             foreach (var member in temporaryTeam)
                             {
-                                var projectEmployee = new ProjectEmployee
+                                if (member != employeeId)
                                 {
-                                    EmployeeId = member,
-                                    ProjectId = recordToUpdate.Id,
-                                    IsResponsible = false
-                                };
+                                    var projectEmployee = new ProjectEmployee
+                                    {
+                                        EmployeeId = member,
+                                        ProjectId = recordToUpdate.Id,
+                                        IsResponsible = false
+                                    };
 
-                                context.ProjectEmployees.Add(projectEmployee);
-                                context.SaveChanges();
+                                    context.ProjectEmployees.Add(projectEmployee);
+                                    context.SaveChanges();
+                                }
+
                             }
                         }
                         else
@@ -313,26 +341,34 @@ namespace Sisir_1
                         };
                         context.Projects.Add(project);
                         context.SaveChanges();
-                        var employeeId = ((Employee)responsible_id.SelectedItem).Id;
-                        var responsible = new ProjectEmployee
+                        var employeeId = -100;
+                        if (!string.IsNullOrWhiteSpace(responsible_id.Text))
                         {
-                            EmployeeId = employeeId,
-                            ProjectId = project.Id,
-                            IsResponsible = true
-                        };
-                        context.ProjectEmployees.Add(responsible);
-                        context.SaveChanges();
+                            employeeId = ((Employee)responsible_id.SelectedItem).Id;
+                            var responsible = new ProjectEmployee
+                            {
+                                EmployeeId = employeeId,
+                                ProjectId = project.Id,
+                                IsResponsible = true
+                            };
+                            context.ProjectEmployees.Add(responsible);
+                            context.SaveChanges();
+                        }
+                        
                         foreach (var member in temporaryTeam)
                         {
-                            var projectEmployee = new ProjectEmployee
+                            if (member != employeeId)
                             {
-                                EmployeeId = member,
-                                ProjectId = project.Id,
-                                IsResponsible = false
-                            };
+                                var projectEmployee = new ProjectEmployee
+                                {
+                                    EmployeeId = member,
+                                    ProjectId = project.Id,
+                                    IsResponsible = false
+                                };
 
-                            context.ProjectEmployees.Add(projectEmployee);
-                            context.SaveChanges();
+                                context.ProjectEmployees.Add(projectEmployee);
+                                context.SaveChanges();
+                            }
                         }
 
                     }
@@ -340,10 +376,6 @@ namespace Sisir_1
                 currentId = 0;
                 ClearInputs();
                 ShowTable();
-            }
-            else
-            {
-                MessageBox.Show("Вы заполнили не все обязательные поля формы!", "Ошибка");
             }
         }
 
@@ -412,7 +444,7 @@ namespace Sisir_1
                         }
                         catch
                         {
-                            MessageBox.Show("Данный проект невозможно удалить, так как для него уже собрана команда", "Ошибка");
+                            MessageBox.Show("Данный проект невозможно удалить, так как за ним уже закреплены сотрудники", "Ошибка");
                         }
                     }
                 }
@@ -449,21 +481,6 @@ namespace Sisir_1
             }
         }
 
-        private void responsible_id_SelectedValueChanged(object sender, EventArgs e)
-        {
-            var selectedEmployee = responsible_id.SelectedItem as Employee;
-            if (temporaryTeam!=null)
-            {
-                for (int i = 0; i < temporaryTeam.Count; i++)
-                {
-                    if (selectedEmployee!=null && temporaryTeam[i] == selectedEmployee.Id)
-                    {
-                        temporaryTeam.RemoveAt(i);
-                        UpdateTeam();
-                    }
-                }
-            }
-           
-        }
+        
     }
 }
