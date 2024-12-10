@@ -1,5 +1,6 @@
 ﻿using Sisir_1.Data;
 using System.Data;
+using System.Diagnostics;
 
 namespace Sisir_1
 {
@@ -86,6 +87,7 @@ namespace Sisir_1
 
         private void add_Click(object sender, EventArgs e)
         {
+        
             ShowInputs();
         }
 
