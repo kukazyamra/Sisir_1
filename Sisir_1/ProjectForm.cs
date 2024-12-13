@@ -159,7 +159,7 @@ namespace Sisir_1
                     return false;
                 }
             }
-            if (finish_date_plan.Value<start_date_plan.Value)
+            if (finish_date_plan.Value < start_date_plan.Value)
             {
                 MessageBox.Show("Плановая дата завершения не может быть раньше плановой даты начала", "Ошибка");
                 return false;
@@ -172,7 +172,7 @@ namespace Sisir_1
                     MessageBox.Show("Вы указали фактическую дату завершения, но не указали фактическую дату начала", "Ошибка");
                     return false;
                 }
-                if (finish_date_fact.Value<start_date_fact.Value)
+                if (finish_date_fact.Value < start_date_fact.Value)
                 {
                     MessageBox.Show("Фактическая дата завершения не может быть раньше фактической даты начала", "Ошибка");
                     return false;
@@ -205,7 +205,7 @@ namespace Sisir_1
                     if (record != null)
                     {
                         char firstNameInitial = record.Name[0];
-                        
+
                         char? patronymicInitial = record.Patronymic?.Length > 0 ? record.Patronymic[0] : null;
                         if (patronymicInitial != null) dataGridView2.Rows.Add($"{record.Surname} {firstNameInitial}.{patronymicInitial}.", record.Position, record.Id);
                         else dataGridView2.Rows.Add($"{record.Surname} {firstNameInitial}.", record.Position, record.Id);
@@ -305,7 +305,7 @@ namespace Sisir_1
                                 context.ProjectEmployees.Add(responsible);
                                 context.SaveChanges();
                             }
-                               
+
                             foreach (var member in temporaryTeam)
                             {
                                 if (member != employeeId)
@@ -354,7 +354,7 @@ namespace Sisir_1
                             context.ProjectEmployees.Add(responsible);
                             context.SaveChanges();
                         }
-                        
+
                         foreach (var member in temporaryTeam)
                         {
                             if (member != employeeId)
@@ -480,7 +480,21 @@ namespace Sisir_1
                 dateTimePicker.CustomFormat = "dd.MM.yyyy"; // Ваш желаемый формат
             }
         }
-
-        
+       
+        private void responsible_id_SelectedValueChanged_1(object sender, EventArgs e)
+        {
+            var selectedEmployee = responsible_id.SelectedItem as Employee;
+            if (temporaryTeam != null)
+            {
+                for (int i = 0; i < temporaryTeam.Count; i++)
+                {
+                    if (selectedEmployee != null && temporaryTeam[i] == selectedEmployee.Id)
+                    {
+                        temporaryTeam.RemoveAt(i);
+                        UpdateTeam();
+                    }
+                }
+            }
+        }
     }
 }

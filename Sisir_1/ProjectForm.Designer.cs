@@ -355,6 +355,7 @@
             responsible_id.Name = "responsible_id";
             responsible_id.Size = new Size(337, 28);
             responsible_id.TabIndex = 8;
+            responsible_id.SelectedValueChanged += responsible_id_SelectedValueChanged_1;
             // 
             // label6
             // 

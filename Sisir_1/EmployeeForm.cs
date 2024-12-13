@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Sisir_1.Data;
+using Sisir_1.Reports;
 
 namespace Sisir_1
 {
@@ -9,11 +10,18 @@ namespace Sisir_1
         private int currentId = 0;
         private string mode;
         public ProjectForm projectForm;
+        public BaseReport reportForm;
         public Dictionary<int, int?> temporarySkills;
 
         public EmployeeForm(ProjectForm form, string mode_)
         {
             this.projectForm = form;
+            this.mode = mode_;
+            InitializeComponent();
+        }
+        public EmployeeForm(BaseReport form, string mode_)
+        {
+            this.reportForm = form;
             this.mode = mode_;
             InitializeComponent();
         }
@@ -336,14 +344,18 @@ namespace Sisir_1
 
                             foreach (var skill in temporarySkills)
                             {
-                                var employeeSkill = new EmployeeSkill
+                                if (context.Skills.Find(skill.Key) != null)
                                 {
-                                    EmployeeId = recordToUpdate.Id,
-                                    SkillId = skill.Key,
-                                    SkillLevel = skill.Value
-                                };
-                                context.EmployeeSkills.Add(employeeSkill);
-                                context.SaveChanges();
+                                    var employeeSkill = new EmployeeSkill
+                                    {
+                                        EmployeeId = recordToUpdate.Id,
+                                        SkillId = skill.Key,
+                                        SkillLevel = skill.Value
+                                    };
+                                    context.EmployeeSkills.Add(employeeSkill);
+                                    context.SaveChanges();
+                                }
+                                
                             }
 
                         }
@@ -413,6 +425,11 @@ namespace Sisir_1
                     projectForm.UpdateTeam();
                     this.Close();
                 }
+                if (reportForm != null && mode == "responsible")
+                {
+                    reportForm.UpdateResponsibleCombobox(id);
+                    this.Close();
+                }
             }
 
         }
@@ -429,6 +446,7 @@ namespace Sisir_1
 
         private void Employee_Load_1(object sender, EventArgs e)
         {
+
             FillTable();
             var datePickers = new[] { birthday, issue_date };
             foreach (var datePicker in datePickers)
@@ -479,8 +497,6 @@ namespace Sisir_1
 
         private void delete_Click(object sender, EventArgs e)
         {
-
-
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 var selectedRow = dataGridView1.SelectedRows[0];
@@ -496,26 +512,28 @@ namespace Sisir_1
                         {
                             context.Employees.Remove(employeeToDelete);
                             context.SaveChanges();
+                            if (projectForm != null && mode == "responsible")
+                            {
+                                projectForm.UpdateResponsibleCombobox();
+                            }
+                            if (reportForm != null && mode == "responsible")
+                            {
+                                reportForm.UpdateResponsibleCombobox();
+                            }
+                            if (projectForm != null && mode == "team")
+                            {
+                                projectForm.UpdateTeam();
+                            }
+                            FillTable();
                         }
                         catch
                         {
                             MessageBox.Show("Данного сотрудника невозможно удалить, так как он задействован уже задействован в проектах", "Ошибка");
                         }
-                          
-                       
-                        
+
                     }
                 }
-                if (projectForm != null && mode == "responsible")
-                {
-                    projectForm.UpdateResponsibleCombobox();
-                }
-                if (projectForm != null && mode == "team")
-                {
-                    projectForm.UpdateTeam();
-                }
 
-                FillTable();
             }
             else
             {
@@ -568,7 +586,7 @@ namespace Sisir_1
                                 return;
                             }
                         }
-     
+
                         if (projectForm.temporaryTeam.IndexOf(id) == -1)
                         {
                             projectForm.temporaryTeam.Add(id);
@@ -587,6 +605,23 @@ namespace Sisir_1
 
                 }
             }
+            if (reportForm != null && e.RowIndex >= 0)
+            {
+                var row = dataGridView1.Rows[e.RowIndex];
+
+                // Предполагаем, что ID хранится в колонке с именем "Id"
+                var idValue = row.Cells["Id"].Value;
+                if (idValue != null)
+                {
+                    int id = Convert.ToInt32(idValue);
+                    if (mode == "responsible")
+                    {
+                        reportForm.UpdateResponsibleCombobox(id);
+                        this.Close();
+                    }
+
+                }
+            }
         }
         private void UniversalDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
@@ -597,9 +632,7 @@ namespace Sisir_1
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
+
     }
 }

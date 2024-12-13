@@ -1,5 +1,7 @@
 ﻿using Sisir_1.Data;
+using Sisir_1.Reports;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Sisir_1
 {
@@ -8,8 +10,14 @@ namespace Sisir_1
         private int currentId = 0;
 
         private EmployeeForm? employeeForm;
+        private SkillReport? skillReportForm;
         public SkillForm()
         {
+            InitializeComponent();
+        }
+        public SkillForm(SkillReport form)
+        {
+            this.skillReportForm = form;
             InitializeComponent();
         }
         public SkillForm(EmployeeForm form)
@@ -95,6 +103,10 @@ namespace Sisir_1
                 {
                     employeeForm.UpdateSkills();
                 }
+                if (skillReportForm != null)
+                {
+                    skillReportForm.UpdateSkills();
+                }
             }
             else
             {
@@ -150,6 +162,17 @@ namespace Sisir_1
                         {
                             context.Skills.Remove(skillToDelete);
                             context.SaveChanges();
+                            if (employeeForm != null)
+                            {
+                                employeeForm.UpdateSkills();
+                               
+                            }
+                            if (skillReportForm != null)
+                            {
+                                skillReportForm.UpdateSkills();
+                               
+                            }
+                            FillTable();
                         }
                         catch
                         {
@@ -157,12 +180,7 @@ namespace Sisir_1
                         }
                     }
                 }
-                if (employeeForm != null)
-                {
-                    employeeForm.UpdateSkills();
-                    this.Close();
-                }
-                FillTable();
+                
             }
             else
             {
@@ -208,6 +226,45 @@ namespace Sisir_1
                     form.Show();
                 }
 
+            }
+            if (skillReportForm != null)
+            {
+                var row = dataGridView1.Rows[e.RowIndex];
+
+                // Предполагаем, что ID хранится в колонке с именем "Id"
+                var idValue = row.Cells["Id"].Value;
+
+                if (idValue != null)
+                {
+                    int id = Convert.ToInt32(idValue);
+                    try
+                    {
+                        if (skillReportForm.temporarySkills.IndexOf(id) == -1)
+                        {
+                            using (var context = new HrDepartmentContext())
+                            {
+                                if (context.Skills.Find(id) != null)
+                                {
+                                    skillReportForm.temporarySkills.Add(id);
+                                    skillReportForm.UpdateSkills();
+                                    this.Close();
+                                }
+                            }
+                                
+                                
+                        }
+                        else MessageBox.Show("Вы уже добавили этот навык", "Ошибка");
+                        
+                    }
+                    catch (InvalidOperationException)
+                    {
+                        MessageBox.Show("Не удалось добавить навык. \nВозможно, вы закрыли форму добавления сотрудников?", "Ошибка");
+                    }
+                    catch (ArgumentException)
+                    {
+                        MessageBox.Show("Вы уже добавли этот навык.", "Ошибка");
+                    }
+                }
             }
         }
     }

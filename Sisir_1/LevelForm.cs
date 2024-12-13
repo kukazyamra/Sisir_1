@@ -174,6 +174,11 @@ namespace Sisir_1
                         {
                             context.Levels.Remove(levelToDelete);
                             context.SaveChanges();
+                            if (employeeForm != null)
+                            {
+                                employeeForm.UpdateLevelsCombobox();
+                            }
+                            FillTable();
                         }
                         catch
                         {
@@ -182,11 +187,7 @@ namespace Sisir_1
 
                     }
                 }
-                if (employeeForm != null)
-                {
-                    employeeForm.UpdateLevelsCombobox();
-                }
-                FillTable();
+
             }
             else
             {

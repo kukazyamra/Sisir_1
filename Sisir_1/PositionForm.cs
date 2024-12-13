@@ -1,4 +1,5 @@
 ﻿using Sisir_1.Data;
+using Sisir_1.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,9 +16,16 @@ namespace Sisir_1
     {
         private int currentId = 0;
         private EmployeeForm? employeeForm;
+        private AvailableReport? reportForm;
+
         public PositionForm(EmployeeForm form)
         {
             this.employeeForm = form;
+            InitializeComponent();
+        }
+        public PositionForm(AvailableReport form)
+        {
+            this.reportForm = form;
             InitializeComponent();
         }
         public PositionForm()
@@ -144,6 +152,11 @@ namespace Sisir_1
                     employeeForm.UpdatePositionsCombobox(id);
                     this.Close();
                 }
+                if (reportForm != null)
+                {
+                    reportForm.UpdatePositionsCombobox(id);
+                    this.Close();
+                }
             }
             else
             {
@@ -184,6 +197,17 @@ namespace Sisir_1
                         {
                             context.Positions.Remove(positionToDelete);
                             context.SaveChanges();
+
+                            if (employeeForm != null)
+                            {
+                                employeeForm.UpdatePositionsCombobox();
+                            }
+                            if (reportForm != null)
+                            {
+                                reportForm.UpdatePositionsCombobox();
+                            }
+
+                            FillTable();
                         }
                         catch
                         {
@@ -193,11 +217,6 @@ namespace Sisir_1
                     }
                 }
 
-                if (employeeForm != null)
-                {
-                    employeeForm.UpdatePositionsCombobox();
-                }
-                FillTable();
             }
             else
             {
@@ -224,6 +243,23 @@ namespace Sisir_1
                 {
                     int id = Convert.ToInt32(idValue);
                     employeeForm.UpdatePositionsCombobox(id);
+                    this.Close();
+
+                    // Здесь можно выполнить любое действие с этим ID
+                }
+            }
+            if (reportForm != null && e.RowIndex >= 0)
+            {
+                // Получаем текущую строку
+                var row = dataGridView1.Rows[e.RowIndex];
+
+                // Предполагаем, что ID хранится в колонке с именем "Id"
+                var idValue = row.Cells["Id"].Value;
+
+                if (idValue != null)
+                {
+                    int id = Convert.ToInt32(idValue);
+                    reportForm.UpdatePositionsCombobox(id);
                     this.Close();
 
                     // Здесь можно выполнить любое действие с этим ID

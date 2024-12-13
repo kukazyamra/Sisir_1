@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Sisir_1.Data;
-
+using Sisir_1.Reports;
 namespace Sisir_1
 {
     public partial class BaseForm : Form
@@ -59,6 +59,31 @@ namespace Sisir_1
 
             // Элемент меню "Отчеты"
             ToolStripMenuItem reportsMenuItem = new ToolStripMenuItem("Отчеты");
+
+   
+
+            ToolStripMenuItem availableReport = new ToolStripMenuItem("Свободные сотрудники");
+            availableReport.Click += (s, e) => OpenForm<AvailableReport>();
+
+            ToolStripMenuItem currentProjects = new ToolStripMenuItem("Проекты в работе");
+            currentProjects.Click += (s, e) => OpenForm<CurrentProjects>();
+
+            ToolStripMenuItem workload = new ToolStripMenuItem("Загруженность сотрудников");
+            workload.Click += (s, e) => OpenForm<WorkloadReport>();
+
+            ToolStripMenuItem skillRep = new ToolStripMenuItem("Поиск по навыкам");
+            skillRep.Click += (s, e) => OpenForm<SkillReport>();
+
+            ToolStripMenuItem responsibleReport = new ToolStripMenuItem("Отчет по ответственным");
+            responsibleReport.Click += (s, e) => OpenForm<ResponsibleReport>();
+
+            reportsMenuItem.DropDownItems.Add(availableReport);
+            reportsMenuItem.DropDownItems.Add(currentProjects);
+            reportsMenuItem.DropDownItems.Add(workload);
+            reportsMenuItem.DropDownItems.Add(skillRep);
+            reportsMenuItem.DropDownItems.Add(responsibleReport);
+
+
 
             // Добавление элемента "Отчеты" в MenuStrip
             menuStrip.Items.Add(reportsMenuItem);
