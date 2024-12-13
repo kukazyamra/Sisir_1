@@ -47,7 +47,7 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(17, 74);
+            dataGridView1.Location = new Point(15, 56);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
@@ -55,7 +55,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(373, 185);
+            dataGridView1.Size = new Size(326, 235);
             dataGridView1.TabIndex = 28;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             // 
@@ -63,19 +63,19 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F);
-            label1.Location = new Point(11, 10);
+            label1.Location = new Point(10, 8);
             label1.Name = "label1";
-            label1.Size = new Size(99, 32);
+            label1.Size = new Size(78, 25);
             label1.TabIndex = 30;
             label1.Text = "Навыки";
             // 
             // delete
             // 
             delete.Font = new Font("Segoe UI", 9F);
-            delete.Location = new Point(410, 178);
+            delete.Location = new Point(359, 134);
             delete.Margin = new Padding(3, 2, 3, 2);
             delete.Name = "delete";
-            delete.Size = new Size(90, 30);
+            delete.Size = new Size(79, 22);
             delete.TabIndex = 29;
             delete.Text = "Удалить";
             delete.UseVisualStyleBackColor = true;
@@ -84,10 +84,10 @@
             // edit
             // 
             edit.Font = new Font("Segoe UI", 9F);
-            edit.Location = new Point(413, 110);
+            edit.Location = new Point(361, 82);
             edit.Margin = new Padding(3, 2, 3, 2);
             edit.Name = "edit";
-            edit.Size = new Size(90, 30);
+            edit.Size = new Size(79, 22);
             edit.TabIndex = 27;
             edit.Text = "Изменить";
             edit.UseVisualStyleBackColor = true;
@@ -96,10 +96,10 @@
             // add
             // 
             add.Font = new Font("Segoe UI", 9F);
-            add.Location = new Point(413, 74);
+            add.Location = new Point(361, 56);
             add.Margin = new Padding(3, 2, 3, 2);
             add.Name = "add";
-            add.Size = new Size(90, 30);
+            add.Size = new Size(79, 22);
             add.TabIndex = 26;
             add.Text = "Добавить";
             add.UseVisualStyleBackColor = true;
@@ -107,10 +107,10 @@
             // 
             // name
             // 
-            name.Location = new Point(3, 30);
+            name.Location = new Point(3, 22);
             name.Margin = new Padding(3, 2, 3, 2);
             name.Name = "name";
-            name.Size = new Size(364, 27);
+            name.Size = new Size(319, 23);
             name.TabIndex = 1;
             // 
             // label2
@@ -118,17 +118,17 @@
             label2.AutoSize = true;
             label2.Location = new Point(3, 0);
             label2.Name = "label2";
-            label2.Size = new Size(116, 20);
+            label2.Size = new Size(90, 15);
             label2.TabIndex = 0;
             label2.Text = "Наименование";
             // 
             // cancel
             // 
             cancel.Font = new Font("Segoe UI", 9F);
-            cancel.Location = new Point(277, 132);
+            cancel.Location = new Point(242, 99);
             cancel.Margin = new Padding(3, 2, 3, 2);
             cancel.Name = "cancel";
-            cancel.Size = new Size(90, 30);
+            cancel.Size = new Size(79, 22);
             cancel.TabIndex = 9;
             cancel.Text = "Отмена";
             cancel.UseVisualStyleBackColor = true;
@@ -137,10 +137,10 @@
             // ok
             // 
             ok.Font = new Font("Segoe UI", 9F);
-            ok.Location = new Point(180, 132);
+            ok.Location = new Point(158, 99);
             ok.Margin = new Padding(3, 2, 3, 2);
             ok.Name = "ok";
-            ok.Size = new Size(90, 30);
+            ok.Size = new Size(79, 22);
             ok.TabIndex = 8;
             ok.Text = "ОК";
             ok.UseVisualStyleBackColor = true;
@@ -152,18 +152,17 @@
             panel1.Controls.Add(cancel);
             panel1.Controls.Add(ok);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(17, 46);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(15, 34);
             panel1.Name = "panel1";
-            panel1.Size = new Size(375, 182);
+            panel1.Size = new Size(328, 136);
             panel1.TabIndex = 31;
             panel1.Visible = false;
             // 
             // SkillForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(543, 333);
+            ClientSize = new Size(475, 302);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);
             Controls.Add(label1);

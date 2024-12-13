@@ -38,31 +38,32 @@
             // 
             // title
             // 
-            title.Size = new Size(311, 32);
+            title.Size = new Size(244, 25);
             title.Text = "Отчет \"Поиск по навыкам\"";
             // 
             // formReport
             // 
-            formReport.Location = new Point(218, 337);
+            formReport.Location = new Point(193, 256);
             // 
             // label2
             // 
-            label2.Location = new Point(12, 265);
+            label2.Location = new Point(12, 202);
             // 
             // button1
             // 
-            button1.Location = new Point(327, 288);
+            button1.Location = new Point(288, 219);
             // 
             // responsible_id
             // 
-            responsible_id.Location = new Point(12, 288);
+            responsible_id.Location = new Point(12, 219);
             // 
             // delete
             // 
             delete.Font = new Font("Segoe UI", 7F);
-            delete.Location = new Point(327, 99);
+            delete.Location = new Point(286, 74);
+            delete.Margin = new Padding(3, 2, 3, 2);
             delete.Name = "delete";
-            delete.Size = new Size(27, 29);
+            delete.Size = new Size(24, 22);
             delete.TabIndex = 39;
             delete.Text = "-";
             delete.UseVisualStyleBackColor = true;
@@ -71,9 +72,10 @@
             // add
             // 
             add.Font = new Font("Segoe UI", 7F);
-            add.Location = new Point(327, 61);
+            add.Location = new Point(286, 46);
+            add.Margin = new Padding(3, 2, 3, 2);
             add.Name = "add";
-            add.Size = new Size(27, 32);
+            add.Size = new Size(24, 24);
             add.TabIndex = 38;
             add.Text = "+";
             add.UseVisualStyleBackColor = true;
@@ -86,14 +88,15 @@
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Skill_name, Skill_id });
-            dataGridView2.Location = new Point(12, 61);
+            dataGridView2.Location = new Point(10, 46);
+            dataGridView2.Margin = new Padding(3, 2, 3, 2);
             dataGridView2.MultiSelect = false;
             dataGridView2.Name = "dataGridView2";
             dataGridView2.ReadOnly = true;
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 51;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.Size = new Size(307, 188);
+            dataGridView2.Size = new Size(269, 141);
             dataGridView2.TabIndex = 37;
             // 
             // Skill_name
@@ -113,9 +116,9 @@
             // 
             // SkillReport
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(375, 317);
             Controls.Add(delete);
             Controls.Add(add);
             Controls.Add(dataGridView2);
