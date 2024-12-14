@@ -35,30 +35,34 @@
             // 
             // title
             // 
-            title.Size = new Size(366, 32);
+            title.Location = new Point(9, 15);
+            title.Size = new Size(286, 25);
             title.Text = "Отчет \"Свободные сотрудники\"";
             // 
             // formReport
             // 
-            formReport.Location = new Point(230, 205);
+            formReport.Location = new Point(217, 154);
+            formReport.Size = new Size(104, 26);
             // 
             // label2
             // 
-            label2.Location = new Point(24, 127);
+            label2.Location = new Point(21, 95);
             // 
             // button1
             // 
-            button1.Location = new Point(339, 150);
+            button1.Location = new Point(297, 112);
+            button1.Size = new Size(24, 23);
             // 
             // responsible_id
             // 
-            responsible_id.Location = new Point(24, 150);
+            responsible_id.Location = new Point(21, 112);
             // 
             // position_form
             // 
-            position_form.Location = new Point(339, 86);
+            position_form.Location = new Point(297, 64);
+            position_form.Margin = new Padding(3, 2, 3, 2);
             position_form.Name = "position_form";
-            position_form.Size = new Size(27, 29);
+            position_form.Size = new Size(24, 22);
             position_form.TabIndex = 39;
             position_form.Text = "...";
             position_form.UseVisualStyleBackColor = true;
@@ -67,9 +71,9 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(20, 62);
+            label8.Location = new Point(18, 46);
             label8.Name = "label8";
-            label8.Size = new Size(86, 20);
+            label8.Size = new Size(69, 15);
             label8.TabIndex = 38;
             label8.Text = "Должность";
             // 
@@ -77,16 +81,17 @@
             // 
             position_id.DropDownStyle = ComboBoxStyle.DropDownList;
             position_id.FormattingEnabled = true;
-            position_id.Location = new Point(24, 86);
+            position_id.Location = new Point(21, 64);
+            position_id.Margin = new Padding(3, 2, 3, 2);
             position_id.Name = "position_id";
-            position_id.Size = new Size(307, 28);
+            position_id.Size = new Size(269, 23);
             position_id.TabIndex = 37;
             // 
             // AvailableReport
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(421, 279);
+            ClientSize = new Size(368, 209);
             Controls.Add(position_form);
             Controls.Add(label8);
             Controls.Add(position_id);

@@ -74,12 +74,12 @@ namespace Sisir_1
             ToolStripMenuItem skillRep = new ToolStripMenuItem("Поиск по навыкам");
             skillRep.Click += (s, e) => OpenForm<SkillReport>();
 
-            ToolStripMenuItem responsibleReport = new ToolStripMenuItem("Отчет по ответственным");
+            ToolStripMenuItem responsibleReport = new ToolStripMenuItem("Эффективность ответственных");
             responsibleReport.Click += (s, e) => OpenForm<ResponsibleReport>();
 
-            //reportsMenuItem.DropDownItems.Add(availableReport);
+            reportsMenuItem.DropDownItems.Add(availableReport);
             reportsMenuItem.DropDownItems.Add(currentProjects);
-            //reportsMenuItem.DropDownItems.Add(workload);
+            reportsMenuItem.DropDownItems.Add(workload);
             reportsMenuItem.DropDownItems.Add(skillRep);
             reportsMenuItem.DropDownItems.Add(responsibleReport);
 

@@ -32,18 +32,22 @@
             // 
             // title
             // 
-            title.Size = new Size(305, 32);
+            title.Size = new Size(239, 25);
             title.Text = "Отчет \"Проекты в работе\"";
             // 
             // formReport
             // 
-            formReport.Location = new Point(218, 147);
+            formReport.Location = new Point(191, 110);
+            // 
+            // button1
+            // 
+            button1.Size = new Size(24, 23);
             // 
             // CurrentProjects
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(386, 188);
+            ClientSize = new Size(338, 141);
             Name = "CurrentProjects";
             Text = "Проекты в работе";
             ResumeLayout(false);

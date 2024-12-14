@@ -39,19 +39,19 @@
             // 
             title.AutoSize = true;
             title.Font = new Font("Segoe UI", 14F);
-            title.Location = new Point(12, 26);
+            title.Location = new Point(10, 20);
             title.Name = "title";
-            title.Size = new Size(116, 32);
+            title.Size = new Size(91, 25);
             title.TabIndex = 25;
             title.Text = "Базовый ";
             // 
             // formReport
             // 
             formReport.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            formReport.Location = new Point(218, 143);
+            formReport.Location = new Point(191, 107);
             formReport.Margin = new Padding(3, 2, 3, 2);
             formReport.Name = "formReport";
-            formReport.Size = new Size(136, 30);
+            formReport.Size = new Size(119, 23);
             formReport.TabIndex = 33;
             formReport.Text = "Сформировать";
             formReport.UseVisualStyleBackColor = true;
@@ -59,17 +59,18 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 71);
+            label2.Location = new Point(10, 53);
             label2.Name = "label2";
-            label2.Size = new Size(134, 20);
+            label2.Size = new Size(107, 15);
             label2.TabIndex = 36;
             label2.Text = "Кто сформировал";
             // 
             // button1
             // 
-            button1.Location = new Point(327, 94);
+            button1.Location = new Point(285, 70);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(27, 29);
+            button1.Size = new Size(24, 24);
             button1.TabIndex = 35;
             button1.Text = "...";
             button1.UseVisualStyleBackColor = true;
@@ -79,21 +80,23 @@
             // 
             responsible_id.DropDownStyle = ComboBoxStyle.DropDownList;
             responsible_id.FormattingEnabled = true;
-            responsible_id.Location = new Point(12, 94);
+            responsible_id.Location = new Point(10, 70);
+            responsible_id.Margin = new Padding(3, 2, 3, 2);
             responsible_id.Name = "responsible_id";
-            responsible_id.Size = new Size(307, 28);
+            responsible_id.Size = new Size(269, 23);
             responsible_id.TabIndex = 34;
             // 
             // BaseReport
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(432, 239);
+            ClientSize = new Size(345, 179);
             Controls.Add(label2);
             Controls.Add(button1);
             Controls.Add(responsible_id);
             Controls.Add(formReport);
             Controls.Add(title);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "BaseReport";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BaseReport";

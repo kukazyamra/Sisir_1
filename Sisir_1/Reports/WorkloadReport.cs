@@ -62,7 +62,14 @@ namespace Sisir_1.Reports
                     {
                         Table table = document.Tables[0];
 
-                        document.ReplaceText("#КТО#", ((Employee)responsible_id.SelectedItem).ToString());
+                        string who = "";
+                        var emp = (Employee)responsible_id.SelectedItem;
+                        char firstNameInitial2 = emp.Name.Length > 0 ? emp.Name[0] : ' ';
+                        char? patronymicInitial2 = emp.Patronymic?.Length > 0 ? emp.Patronymic[0] : null;
+                        if (patronymicInitial2 != null) who += ($"{emp.Surname} {firstNameInitial2}.{patronymicInitial2}.");
+                        else who += ($"{emp.Surname} {firstNameInitial2}.");
+
+                        document.ReplaceText("#КТО#", $"{emp.Position.Name} ___/{who}");
                         document.ReplaceText("#ДАТА#", DateTime.Now.ToShortDateString());
                         foreach (var employee in employees)
                         {
@@ -77,7 +84,7 @@ namespace Sisir_1.Reports
                                 newRow.Cells[2].Paragraphs[0].Append(employee.Level);
                             newRow.Cells[3].Paragraphs[0].Append(employee.ProjectCount.ToString());
                         }
-                        SetTableFormatting(table, "Times New Roman", 12);
+                        SetTableFormatting(table, "Times New Roman", 11);
                         document.SaveAs(newFilePath);
                         var p = new Process();
                         p.StartInfo = new ProcessStartInfo(newFilePath)
@@ -85,7 +92,6 @@ namespace Sisir_1.Reports
                             UseShellExecute = true
                         };
                         p.Start();
-                        this.Close();
                     }
                 }
                 catch

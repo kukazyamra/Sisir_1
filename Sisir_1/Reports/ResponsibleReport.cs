@@ -151,7 +151,7 @@ namespace Sisir_1.Reports
 
                 
                         }
-                        SetTableFormatting(table, "Arial", 11);
+                        SetTableFormatting(table, "Times new Roman", 11);
                         document.SaveAs(newFilePath);
                         var p = new Process();
                         p.StartInfo = new ProcessStartInfo(newFilePath)

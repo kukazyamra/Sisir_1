@@ -34,31 +34,35 @@
             // 
             // title
             // 
-            title.Size = new Size(418, 32);
+            title.Location = new Point(9, 15);
+            title.Size = new Size(328, 25);
             title.Text = "Отчет \"Загруженность сотрудников\"";
             // 
             // formReport
             // 
-            formReport.Location = new Point(227, 201);
+            formReport.Location = new Point(189, 152);
+            formReport.Size = new Size(104, 25);
             // 
             // label2
             // 
-            label2.Location = new Point(23, 132);
+            label2.Location = new Point(20, 99);
             // 
             // button1
             // 
-            button1.Location = new Point(336, 154);
+            button1.Location = new Point(268, 116);
+            button1.Size = new Size(25, 23);
             // 
             // responsible_id
             // 
-            responsible_id.Location = new Point(23, 155);
+            responsible_id.Location = new Point(20, 116);
+            responsible_id.Size = new Size(242, 23);
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(23, 71);
+            label1.Location = new Point(20, 53);
             label1.Name = "label1";
-            label1.Size = new Size(92, 20);
+            label1.Size = new Size(73, 15);
             label1.TabIndex = 38;
             label1.Text = "Сортировка";
             // 
@@ -66,16 +70,17 @@
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(23, 94);
+            comboBox1.Location = new Point(20, 70);
+            comboBox1.Margin = new Padding(3, 2, 3, 2);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(307, 28);
+            comboBox1.Size = new Size(269, 23);
             comboBox1.TabIndex = 37;
             // 
             // WorkloadReport
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(445, 287);
+            ClientSize = new Size(389, 215);
             Controls.Add(label1);
             Controls.Add(comboBox1);
             Name = "WorkloadReport";

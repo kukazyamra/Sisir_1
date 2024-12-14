@@ -36,70 +36,72 @@
             // 
             // title
             // 
-            title.Size = new Size(290, 32);
-            title.Text = "Отчет по ответственным";
+            title.Size = new Size(350, 25);
+            title.Text = "Отчет \"Эффективность ответственных\"";
             // 
             // formReport
             // 
-            formReport.Location = new Point(213, 205);
+            formReport.Location = new Point(186, 154);
             // 
             // label2
             // 
-            label2.Location = new Point(12, 138);
+            label2.Location = new Point(10, 104);
             // 
             // button1
             // 
-            button1.Location = new Point(322, 161);
+            button1.Location = new Point(282, 121);
             // 
             // responsible_id
             // 
-            responsible_id.Location = new Point(12, 161);
+            responsible_id.Location = new Point(10, 121);
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 74);
+            label3.Location = new Point(10, 56);
             label3.Name = "label3";
-            label3.Size = new Size(125, 20);
+            label3.Size = new Size(98, 15);
             label3.TabIndex = 38;
             label3.Text = "Начало периода";
             // 
             // start_period
             // 
             start_period.Format = DateTimePickerFormat.Short;
-            start_period.Location = new Point(12, 97);
+            start_period.Location = new Point(10, 73);
+            start_period.Margin = new Padding(3, 2, 3, 2);
             start_period.Name = "start_period";
-            start_period.Size = new Size(151, 27);
+            start_period.Size = new Size(133, 23);
             start_period.TabIndex = 37;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(198, 74);
+            label1.Location = new Point(173, 56);
             label1.Name = "label1";
-            label1.Size = new Size(117, 20);
+            label1.Size = new Size(90, 15);
             label1.TabIndex = 40;
             label1.Text = "Конец периода";
             // 
             // end_period
             // 
             end_period.Format = DateTimePickerFormat.Short;
-            end_period.Location = new Point(198, 97);
+            end_period.Location = new Point(173, 73);
+            end_period.Margin = new Padding(3, 2, 3, 2);
             end_period.Name = "end_period";
-            end_period.Size = new Size(151, 27);
+            end_period.Size = new Size(133, 23);
             end_period.TabIndex = 39;
             // 
             // ResponsibleReport
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(418, 282);
+            ClientSize = new Size(366, 212);
             Controls.Add(label1);
             Controls.Add(end_period);
             Controls.Add(label3);
             Controls.Add(start_period);
             Name = "ResponsibleReport";
-            Text = "Отчет по ответственным";
+            Text = "Эффективность ответственных";
             Controls.SetChildIndex(title, 0);
             Controls.SetChildIndex(formReport, 0);
             Controls.SetChildIndex(responsible_id, 0);

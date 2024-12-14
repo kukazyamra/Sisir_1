@@ -97,7 +97,7 @@ namespace Sisir_1.Reports
                                 newRow.Cells[3].Paragraphs[0].Append(responsible.ToString());
                             }
                         }
-                        SetTableFormatting(table, "Arial", 11);
+                        SetTableFormatting(table, "Times new Roman", 11);
                         document.SaveAs(newFilePath);
                         var p = new Process();
                         p.StartInfo = new ProcessStartInfo(newFilePath)
@@ -105,7 +105,6 @@ namespace Sisir_1.Reports
                             UseShellExecute = true
                         };
                         p.Start();
-                        this.Close();
                     }
                 }
                 catch

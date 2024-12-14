@@ -96,7 +96,7 @@ namespace Sisir_1.Reports
                         var emp = (Employee)responsible_id.SelectedItem;
                         char firstNameInitial = emp.Name.Length > 0 ? emp.Name[0] : ' ';
                         char? patronymicInitial = emp.Patronymic?.Length > 0 ? emp.Patronymic[0] : null;
-                        if (patronymicInitial != null) who +=($"{emp.Surname} {firstNameInitial}.{patronymicInitial}.");
+                        if (patronymicInitial != null) who += ($"{emp.Surname} {firstNameInitial}.{patronymicInitial}.");
                         else who += ($"{emp.Surname} {firstNameInitial}.");
 
                         document.ReplaceText("#КТО#", $"{emp.Position.Name} ___/{who}");
@@ -129,12 +129,7 @@ namespace Sisir_1.Reports
                         {
 
                             Row newRow = table.InsertRow();
-                            //char firstNameInitial = employee.Employee.Name.Length > 0 ? employee.Employee.Name[0] : ' ';
-                            //char? patronymicInitial = employee.Employee.Patronymic?.Length > 0 ? employee.Employee.Patronymic[0] : null;
-                            //if (patronymicInitial != null) newRow.Cells[0].Paragraphs[0].Append($"{employee.Employee.Surname} {firstNameInitial}.{patronymicInitial}.");
-                            //else newRow.Cells[0].Paragraphs[0].Append($"{employee.Employee.Surname} {firstNameInitial}.");
-                            //newRow.Cells[1].Paragraphs[0].Append(employee.Employee.Position.Name);
-                            //if (employee.Employee.Level != null) newRow.Cells[2].Paragraphs[0].Append(employee.Employee.Level.Name);
+                            
                             newRow.Cells[0].Paragraphs[0].Append(employee.Employee.ToString());
                             for (int i = 0; i < employee.Skills.Count; i++)
                             {
@@ -144,7 +139,7 @@ namespace Sisir_1.Reports
                             }
                             newRow.Cells[2].Paragraphs[0].Append(employee.Employee.ProjectEmployees.Count.ToString());
                         }
-                        SetTableFormatting(table, "Arial", 11);
+                        SetTableFormatting(table, "Times new Roman", 11);
                         document.SaveAs(newFilePath);
                         var p = new Process();
                         p.StartInfo = new ProcessStartInfo(newFilePath)
@@ -152,15 +147,15 @@ namespace Sisir_1.Reports
                             UseShellExecute = true
                         };
                         p.Start();
-                        this.Close();
                     }
                 }
                 catch (Exception ex)
                 {
-
                     MessageBox.Show("Закройте предыдущий файл");
                 }
             }
         }
+
+
     }
 }
