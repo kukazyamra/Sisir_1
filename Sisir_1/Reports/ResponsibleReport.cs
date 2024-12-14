@@ -124,7 +124,14 @@ namespace Sisir_1.Reports
 
                             document.ReplaceText("#НАЧАЛОПЕРИОДА#", earliestEndDatePlan.ToString());
                         }
-                        document.ReplaceText("#КТО#", ((Employee)responsible_id.SelectedItem).ToString());
+                        string who = "";
+                        var emp = (Employee)responsible_id.SelectedItem;
+                        char firstNameInitial2 = emp.Name.Length > 0 ? emp.Name[0] : ' ';
+                        char? patronymicInitial2 = emp.Patronymic?.Length > 0 ? emp.Patronymic[0] : null;
+                        if (patronymicInitial2 != null) who += ($"{emp.Surname} {firstNameInitial2}.{patronymicInitial2}.");
+                        else who += ($"{emp.Surname} {firstNameInitial2}.");
+
+                        document.ReplaceText("#КТО#", $"{emp.Position.Name} ___/{who}");
                         document.ReplaceText("#ДАТА#", DateTime.Now.ToShortDateString());
                         foreach (var result in results)
                         {
@@ -137,7 +144,7 @@ namespace Sisir_1.Reports
                             else newRow.Cells[0].Paragraphs[0].Append($"{result.Employee.Surname} {firstNameInitial}.");
                             newRow.Cells[1].Paragraphs[0].Append(result.Employee.Position.Name);
                             if (result.Employee.Level!=null) newRow.Cells[2].Paragraphs[0].Append(result.Employee.Level.Name);
-
+                            newRow.Cells[3].Paragraphs[0].Append(Math.Round(result.Employee.Position.Salary * (result.Employee.Level != null ? result.Employee.Level.Coefficient : 1)).ToString());
 
                             newRow.Cells[4].Paragraphs[0].Append(result.ClosedOnTime.ToString());
                             newRow.Cells[5].Paragraphs[0].Append(result.ClosedLate.ToString());

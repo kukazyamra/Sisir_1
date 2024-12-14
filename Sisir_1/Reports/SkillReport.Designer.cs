@@ -38,32 +38,38 @@
             // 
             // title
             // 
-            title.Size = new Size(244, 25);
+            title.Location = new Point(14, 35);
+            title.Size = new Size(311, 32);
             title.Text = "Отчет \"Поиск по навыкам\"";
             // 
             // formReport
             // 
-            formReport.Location = new Point(193, 256);
+            formReport.Location = new Point(232, 341);
+            formReport.Margin = new Padding(3, 3, 3, 3);
+            formReport.Size = new Size(124, 28);
             // 
             // label2
             // 
-            label2.Location = new Point(12, 202);
+            label2.Location = new Point(14, 269);
             // 
             // button1
             // 
-            button1.Location = new Point(288, 219);
+            button1.Location = new Point(329, 292);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Size = new Size(27, 30);
             // 
             // responsible_id
             // 
-            responsible_id.Location = new Point(12, 219);
+            responsible_id.Location = new Point(14, 292);
+            responsible_id.Margin = new Padding(3, 4, 3, 4);
+            responsible_id.Size = new Size(305, 28);
             // 
             // delete
             // 
             delete.Font = new Font("Segoe UI", 7F);
-            delete.Location = new Point(286, 74);
-            delete.Margin = new Padding(3, 2, 3, 2);
+            delete.Location = new Point(329, 116);
             delete.Name = "delete";
-            delete.Size = new Size(24, 22);
+            delete.Size = new Size(27, 29);
             delete.TabIndex = 39;
             delete.Text = "-";
             delete.UseVisualStyleBackColor = true;
@@ -72,10 +78,9 @@
             // add
             // 
             add.Font = new Font("Segoe UI", 7F);
-            add.Location = new Point(286, 46);
-            add.Margin = new Padding(3, 2, 3, 2);
+            add.Location = new Point(329, 78);
             add.Name = "add";
-            add.Size = new Size(24, 24);
+            add.Size = new Size(27, 32);
             add.TabIndex = 38;
             add.Text = "+";
             add.UseVisualStyleBackColor = true;
@@ -88,15 +93,14 @@
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Skill_name, Skill_id });
-            dataGridView2.Location = new Point(10, 46);
-            dataGridView2.Margin = new Padding(3, 2, 3, 2);
+            dataGridView2.Location = new Point(12, 78);
             dataGridView2.MultiSelect = false;
             dataGridView2.Name = "dataGridView2";
             dataGridView2.ReadOnly = true;
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 51;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.Size = new Size(269, 141);
+            dataGridView2.Size = new Size(307, 188);
             dataGridView2.TabIndex = 37;
             // 
             // Skill_name
@@ -116,12 +120,13 @@
             // 
             // SkillReport
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(375, 317);
+            ClientSize = new Size(505, 423);
             Controls.Add(delete);
             Controls.Add(add);
             Controls.Add(dataGridView2);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "SkillReport";
             Text = "Поиск по навыкам";
             Controls.SetChildIndex(title, 0);

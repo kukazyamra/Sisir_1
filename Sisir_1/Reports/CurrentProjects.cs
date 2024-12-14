@@ -69,7 +69,14 @@ namespace Sisir_1.Reports
                     {
                         Table table = document.Tables[0];
 
-                        document.ReplaceText("#КТО#", ((Employee)responsible_id.SelectedItem).ToString());
+                        string who = "";
+                        var emp = (Employee)responsible_id.SelectedItem;
+                        char firstNameInitial = emp.Name.Length > 0 ? emp.Name[0] : ' ';
+                        char? patronymicInitial = emp.Patronymic?.Length > 0 ? emp.Patronymic[0] : null;
+                        if (patronymicInitial != null) who += ($"{emp.Surname} {firstNameInitial}.{patronymicInitial}.");
+                        else who += ($"{emp.Surname} {firstNameInitial}.");
+
+                        document.ReplaceText("#КТО#", $"{emp.Position.Name} ___/{who}");
                         document.ReplaceText("#ДАТА#", DateTime.Now.ToShortDateString());
                         foreach (var project in activeProjects)
                         {

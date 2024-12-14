@@ -178,6 +178,23 @@ namespace Sisir_1
                     return false;
                 }
             }
+            if (!string.IsNullOrWhiteSpace(start_date_fact.Text))
+            {
+                if (start_date_fact.Value > DateTime.Today)
+                {
+                    MessageBox.Show("Фактическая дата начала не может быть позже текущей даты","Ошибка");
+                    return false;
+                }
+            }
+
+            if (!string.IsNullOrWhiteSpace(finish_date_fact.Text))
+            {
+                if (finish_date_fact.Value > DateTime.Today)
+                {
+                    MessageBox.Show("Фактическая дата завершения не может быть позже текущей даты","Ошибка");
+                    return false;
+                }
+            }
             return true;
         }
         public ProjectForm()
